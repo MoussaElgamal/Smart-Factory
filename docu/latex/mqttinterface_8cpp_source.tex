@@ -1,0 +1,123 @@
+\hypertarget{mqttinterface_8cpp_source}{}\doxysection{mqttinterface.\+cpp}
+\label{mqttinterface_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/mqttinterface.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/mqttinterface.cpp}}
+\mbox{\hyperlink{mqttinterface_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mqttinterface_8h}{mqttinterface.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00003}\mbox{\hyperlink{class_mqtt_interface_a5499688a482dcba33ac2a22a5a459d16}{00003}} \mbox{\hyperlink{class_mqtt_interface_a5499688a482dcba33ac2a22a5a459d16}{MqttInterface::MqttInterface}}(\mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log)}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00004}00004 \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00005}00005     \mbox{\hyperlink{class_mqtt_interface_a7cb74ed463568289c32f668f34392504}{\_log}} = log;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00006}00006     \_mqttClient = \textcolor{keyword}{new} QMqttClient();}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00008}00008     \textcolor{comment}{// Setup MQTT Client}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00009}00009     \_mqttClient-\/>setHostname(\textcolor{stringliteral}{"{}192.168.0.11"{}});}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00010}00010     \_mqttClient-\/>setPort(1883);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00011}00011     \_mqttClient-\/>setUsername(\textcolor{stringliteral}{"{}VPJ"{}});}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00012}00012     \_mqttClient-\/>setPassword(\textcolor{stringliteral}{"{}R462"{}});}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00014}00014     \textcolor{comment}{// Verbinde Signale}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00015}00015     connect(\_mqttClient, \&QMqttClient::messageReceived, \textcolor{keyword}{this}, \&MqttInterface::onMessageReceived);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00016}00016     connect(\_mqttClient, \&QMqttClient::connected, \textcolor{keyword}{this}, \&MqttInterface::onConnected);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00017}00017     connect(\_mqttClient, \&QMqttClient::disconnected, \textcolor{keyword}{this}, \&MqttInterface::onDisconnected);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00019}00019     \textcolor{comment}{// Versuche, die Verbindung herzustellen}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00020}00020     \_mqttClient-\/>connectToHost();}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00023}00023 \textcolor{keywordtype}{void} MqttInterface::onConnected()}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00024}00024 \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00025}00025     \mbox{\hyperlink{class_mqtt_interface_a57e4b5a439f7874fb8b90d418202acd5}{\_mqttConnected}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00026}00026     qDebug() << \textcolor{stringliteral}{"{}MQTT Client connected successfully!"{}};}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00029}00029 \textcolor{keywordtype}{void} MqttInterface::onDisconnected()}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00030}00030 \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00031}00031     \mbox{\hyperlink{class_mqtt_interface_a57e4b5a439f7874fb8b90d418202acd5}{\_mqttConnected}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00032}00032     qDebug() << \textcolor{stringliteral}{"{}MQTT Client disconnected!"{}};}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00033}00033     emit \mbox{\hyperlink{class_mqtt_interface_aeb04e04f7107f689496327b3dbfc31b2}{disconnected}}();}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00035}00035     QTimer::singleShot(3000, \textcolor{keyword}{this}, \&MqttInterface::attemptReconnect);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00038}00038 \textcolor{keywordtype}{void} MqttInterface::attemptReconnect()}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00039}00039 \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00040}00040     \textcolor{keywordflow}{if}(!\mbox{\hyperlink{class_mqtt_interface_a57e4b5a439f7874fb8b90d418202acd5}{\_mqttConnected}})}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00041}00041     \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00042}00042         qDebug() << \textcolor{stringliteral}{"{}Attempting to reconnect to Mqtt broker..."{}};}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00043}00043         \_mqttClient-\/>connectToHost();}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00045}00045 \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00047}\mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{00047}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{MqttInterface::publishMessageToTopic}}(\textcolor{keyword}{const} QString \&topic, \textcolor{keyword}{const} QString \&message)}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00048}00048 \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00049}00049     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_mqtt_interface_a57e4b5a439f7874fb8b90d418202acd5}{\_mqttConnected}})}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00050}00050     \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00051}00051         \textcolor{keywordtype}{int} result = \_mqttClient-\/>publish(topic, message.toUtf8());}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00053}00053         \textcolor{keywordflow}{if} (result == -\/1)}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00054}00054         \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00055}00055             qDebug() << \textcolor{stringliteral}{"{}Failed to publish message to topic:"{}} << topic;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00056}00056         \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00057}00057         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00058}00058         \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00059}00059             qDebug() << \textcolor{stringliteral}{"{}Message published to topic:"{}} << topic;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00060}00060         \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00061}00061         \textcolor{keywordflow}{return} result;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00063}00063     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00064}00064     \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00065}00065         qDebug() << \textcolor{stringliteral}{"{}MQTT client is not connected. Cannot publish message."{}};}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00066}00066         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00067}00067     \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00068}00068 \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00070}\mbox{\hyperlink{class_mqtt_interface_a5f40f376fa89dbd45c4257e89b814935}{00070}} QString \mbox{\hyperlink{class_mqtt_interface_a5f40f376fa89dbd45c4257e89b814935}{MqttInterface::subscribeMessageFromTopic}}(\textcolor{keyword}{const} QString \&topic)}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00071}00071 \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00072}00072     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_mqtt_interface_a57e4b5a439f7874fb8b90d418202acd5}{\_mqttConnected}})}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00073}00073     \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00074}00074         \textcolor{keyword}{auto} subscription = \_mqttClient-\/>subscribe(topic);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00075}00075         \textcolor{keywordflow}{if} (!subscription)}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00076}00076         \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00077}00077             qDebug() << \textcolor{stringliteral}{"{}Failed to subscribe to topic:"{}} << topic;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00078}00078             \textcolor{keywordflow}{return} QString();}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00079}00079         \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00080}00080         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00081}00081         \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00082}00082             qDebug() << \textcolor{stringliteral}{"{}Subscribed to topic:"{}} << topic;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00083}00083         \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00084}00084     \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00085}00085     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00086}00086     \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00087}00087         qDebug() << \textcolor{stringliteral}{"{}MQTT client is not connected. Cannot subscribe to topic."{}};}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00088}00088     \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00090}00090     \textcolor{keywordflow}{return} QString();}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00091}00091 \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00093}00093 \textcolor{keywordtype}{void} MqttInterface::onMessageReceived(\textcolor{keyword}{const} QByteArray \&message, \textcolor{keyword}{const} QMqttTopicName \&topic)}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00094}00094 \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00095}00095     QString receivedMessage = QString::fromUtf8(message);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00096}00096     qDebug() << \textcolor{stringliteral}{"{}Message received from topic:"{}} << topic.name() << \textcolor{stringliteral}{"{}Message:"{}} << receivedMessage;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00098}00098     \textcolor{comment}{// Emit signal to notify other classes about the received message}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00099}00099     emit \mbox{\hyperlink{class_mqtt_interface_a4d23080b20afc6d6a80b618a40623e3a}{messageReceived}}(topic.name(), receivedMessage);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00100}00100 \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00102}\mbox{\hyperlink{class_mqtt_interface_a04bfb7cd7834b5e90ee38f793f923379}{00102}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_mqtt_interface_a04bfb7cd7834b5e90ee38f793f923379}{MqttInterface::sendRobotJob}}(\textcolor{keywordtype}{int} robot, \textcolor{keywordtype}{int} job)}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00103}00103 \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00104}00104     \textcolor{comment}{// publishes job number to topic of the adressed robot}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00105}00105     QString topic = QString(\textcolor{stringliteral}{"{}Jobs/Robot/\%1/Jobnumber"{}}).arg(robot);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00106}00106     QString message = QString(\textcolor{stringliteral}{"{}\%1"{}}).arg(job);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00108}00108     \_mqttClient-\/>publish(topic, message.toUtf8());}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00109}00109 \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00111}00111 \textcolor{keywordtype}{int} MqttInterface::updateRobotStatus()}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00112}00112 \{}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00113}00113     \textcolor{keywordtype}{int} status = 0;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00114}00114     emit \mbox{\hyperlink{class_mqtt_interface_a2151fa68abf7365be4f7fcaf454e0e17}{MqttInterface::updateRobotStatusSignal}}(status);}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00115}00115     \textcolor{keywordflow}{return} status;}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00116}00116 \}}
+\DoxyCodeLine{\Hypertarget{mqttinterface_8cpp_source_l00117}00117 }
+
+\end{DoxyCode}

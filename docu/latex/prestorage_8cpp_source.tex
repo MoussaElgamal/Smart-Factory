@@ -1,0 +1,93 @@
+\hypertarget{prestorage_8cpp_source}{}\doxysection{prestorage.\+cpp}
+\label{prestorage_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/prestorage.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/prestorage.cpp}}
+\mbox{\hyperlink{prestorage_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{prestorage_8h}{prestorage.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00003}00003 \textcolor{comment}{//The following list is used to collect all prestorages and calculate the number.}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00004}00004 QList<Prestorage*>* \mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{Prestorage::listOfPrestorages}} = \textcolor{keyword}{new} QList<Prestorage*>;}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00011}\mbox{\hyperlink{class_prestorage_a580e3f21c6e553d2107461b663f66571}{00011}} \mbox{\hyperlink{class_prestorage_a580e3f21c6e553d2107461b663f66571}{Prestorage::Prestorage}}(\mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log, \mbox{\hyperlink{class_order_manager}{OrderManager}}* orderManager) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00012}00012     \mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}} = \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfaad4cec7e12be0aef3c170fc3728c4d83}{Agent::Type::prestorage}};}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00014}00014     \mbox{\hyperlink{class_agent_af3fee8d5146a2de3dc9e6709118964a9}{\_log}} = log;}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00015}00015     \_orderManager = orderManager;}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00017}00017     \mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{listOfPrestorages}}-\/>append(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00019}00019     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_prestorage_a389292ad0cf943fbd2f595ed60f73562}{numberOfWorkbenches}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00020}00020         \_workbenches[i] = \textcolor{keyword}{new} \mbox{\hyperlink{class_workbench}{Workbench}}();}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00021}00021         QObject::connect(this-\/>\_workbenches[i], \&\mbox{\hyperlink{class_workbench_ac7f69a348dd83554092af4dc2bde5551}{Workbench::onPartRemoved}}, \textcolor{keyword}{this}, \&\mbox{\hyperlink{class_prestorage_a914786485f18c5724b6fec93ec656a95}{Prestorage::partTakenFromPrestorage}});}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00024}00024     \_mqttInterface = \textcolor{keyword}{new} \mbox{\hyperlink{class_mqtt_interface}{MqttInterface}}(\mbox{\hyperlink{class_agent_af3fee8d5146a2de3dc9e6709118964a9}{\_log}}); \textcolor{comment}{//provide neccessary params for RFID-\/Constructor}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00025}00025     \_rfid = \textcolor{keyword}{new} \mbox{\hyperlink{class_r_f_i_d}{RFID}}(\_mqttInterface);}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00027}00027     offerServicePrestorage();}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00028}00028 \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00033}\mbox{\hyperlink{class_prestorage_aa81a9471fb66eee1746736ba43f0d343}{00033}} \mbox{\hyperlink{class_prestorage_aa81a9471fb66eee1746736ba43f0d343}{Prestorage::\string~Prestorage}}() \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00034}00034     \textcolor{keywordflow}{for} (uint i = 0; i < \mbox{\hyperlink{class_prestorage_a389292ad0cf943fbd2f595ed60f73562}{numberOfWorkbenches}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00035}00035         \textcolor{keyword}{delete} \_workbenches[i];}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00037}00037     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{listOfPrestorages}}-\/>length(); i++) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00038}00038         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{listOfPrestorages}}-\/>at(i) == \textcolor{keyword}{this}) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00039}00039             \mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{listOfPrestorages}}-\/>removeAt(i);}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00040}00040         \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00042}00042     \textcolor{keyword}{delete} \_rfid;}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00043}00043 \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00048}\mbox{\hyperlink{class_prestorage_a914786485f18c5724b6fec93ec656a95}{00048}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_prestorage_a914786485f18c5724b6fec93ec656a95}{Prestorage::partTakenFromPrestorage}}()}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00049}00049 \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00050}00050     offerServicePrestorage();}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00051}00051 \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00056}00056 \textcolor{keywordtype}{void} Prestorage::offerServicePrestorage()}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00057}00057 \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00058}00058     \mbox{\hyperlink{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}{Agent::listOfServicesPrestorage}}-\/>append(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00059}00059     \mbox{\hyperlink{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}{Agent::organizeHelp}}(\mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}});}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00066}\mbox{\hyperlink{class_prestorage_af8618606cfe67ff727cd92682876ff77}{00066}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_prestorage_af8618606cfe67ff727cd92682876ff77}{Prestorage::takeService}}(\mbox{\hyperlink{class_agent}{Agent}} *agent)}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00067}00067 \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00068}00068     \textcolor{keywordflow}{if}(agent-\/>\mbox{\hyperlink{class_agent_ad61c9a576e4b13067c4255ad521c1f26}{getType}}() == \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfaf4c9385f1902f7334b00b9b4ecd164de}{Type::part}}) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00069}00069         \mbox{\hyperlink{class_part}{Part}}* part = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_part}{Part}}*\textcolor{keyword}{>}(agent);}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00070}00070         \textcolor{keywordtype}{int} positionInt = (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a458c367e8649fcafe6a830fa322e6f79}{Part::Position::prestorage1place1}}) -\/ 1 + ((\mbox{\hyperlink{class_prestorage_a84b55fb22a4fa3b85608cda8b364bc4b}{getPrestorageNumber}}() -\/ 1) * 2) + \mbox{\hyperlink{class_prestorage_a08e8d730975af16a3558e4bdbb0969fd}{getFreeWorkbenchNumber}}());}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00071}00071         \textcolor{keywordflow}{if} (positionInt > 0 \&\& \mbox{\hyperlink{class_prestorage_a08e8d730975af16a3558e4bdbb0969fd}{getFreeWorkbenchNumber}}() > 0) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00072}00072             \_workbenches[\mbox{\hyperlink{class_prestorage_a08e8d730975af16a3558e4bdbb0969fd}{getFreeWorkbenchNumber}}() -\/ 1]-\/>setPartToPlace(part);}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00073}00073             \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part::Position}} position = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part::Position}}\textcolor{keyword}{>}(positionInt);}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00074}00074             part-\/>\mbox{\hyperlink{class_part_a62678bdfc5b62f7cee1c60cd441780c9}{setPosition}}(position);}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00075}00075             part-\/>\mbox{\hyperlink{class_part_a4c59de1d50fbcfdb6f07a93677e0e85d}{machineCycleReady}}(); \textcolor{comment}{//no cycle}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00076}00076         \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00077}00077     \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00078}00078     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_prestorage_a389292ad0cf943fbd2f595ed60f73562}{numberOfWorkbenches}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00079}00079         \textcolor{keywordflow}{if} (\_workbenches[i]-\/>isPlaceFree()) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00080}00080             offerServicePrestorage();}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00081}00081         \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00083}00083 \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00088}\mbox{\hyperlink{class_prestorage_a08e8d730975af16a3558e4bdbb0969fd}{00088}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_prestorage_a08e8d730975af16a3558e4bdbb0969fd}{Prestorage::getFreeWorkbenchNumber}}()}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00089}00089 \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00090}00090     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_prestorage_a389292ad0cf943fbd2f595ed60f73562}{numberOfWorkbenches}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00091}00091         \textcolor{keywordflow}{if} (\_workbenches[i]-\/>isPlaceFree()) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00092}00092             \textcolor{keywordflow}{return} (i + 1);}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00093}00093         \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00094}00094     \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00095}00095     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00096}00096 \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00101}\mbox{\hyperlink{class_prestorage_a84b55fb22a4fa3b85608cda8b364bc4b}{00101}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_prestorage_a84b55fb22a4fa3b85608cda8b364bc4b}{Prestorage::getPrestorageNumber}}()}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00102}00102 \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00103}00103     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{listOfPrestorages}}-\/>length(); i++) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00104}00104         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{listOfPrestorages}}-\/>at(i) == \textcolor{keyword}{this}) \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00105}00105             \textcolor{keywordflow}{return} (i + 1);}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00106}00106         \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00107}00107     \}}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00109}00109     \mbox{\hyperlink{class_agent_af3fee8d5146a2de3dc9e6709118964a9}{\_log}}-\/>\mbox{\hyperlink{class_csv_interpreter_a5ea68a0704e0b03d6fad49131bd4a704}{writeLogData}}(\textcolor{stringliteral}{"{}Rohteillagernummer konnte nicht vergeben werden."{}});}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00110}00110     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{prestorage_8cpp_source_l00111}00111 \}}
+
+\end{DoxyCode}

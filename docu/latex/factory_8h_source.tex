@@ -1,0 +1,41 @@
+\hypertarget{factory_8h_source}{}\doxysection{factory.\+h}
+\label{factory_8h_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/factory.h@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/factory.h}}
+\mbox{\hyperlink{factory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef FACTORY\_H}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00002}00002 \textcolor{preprocessor}{\#define FACTORY\_H}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{sqlinterface_8h}{sqlinterface.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{robot_8h}{robot.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{machine_8h}{machine.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{chargingplace_8h}{chargingplace.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{viewinterface_8h}{viewinterface.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{mqttinterface_8h}{mqttinterface.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{csvinterpreter_8h}{csvinterpreter.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ordermanager_8h}{ordermanager.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{prestorage_8h}{prestorage.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00013}00013 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{finalstorage_8h}{finalstorage.h}}>}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00020}\mbox{\hyperlink{class_factory}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{class_factory}{Factory}}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00022}00022 \textcolor{keyword}{public}:    }
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00023}00023     \mbox{\hyperlink{class_factory_ac792bf88cfb7b6804b479529da5308cc}{Factory}}();}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00024}00024     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_factory_aff1ce187ba06b2e8dfe72c10363d9a33}{createProductionPlant}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00026}00026 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00027}00027     \mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* \_csvInterpreter;}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00029}00029     \mbox{\hyperlink{class_sql_interface}{SqlInterface}}* createSqlInterface(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{mainwindow_8cpp_a4ecd7f0e6a22b4a5c54a83e94ea5c3a3}{SqlInterface}}();\}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00030}00030     \mbox{\hyperlink{class_order_manager}{OrderManager}}* createOrderManager(\mbox{\hyperlink{class_sql_interface}{SqlInterface}}* sqlInterface) \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_order_manager}{OrderManager}}(\_csvInterpreter, sqlInterface);\}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00031}00031     \mbox{\hyperlink{class_robot}{Robot}}* createRobot(\mbox{\hyperlink{class_mqtt_interface}{MqttInterface}}* mqttInterface, \mbox{\hyperlink{class_view_interface}{ViewInterface}}* viewInterface) \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_robot}{Robot}}(mqttInterface, \_csvInterpreter, viewInterface);\}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00032}00032     \mbox{\hyperlink{class_charging_place}{ChargingPlace}}* createChargingPlace(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_charging_place}{ChargingPlace}}(\_csvInterpreter);\}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00033}00033     \mbox{\hyperlink{class_machine}{Machine}}* createMachine(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_machine}{Machine}}(\_csvInterpreter);\}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00034}00034     \mbox{\hyperlink{class_finalstorage}{Finalstorage}}* createFinalstorage(\mbox{\hyperlink{class_order_manager}{OrderManager}}* orderManager, \mbox{\hyperlink{class_view_interface}{ViewInterface}}* viewInterface) \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_finalstorage}{Finalstorage}}(\_csvInterpreter, orderManager, viewInterface);\}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00035}00035     \mbox{\hyperlink{class_prestorage}{Prestorage}}* createPrestorage(\mbox{\hyperlink{class_order_manager}{OrderManager}}* orderManager) \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_prestorage}{Prestorage}}(\_csvInterpreter, orderManager);\}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00036}00036     \mbox{\hyperlink{class_view_interface}{ViewInterface}}* createViewInterface(\mbox{\hyperlink{class_order_manager}{OrderManager}}* orderManager, \mbox{\hyperlink{class_sql_interface}{SqlInterface}}* sqlInterface) \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_view_interface}{ViewInterface}}(orderManager, sqlInterface);\}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00037}00037     \mbox{\hyperlink{class_mqtt_interface}{MqttInterface}}* createMqttInterface(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{class_mqtt_interface}{MqttInterface}}(\_csvInterpreter);\}}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00038}00038 \};}
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{factory_8h_source_l00040}00040 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// FACTORY\_H}}
+
+\end{DoxyCode}

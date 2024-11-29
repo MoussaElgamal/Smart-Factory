@@ -1,0 +1,96 @@
+\hypertarget{viewinterface_8cpp_source}{}\doxysection{viewinterface.\+cpp}
+\label{viewinterface_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/viewinterface.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/viewinterface.cpp}}
+\mbox{\hyperlink{viewinterface_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{viewinterface_8h}{viewinterface.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00008}\mbox{\hyperlink{class_view_interface_a7cc6dd4abc1efdc597242474ae2b4abb}{00008}} \mbox{\hyperlink{class_view_interface_a7cc6dd4abc1efdc597242474ae2b4abb}{ViewInterface::ViewInterface}}(\mbox{\hyperlink{class_order_manager}{OrderManager}}* orderManager, \mbox{\hyperlink{class_sql_interface}{SqlInterface}}* sqlInterface) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00009}00009     \_orderManager = orderManager;}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00011}00011     QObject::connect(\textcolor{keyword}{this}, \&\mbox{\hyperlink{class_view_interface_a84aa84d798d9877b1ba2325012d0327b}{ViewInterface::sendOrder}}, sqlInterface, \&\mbox{\hyperlink{class_sql_interface_ae0aa968d559aff1e4c3ba770dffe5ddf}{SqlInterface::sendOrder}});}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00012}00012     QObject::connect(sqlInterface, \&\mbox{\hyperlink{class_sql_interface_a010d975e4469d07fb480716dfaf571e7}{SqlInterface::orderAccepted}}, \textcolor{keyword}{this}, \&\mbox{\hyperlink{class_view_interface_ab41acd287fda6e808926502f00c9756b}{ViewInterface::orderAcceptedBySql}});}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00013}00013     QObject::connect(\textcolor{keyword}{this}, \&\mbox{\hyperlink{class_view_interface_a84aa84d798d9877b1ba2325012d0327b}{ViewInterface::sendOrder}}, sqlInterface, \&\mbox{\hyperlink{class_sql_interface_ae0aa968d559aff1e4c3ba770dffe5ddf}{SqlInterface::sendOrder}});}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00014}00014     QObject::connect(\textcolor{keyword}{this}, \&\mbox{\hyperlink{class_view_interface_ab539f04d2fb5c1ea946c326f927c3197}{ViewInterface::onNumberOfPalletsChanged}}, orderManager, \&\mbox{\hyperlink{class_order_manager_ae8f455262adafa06d841c1312cbe6b6d}{OrderManager::setNumberOfPallets}});}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00022}\mbox{\hyperlink{class_view_interface_ac3d60ac6695126751bb1e6753565e28c}{00022}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_ac3d60ac6695126751bb1e6753565e28c}{ViewInterface::takeOrder}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} \&productType, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&parts)}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00023}00023 \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00024}00024     \textcolor{keywordflow}{switch} (productType) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00025}00025         \textcolor{keywordflow}{case} \textcolor{charliteral}{'A'}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00026}00026             emit \mbox{\hyperlink{class_view_interface_a84aa84d798d9877b1ba2325012d0327b}{sendOrder}}(\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94ba7fc56270e7a70fa81a5935b72eacbe29}{Part::ProductType::A}}, parts);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00027}00027             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00028}00028         \textcolor{keywordflow}{case} \textcolor{charliteral}{'B'}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00029}00029             emit \mbox{\hyperlink{class_view_interface_a84aa84d798d9877b1ba2325012d0327b}{sendOrder}}(\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94ba9d5ed678fe57bcca610140957afab571}{Part::ProductType::B}}, parts);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00030}00030             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00031}00031         \textcolor{keywordflow}{case} \textcolor{charliteral}{'C'}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00032}00032             emit \mbox{\hyperlink{class_view_interface_a84aa84d798d9877b1ba2325012d0327b}{sendOrder}}(\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94ba0d61f8370cad1d412f80b84d143e1257}{Part::ProductType::C}}, parts);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00033}00033             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00034}00034         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00035}00035             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00036}00036     \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00037}00037 \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00046}\mbox{\hyperlink{class_view_interface_a5fffd55018f1fc477b52ed0336e818fc}{00046}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_view_interface_a5fffd55018f1fc477b52ed0336e818fc}{ViewInterface::getRobotPosition}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&robot, \textcolor{keywordtype}{int} \&x, \textcolor{keywordtype}{int} \&y)}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00047}00047 \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00048}00048     \textcolor{keywordtype}{bool} dataValid = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00050}00050     \textcolor{keywordflow}{if} (robot > 0 \&\& robot <= Robot::listOfRobots-\/>length()) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00051}00051         \mbox{\hyperlink{class_robot_a9fd193228c637ec1de60f59b39967ade}{Robot::listOfRobots}}-\/>at(robot)-\/>getPosition(x, y);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00052}00052         dataValid = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00053}00053     \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00055}00055     \textcolor{keywordflow}{return} dataValid;}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00056}00056 \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00064}\mbox{\hyperlink{class_view_interface_a91ff80cf80ae83b7d206c360fc169868}{00064}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_view_interface_a91ff80cf80ae83b7d206c360fc169868}{ViewInterface::getState}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Agent::Type}} \&agentType, \textcolor{keywordtype}{int} number) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00065}00065     number-\/-\/; \textcolor{comment}{//to adjust display number to array number}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00066}00066     \textcolor{keywordflow}{switch} (agentType) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00067}00067         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa57a398f84a172e11d8b3d376942be1de}{Agent::Type::chargingPlace}}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00068}00068             \textcolor{keywordflow}{if} (number >= 0 \&\& number < ChargingPlace::listOfChargingPlaces-\/>length()) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00069}00069                 \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_charging_place_a7c067236ae734439fe1ae28db0a618d9}{ChargingPlace::listOfChargingPlaces}}-\/>at(number)-\/>getState());}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00070}00070             \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00071}00071             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00072}00072         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa87b7cb79481f317bde90c116cf36084b}{Agent::Type::robot}}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00073}00073             \textcolor{keywordflow}{if} (number >= 0 \&\& number < Robot::listOfRobots-\/>length()) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00074}00074                 \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_robot_a9fd193228c637ec1de60f59b39967ade}{Robot::listOfRobots}}-\/>at(number)-\/>getState());}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00075}00075             \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00076}00076             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00077}00077         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa14754f13e5280c5d49d2ae536c2d57e2}{Agent::Type::machine}}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00078}00078             \textcolor{keywordflow}{if} (number >= 0 \&\& number < Machine::listOfMachines-\/>length()) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00079}00079                 \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_machine_af4432f5adfe1268898e6ff2c29524b42}{Machine::listOfMachines}}-\/>at(number)-\/>getState());}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00080}00080             \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00081}00081             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00082}00082         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa066a17b0ad96be18b62d39d39e7ecb07}{Agent::Type::finalstorage}}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00083}00083             \textcolor{keywordflow}{if} (number >= 0 \&\& number < Finalstorage::listOfFinalstorages-\/>length()) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00084}00084                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{Finalstorage::listOfFinalstorages}}-\/>at(number)-\/>getFinalstorageNumber() == (number + 1)) \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00085}00085                     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{Finalstorage::listOfFinalstorages}}-\/>at(number)-\/>getState());}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00086}00086                 \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00087}00087             \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00088}00088             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00089}00089         \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00090}00090             \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399acb5e100e5a9a3e7f6d1fd97512215282}{Agent::State::error}});}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00091}00091     \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00092}00092     \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399acb5e100e5a9a3e7f6d1fd97512215282}{Agent::State::error}});}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00093}00093 \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00099}\mbox{\hyperlink{class_view_interface_a67ff72b01d5d231a9fdfd7f968644972}{00099}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a67ff72b01d5d231a9fdfd7f968644972}{ViewInterface::setNumberOfPallets}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&pallets)}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00100}00100 \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00101}00101     emit \mbox{\hyperlink{class_view_interface_ab539f04d2fb5c1ea946c326f927c3197}{onNumberOfPalletsChanged}}(pallets);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00102}00102 \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00109}\mbox{\hyperlink{class_view_interface_a07aa1181992ab1ef531c7bd9a4f8e5b7}{00109}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a07aa1181992ab1ef531c7bd9a4f8e5b7}{ViewInterface::takePartFromFinalstorage}}(\textcolor{keywordtype}{int} finalstorage, \textcolor{keywordtype}{int} workbench)}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00110}00110 \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00111}00111     emit \mbox{\hyperlink{class_view_interface_a420f348c126d10f52aef1aa311150724}{partTakenFromFinalstorage}}(finalstorage, workbench);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00118}\mbox{\hyperlink{class_view_interface_ab41acd287fda6e808926502f00c9756b}{00118}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_ab41acd287fda6e808926502f00c9756b}{ViewInterface::orderAcceptedBySql}}(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} \&valid)}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00119}00119 \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00120}00120     emit \mbox{\hyperlink{class_view_interface_a18ea86c1306470fcff86107639006acb}{orderAccepted}}(valid);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00121}00121 \}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00122}00122 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00127}\mbox{\hyperlink{class_view_interface_a4f3df4afa214813b56ea31625605035c}{00127}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a4f3df4afa214813b56ea31625605035c}{ViewInterface::errorFromRobot}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&error)}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00128}00128 \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00129}00129     emit \mbox{\hyperlink{class_view_interface_a04665ffb1f4f729957c94bfc7b67a6d7}{onErrorFromRobot}}(\mbox{\hyperlink{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}{error}});}
+\DoxyCodeLine{\Hypertarget{viewinterface_8cpp_source_l00130}00130 \}}
+
+\end{DoxyCode}

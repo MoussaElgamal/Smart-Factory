@@ -1,0 +1,313 @@
+\hypertarget{class_view_interface}{}\doxysection{View\+Interface Class Reference}
+\label{class_view_interface}\index{ViewInterface@{ViewInterface}}
+
+
+This class is used as an interface to the view.  
+
+
+
+
+{\ttfamily \#include $<$viewinterface.\+h$>$}
+
+Inheritance diagram for View\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_view_interface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_view_interface_ab41acd287fda6e808926502f00c9756b}{order\+Accepted\+By\+Sql}} (const bool \&valid)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_view_interface_ab41acd287fda6e808926502f00c9756b}{View\+Interface\+::order\+Accepted\+By\+Sql}} emits the signal to the view, that the order is accepted by the sql server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_view_interface_a4f3df4afa214813b56ea31625605035c}{error\+From\+Robot}} (const int \&\mbox{\hyperlink{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}{error}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_view_interface_a4f3df4afa214813b56ea31625605035c}{View\+Interface\+::error\+From\+Robot}} informs the view that an error occured on a robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_view_interface_a84aa84d798d9877b1ba2325012d0327b}{send\+Order}} (\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{Part\+::\+Product\+Type}} product\+Type, int parts)
+\item 
+void \mbox{\hyperlink{class_view_interface_a18ea86c1306470fcff86107639006acb}{order\+Accepted}} (const bool \&valid)
+\item 
+void \mbox{\hyperlink{class_view_interface_ab539f04d2fb5c1ea946c326f927c3197}{on\+Number\+Of\+Pallets\+Changed}} (const int \&pallets)
+\item 
+void \mbox{\hyperlink{class_view_interface_a420f348c126d10f52aef1aa311150724}{part\+Taken\+From\+Finalstorage}} (int finalstorage, int workbench)
+\item 
+void \mbox{\hyperlink{class_view_interface_a04665ffb1f4f729957c94bfc7b67a6d7}{on\+Error\+From\+Robot}} (const int \&\mbox{\hyperlink{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}{error}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_view_interface_a7cc6dd4abc1efdc597242474ae2b4abb}{View\+Interface}} (\mbox{\hyperlink{class_order_manager}{Order\+Manager}} $\ast$order\+Manager, \mbox{\hyperlink{class_sql_interface}{Sql\+Interface}} $\ast$sql\+Interface)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_view_interface_a7cc6dd4abc1efdc597242474ae2b4abb}{View\+Interface\+::\+View\+Interface}} creates a new view interface and connects it to the order manager and the sql interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_view_interface_a2f1b6234e0b16f944815ec2109d3f2e0}{log}} (QString)
+\item 
+void \mbox{\hyperlink{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}{error}} (int error\+Number)
+\item 
+void \mbox{\hyperlink{class_view_interface_ac3d60ac6695126751bb1e6753565e28c}{take\+Order}} (const char \&product\+Type, const int \&parts)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_view_interface_ac3d60ac6695126751bb1e6753565e28c}{View\+Interface\+::take\+Order}} sends new order details to the sql interface. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_view_interface_a5fffd55018f1fc477b52ed0336e818fc}{get\+Robot\+Position}} (const int \&robot, int \&x, int \&y)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_view_interface_a5fffd55018f1fc477b52ed0336e818fc}{View\+Interface\+::get\+Robot\+Position}} returns the coordinates of the requested robot by reference. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_view_interface_a91ff80cf80ae83b7d206c360fc169868}{get\+State}} (const \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Agent\+::\+Type}} \&agent\+Type, int number)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_view_interface_a91ff80cf80ae83b7d206c360fc169868}{View\+Interface\+::get\+State}} is used to get the actual state from an agent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_view_interface_a67ff72b01d5d231a9fdfd7f968644972}{set\+Number\+Of\+Pallets}} (const int \&pallets)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_view_interface_a67ff72b01d5d231a9fdfd7f968644972}{View\+Interface\+::set\+Number\+Of\+Pallets}} sends a signal to the order manager with the new number of pallets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_view_interface_a07aa1181992ab1ef531c7bd9a4f8e5b7}{take\+Part\+From\+Finalstorage}} (int finalstorage, int workbench)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_view_interface_a07aa1181992ab1ef531c7bd9a4f8e5b7}{View\+Interface\+::take\+Part\+From\+Finalstorage}} informs the finalstorages that one part is taken. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used as an interface to the view. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{viewinterface_8h_source_l00019}{19}} of file \mbox{\hyperlink{viewinterface_8h_source}{viewinterface.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_view_interface_a7cc6dd4abc1efdc597242474ae2b4abb}\label{class_view_interface_a7cc6dd4abc1efdc597242474ae2b4abb}} 
+\index{ViewInterface@{ViewInterface}!ViewInterface@{ViewInterface}}
+\index{ViewInterface@{ViewInterface}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{ViewInterface()}{ViewInterface()}}
+{\footnotesize\ttfamily View\+Interface\+::\+View\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_order_manager}{Order\+Manager}} $\ast$}]{order\+Manager,  }\item[{\mbox{\hyperlink{class_sql_interface}{Sql\+Interface}} $\ast$}]{sql\+Interface }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_view_interface_a7cc6dd4abc1efdc597242474ae2b4abb}{View\+Interface\+::\+View\+Interface}} creates a new view interface and connects it to the order manager and the sql interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Manager} & contains the order manager to connect with. \\
+\hline
+{\em sql\+Interface} & contains the sql manager to connect with. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{viewinterface_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{viewinterface_8cpp_source}{viewinterface.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}\label{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}} 
+\index{ViewInterface@{ViewInterface}!error@{error}}
+\index{error@{error}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily void View\+Interface\+::error (\begin{DoxyParamCaption}\item[{int}]{error\+Number }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_view_interface_a4f3df4afa214813b56ea31625605035c}\label{class_view_interface_a4f3df4afa214813b56ea31625605035c}} 
+\index{ViewInterface@{ViewInterface}!errorFromRobot@{errorFromRobot}}
+\index{errorFromRobot@{errorFromRobot}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{errorFromRobot}{errorFromRobot}}
+{\footnotesize\ttfamily void View\+Interface\+::error\+From\+Robot (\begin{DoxyParamCaption}\item[{const int \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_view_interface_a4f3df4afa214813b56ea31625605035c}{View\+Interface\+::error\+From\+Robot}} informs the view that an error occured on a robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & represents the number of the error \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{viewinterface_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{viewinterface_8cpp_source}{viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_a5fffd55018f1fc477b52ed0336e818fc}\label{class_view_interface_a5fffd55018f1fc477b52ed0336e818fc}} 
+\index{ViewInterface@{ViewInterface}!getRobotPosition@{getRobotPosition}}
+\index{getRobotPosition@{getRobotPosition}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{getRobotPosition()}{getRobotPosition()}}
+{\footnotesize\ttfamily bool View\+Interface\+::get\+Robot\+Position (\begin{DoxyParamCaption}\item[{const int \&}]{robot,  }\item[{int \&}]{x,  }\item[{int \&}]{y }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_view_interface_a5fffd55018f1fc477b52ed0336e818fc}{View\+Interface\+::get\+Robot\+Position}} returns the coordinates of the requested robot by reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em robot} & representes the number to get the coordinats from. \\
+\hline
+{\em x} & contains the x-\/coordinate by reference. \\
+\hline
+{\em y} & contains the y-\/coordinate by reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns whether the data are valid. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{viewinterface_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{viewinterface_8cpp_source}{viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_a91ff80cf80ae83b7d206c360fc169868}\label{class_view_interface_a91ff80cf80ae83b7d206c360fc169868}} 
+\index{ViewInterface@{ViewInterface}!getState@{getState}}
+\index{getState@{getState}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily int View\+Interface\+::get\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Agent\+::\+Type}} \&}]{agent\+Type,  }\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_view_interface_a91ff80cf80ae83b7d206c360fc169868}{View\+Interface\+::get\+State}} is used to get the actual state from an agent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent\+Type} & contains the type of the requested agent. \\
+\hline
+{\em number} & contains the number of the requested agent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the state as an integer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{viewinterface_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{viewinterface_8cpp_source}{viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_a2f1b6234e0b16f944815ec2109d3f2e0}\label{class_view_interface_a2f1b6234e0b16f944815ec2109d3f2e0}} 
+\index{ViewInterface@{ViewInterface}!log@{log}}
+\index{log@{log}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily void View\+Interface\+::log (\begin{DoxyParamCaption}\item[{QString}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_view_interface_a04665ffb1f4f729957c94bfc7b67a6d7}\label{class_view_interface_a04665ffb1f4f729957c94bfc7b67a6d7}} 
+\index{ViewInterface@{ViewInterface}!onErrorFromRobot@{onErrorFromRobot}}
+\index{onErrorFromRobot@{onErrorFromRobot}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{onErrorFromRobot}{onErrorFromRobot}}
+{\footnotesize\ttfamily void View\+Interface\+::on\+Error\+From\+Robot (\begin{DoxyParamCaption}\item[{const int \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__viewinterface_8cpp_source_l00249}{249}} of file \mbox{\hyperlink{moc__viewinterface_8cpp_source}{moc\+\_\+viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_ab539f04d2fb5c1ea946c326f927c3197}\label{class_view_interface_ab539f04d2fb5c1ea946c326f927c3197}} 
+\index{ViewInterface@{ViewInterface}!onNumberOfPalletsChanged@{onNumberOfPalletsChanged}}
+\index{onNumberOfPalletsChanged@{onNumberOfPalletsChanged}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{onNumberOfPalletsChanged}{onNumberOfPalletsChanged}}
+{\footnotesize\ttfamily void View\+Interface\+::on\+Number\+Of\+Pallets\+Changed (\begin{DoxyParamCaption}\item[{const int \&}]{pallets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__viewinterface_8cpp_source_l00235}{235}} of file \mbox{\hyperlink{moc__viewinterface_8cpp_source}{moc\+\_\+viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_a18ea86c1306470fcff86107639006acb}\label{class_view_interface_a18ea86c1306470fcff86107639006acb}} 
+\index{ViewInterface@{ViewInterface}!orderAccepted@{orderAccepted}}
+\index{orderAccepted@{orderAccepted}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{orderAccepted}{orderAccepted}}
+{\footnotesize\ttfamily void View\+Interface\+::order\+Accepted (\begin{DoxyParamCaption}\item[{const bool \&}]{valid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__viewinterface_8cpp_source_l00228}{228}} of file \mbox{\hyperlink{moc__viewinterface_8cpp_source}{moc\+\_\+viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_ab41acd287fda6e808926502f00c9756b}\label{class_view_interface_ab41acd287fda6e808926502f00c9756b}} 
+\index{ViewInterface@{ViewInterface}!orderAcceptedBySql@{orderAcceptedBySql}}
+\index{orderAcceptedBySql@{orderAcceptedBySql}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{orderAcceptedBySql}{orderAcceptedBySql}}
+{\footnotesize\ttfamily void View\+Interface\+::order\+Accepted\+By\+Sql (\begin{DoxyParamCaption}\item[{const bool \&}]{valid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_view_interface_ab41acd287fda6e808926502f00c9756b}{View\+Interface\+::order\+Accepted\+By\+Sql}} emits the signal to the view, that the order is accepted by the sql server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em valid} & contains the information whether the data are valid by reference. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{viewinterface_8cpp_source_l00118}{118}} of file \mbox{\hyperlink{viewinterface_8cpp_source}{viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_a420f348c126d10f52aef1aa311150724}\label{class_view_interface_a420f348c126d10f52aef1aa311150724}} 
+\index{ViewInterface@{ViewInterface}!partTakenFromFinalstorage@{partTakenFromFinalstorage}}
+\index{partTakenFromFinalstorage@{partTakenFromFinalstorage}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{partTakenFromFinalstorage}{partTakenFromFinalstorage}}
+{\footnotesize\ttfamily void View\+Interface\+::part\+Taken\+From\+Finalstorage (\begin{DoxyParamCaption}\item[{int}]{finalstorage,  }\item[{int}]{workbench }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__viewinterface_8cpp_source_l00242}{242}} of file \mbox{\hyperlink{moc__viewinterface_8cpp_source}{moc\+\_\+viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_a84aa84d798d9877b1ba2325012d0327b}\label{class_view_interface_a84aa84d798d9877b1ba2325012d0327b}} 
+\index{ViewInterface@{ViewInterface}!sendOrder@{sendOrder}}
+\index{sendOrder@{sendOrder}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{sendOrder}{sendOrder}}
+{\footnotesize\ttfamily void View\+Interface\+::send\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{Part\+::\+Product\+Type}}}]{product\+Type,  }\item[{int}]{parts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__viewinterface_8cpp_source_l00221}{221}} of file \mbox{\hyperlink{moc__viewinterface_8cpp_source}{moc\+\_\+viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_a67ff72b01d5d231a9fdfd7f968644972}\label{class_view_interface_a67ff72b01d5d231a9fdfd7f968644972}} 
+\index{ViewInterface@{ViewInterface}!setNumberOfPallets@{setNumberOfPallets}}
+\index{setNumberOfPallets@{setNumberOfPallets}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{setNumberOfPallets()}{setNumberOfPallets()}}
+{\footnotesize\ttfamily void View\+Interface\+::set\+Number\+Of\+Pallets (\begin{DoxyParamCaption}\item[{const int \&}]{pallets }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_view_interface_a67ff72b01d5d231a9fdfd7f968644972}{View\+Interface\+::set\+Number\+Of\+Pallets}} sends a signal to the order manager with the new number of pallets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & is the new number of pallets \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{viewinterface_8cpp_source_l00099}{99}} of file \mbox{\hyperlink{viewinterface_8cpp_source}{viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_ac3d60ac6695126751bb1e6753565e28c}\label{class_view_interface_ac3d60ac6695126751bb1e6753565e28c}} 
+\index{ViewInterface@{ViewInterface}!takeOrder@{takeOrder}}
+\index{takeOrder@{takeOrder}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{takeOrder()}{takeOrder()}}
+{\footnotesize\ttfamily void View\+Interface\+::take\+Order (\begin{DoxyParamCaption}\item[{const char \&}]{product\+Type,  }\item[{const int \&}]{parts }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_view_interface_ac3d60ac6695126751bb1e6753565e28c}{View\+Interface\+::take\+Order}} sends new order details to the sql interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Type} & contains the type of product to be produced. \\
+\hline
+{\em parts} & conains the number of parts to be produced. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{viewinterface_8cpp_source_l00022}{22}} of file \mbox{\hyperlink{viewinterface_8cpp_source}{viewinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_view_interface_a07aa1181992ab1ef531c7bd9a4f8e5b7}\label{class_view_interface_a07aa1181992ab1ef531c7bd9a4f8e5b7}} 
+\index{ViewInterface@{ViewInterface}!takePartFromFinalstorage@{takePartFromFinalstorage}}
+\index{takePartFromFinalstorage@{takePartFromFinalstorage}!ViewInterface@{ViewInterface}}
+\doxysubsubsection{\texorpdfstring{takePartFromFinalstorage()}{takePartFromFinalstorage()}}
+{\footnotesize\ttfamily void View\+Interface\+::take\+Part\+From\+Finalstorage (\begin{DoxyParamCaption}\item[{int}]{finalstorage,  }\item[{int}]{workbench }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_view_interface_a07aa1181992ab1ef531c7bd9a4f8e5b7}{View\+Interface\+::take\+Part\+From\+Finalstorage}} informs the finalstorages that one part is taken. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em finalstorage} & defines the number of the finalstorage the part is taken from. \\
+\hline
+{\em workbench} & defines the number of the workbench the part is taken from. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{viewinterface_8cpp_source_l00109}{109}} of file \mbox{\hyperlink{viewinterface_8cpp_source}{viewinterface.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{viewinterface_8h}{viewinterface.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{moc__viewinterface_8cpp}{moc\+\_\+viewinterface.\+cpp}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{viewinterface_8cpp}{viewinterface.\+cpp}}\end{DoxyCompactItemize}

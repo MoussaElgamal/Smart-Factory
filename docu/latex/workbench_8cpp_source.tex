@@ -1,0 +1,46 @@
+\hypertarget{workbench_8cpp_source}{}\doxysection{workbench.\+cpp}
+\label{workbench_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/workbench.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/workbench.cpp}}
+\mbox{\hyperlink{workbench_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{workbench_8h}{workbench.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00006}\mbox{\hyperlink{class_workbench_a052a62fb11c36380d04283bff6d47582}{00006}} \mbox{\hyperlink{class_workbench_a052a62fb11c36380d04283bff6d47582}{Workbench::Workbench}}() \{}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00007}00007     \textcolor{comment}{//TODO: connect check in und check out mit mqtt verknüpfen}}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00008}00008 \}}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00014}\mbox{\hyperlink{class_workbench_afc59dad584ef6b68b4ba12a6b9b0a4e3}{00014}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_workbench_afc59dad584ef6b68b4ba12a6b9b0a4e3}{Workbench::setPartToPlace}}(\mbox{\hyperlink{class_part}{Part}}* part)}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00015}00015 \{}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00016}00016     \_part = part;}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00017}00017     QObject::connect(\_part, \&\mbox{\hyperlink{class_part_aa9a787e38d7208b0f5994cce72b764f4}{Part::partTakenFromMachine}}, \textcolor{keyword}{this}, \&\mbox{\hyperlink{class_workbench_a86898a6876b51614b5483a267c9c4f7e}{Workbench::takePartFromPlace}});}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00023}\mbox{\hyperlink{class_workbench_a86898a6876b51614b5483a267c9c4f7e}{00023}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_workbench_a86898a6876b51614b5483a267c9c4f7e}{Workbench::takePartFromPlace}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00024}00024 \{}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00025}00025     QObject::disconnect(\_part, \&\mbox{\hyperlink{class_part_aa9a787e38d7208b0f5994cce72b764f4}{Part::partTakenFromMachine}}, \textcolor{keyword}{this}, \&\mbox{\hyperlink{class_workbench_a86898a6876b51614b5483a267c9c4f7e}{Workbench::takePartFromPlace}});}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00026}00026     \_part = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00032}\mbox{\hyperlink{class_workbench_a23845b94f3686bf395ab3e8603a7d0fb}{00032}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_workbench_a23845b94f3686bf395ab3e8603a7d0fb}{Workbench::checkIn}}()}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00033}00033 \{}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00034}00034     \_checkedIn = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00035}00035     emit checkInSuccessful(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00036}00036 \}}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00041}\mbox{\hyperlink{class_workbench_ad081361a465a12d42f0e31d2e9093424}{00041}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_workbench_ad081361a465a12d42f0e31d2e9093424}{Workbench::checkOut}}()}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00042}00042 \{}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00043}00043     \_checkedIn = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00044}00044     \_checkOutRequested = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00045}00045     emit checkOutSuccessful(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00046}00046 \}}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00051}\mbox{\hyperlink{class_workbench_a61ff84eda233bc851edc8e4e74ab70c9}{00051}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_workbench_a61ff84eda233bc851edc8e4e74ab70c9}{Workbench::isPlaceFree}}()}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00052}00052 \{}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00053}00053     \textcolor{keywordflow}{return} (\_part == \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00054}00054 \}}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00059}\mbox{\hyperlink{class_workbench_a88a5f183f56ce7d93c26373117283507}{00059}} \mbox{\hyperlink{class_part}{Part}}* \mbox{\hyperlink{class_workbench_a88a5f183f56ce7d93c26373117283507}{Workbench::getPart}}()}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00060}00060 \{}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00061}00061     \textcolor{keywordflow}{return} \_part;}
+\DoxyCodeLine{\Hypertarget{workbench_8cpp_source_l00062}00062 \}}
+
+\end{DoxyCode}

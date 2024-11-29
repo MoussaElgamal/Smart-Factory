@@ -1,0 +1,190 @@
+\hypertarget{class_workbench}{}\doxysection{Workbench Class Reference}
+\label{class_workbench}\index{Workbench@{Workbench}}
+
+
+This class is used as an storage for the part in the machine.  
+
+
+
+
+{\ttfamily \#include $<$workbench.\+h$>$}
+
+Inheritance diagram for Workbench\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_workbench}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_workbench_a23845b94f3686bf395ab3e8603a7d0fb}{check\+In}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_workbench_a23845b94f3686bf395ab3e8603a7d0fb}{Workbench\+::check\+In}} check in the part into the machine or storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_workbench_ad081361a465a12d42f0e31d2e9093424}{check\+Out}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_workbench_ad081361a465a12d42f0e31d2e9093424}{Workbench\+::check\+Out}} check out the part into the machine or storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_workbench_a94c832f7e60c84ad0e7c647c602459d1}{start\+Workcycle}} (void)
+\item 
+void \mbox{\hyperlink{class_workbench_ac7f69a348dd83554092af4dc2bde5551}{on\+Part\+Removed}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_workbench_a052a62fb11c36380d04283bff6d47582}{Workbench}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_workbench_a052a62fb11c36380d04283bff6d47582}{Workbench\+::\+Workbench}} is an empty constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_workbench_afc59dad584ef6b68b4ba12a6b9b0a4e3}{set\+Part\+To\+Place}} (\mbox{\hyperlink{class_part}{Part}} $\ast$part)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_workbench_afc59dad584ef6b68b4ba12a6b9b0a4e3}{Workbench\+::set\+Part\+To\+Place}} adds the part to the workbench. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_workbench_a86898a6876b51614b5483a267c9c4f7e}{take\+Part\+From\+Place}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_workbench_a86898a6876b51614b5483a267c9c4f7e}{Workbench\+::take\+Part\+From\+Place}} removes the part from the workbench. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_workbench_a61ff84eda233bc851edc8e4e74ab70c9}{is\+Place\+Free}} ()
+\item 
+\mbox{\hyperlink{class_part}{Part}} $\ast$ \mbox{\hyperlink{class_workbench_a88a5f183f56ce7d93c26373117283507}{get\+Part}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used as an storage for the part in the machine. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{workbench_8h_source_l00013}{13}} of file \mbox{\hyperlink{workbench_8h_source}{workbench.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_workbench_a052a62fb11c36380d04283bff6d47582}\label{class_workbench_a052a62fb11c36380d04283bff6d47582}} 
+\index{Workbench@{Workbench}!Workbench@{Workbench}}
+\index{Workbench@{Workbench}!Workbench@{Workbench}}
+\doxysubsubsection{\texorpdfstring{Workbench()}{Workbench()}}
+{\footnotesize\ttfamily Workbench\+::\+Workbench (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_workbench_a052a62fb11c36380d04283bff6d47582}{Workbench\+::\+Workbench}} is an empty constructor. 
+
+
+
+Definition at line \mbox{\hyperlink{workbench_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{workbench_8cpp_source}{workbench.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_workbench_a23845b94f3686bf395ab3e8603a7d0fb}\label{class_workbench_a23845b94f3686bf395ab3e8603a7d0fb}} 
+\index{Workbench@{Workbench}!checkIn@{checkIn}}
+\index{checkIn@{checkIn}!Workbench@{Workbench}}
+\doxysubsubsection{\texorpdfstring{checkIn}{checkIn}}
+{\footnotesize\ttfamily void Workbench\+::check\+In (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_workbench_a23845b94f3686bf395ab3e8603a7d0fb}{Workbench\+::check\+In}} check in the part into the machine or storage. 
+
+
+
+Definition at line \mbox{\hyperlink{workbench_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{workbench_8cpp_source}{workbench.\+cpp}}.
+
+\mbox{\Hypertarget{class_workbench_ad081361a465a12d42f0e31d2e9093424}\label{class_workbench_ad081361a465a12d42f0e31d2e9093424}} 
+\index{Workbench@{Workbench}!checkOut@{checkOut}}
+\index{checkOut@{checkOut}!Workbench@{Workbench}}
+\doxysubsubsection{\texorpdfstring{checkOut}{checkOut}}
+{\footnotesize\ttfamily void Workbench\+::check\+Out (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_workbench_ad081361a465a12d42f0e31d2e9093424}{Workbench\+::check\+Out}} check out the part into the machine or storage. 
+
+
+
+Definition at line \mbox{\hyperlink{workbench_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{workbench_8cpp_source}{workbench.\+cpp}}.
+
+\mbox{\Hypertarget{class_workbench_a88a5f183f56ce7d93c26373117283507}\label{class_workbench_a88a5f183f56ce7d93c26373117283507}} 
+\index{Workbench@{Workbench}!getPart@{getPart}}
+\index{getPart@{getPart}!Workbench@{Workbench}}
+\doxysubsubsection{\texorpdfstring{getPart()}{getPart()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_part}{Part}} $\ast$ Workbench\+::get\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the part. Can be nullpointer. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{workbench_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{workbench_8cpp_source}{workbench.\+cpp}}.
+
+\mbox{\Hypertarget{class_workbench_a61ff84eda233bc851edc8e4e74ab70c9}\label{class_workbench_a61ff84eda233bc851edc8e4e74ab70c9}} 
+\index{Workbench@{Workbench}!isPlaceFree@{isPlaceFree}}
+\index{isPlaceFree@{isPlaceFree}!Workbench@{Workbench}}
+\doxysubsubsection{\texorpdfstring{isPlaceFree()}{isPlaceFree()}}
+{\footnotesize\ttfamily bool Workbench\+::is\+Place\+Free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns whether the workbench is free or occupied. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{workbench_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{workbench_8cpp_source}{workbench.\+cpp}}.
+
+\mbox{\Hypertarget{class_workbench_ac7f69a348dd83554092af4dc2bde5551}\label{class_workbench_ac7f69a348dd83554092af4dc2bde5551}} 
+\index{Workbench@{Workbench}!onPartRemoved@{onPartRemoved}}
+\index{onPartRemoved@{onPartRemoved}!Workbench@{Workbench}}
+\doxysubsubsection{\texorpdfstring{onPartRemoved}{onPartRemoved}}
+{\footnotesize\ttfamily void Workbench\+::on\+Part\+Removed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__workbench_8cpp_source_l00156}{156}} of file \mbox{\hyperlink{moc__workbench_8cpp_source}{moc\+\_\+workbench.\+cpp}}.
+
+\mbox{\Hypertarget{class_workbench_afc59dad584ef6b68b4ba12a6b9b0a4e3}\label{class_workbench_afc59dad584ef6b68b4ba12a6b9b0a4e3}} 
+\index{Workbench@{Workbench}!setPartToPlace@{setPartToPlace}}
+\index{setPartToPlace@{setPartToPlace}!Workbench@{Workbench}}
+\doxysubsubsection{\texorpdfstring{setPartToPlace()}{setPartToPlace()}}
+{\footnotesize\ttfamily void Workbench\+::set\+Part\+To\+Place (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_part}{Part}} $\ast$}]{part }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_workbench_afc59dad584ef6b68b4ba12a6b9b0a4e3}{Workbench\+::set\+Part\+To\+Place}} adds the part to the workbench. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em part} & which is placed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{workbench_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{workbench_8cpp_source}{workbench.\+cpp}}.
+
+\mbox{\Hypertarget{class_workbench_a94c832f7e60c84ad0e7c647c602459d1}\label{class_workbench_a94c832f7e60c84ad0e7c647c602459d1}} 
+\index{Workbench@{Workbench}!startWorkcycle@{startWorkcycle}}
+\index{startWorkcycle@{startWorkcycle}!Workbench@{Workbench}}
+\doxysubsubsection{\texorpdfstring{startWorkcycle}{startWorkcycle}}
+{\footnotesize\ttfamily void Workbench\+::start\+Workcycle (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__workbench_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{moc__workbench_8cpp_source}{moc\+\_\+workbench.\+cpp}}.
+
+\mbox{\Hypertarget{class_workbench_a86898a6876b51614b5483a267c9c4f7e}\label{class_workbench_a86898a6876b51614b5483a267c9c4f7e}} 
+\index{Workbench@{Workbench}!takePartFromPlace@{takePartFromPlace}}
+\index{takePartFromPlace@{takePartFromPlace}!Workbench@{Workbench}}
+\doxysubsubsection{\texorpdfstring{takePartFromPlace()}{takePartFromPlace()}}
+{\footnotesize\ttfamily void Workbench\+::take\+Part\+From\+Place (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_workbench_a86898a6876b51614b5483a267c9c4f7e}{Workbench\+::take\+Part\+From\+Place}} removes the part from the workbench. 
+
+
+
+Definition at line \mbox{\hyperlink{workbench_8cpp_source_l00023}{23}} of file \mbox{\hyperlink{workbench_8cpp_source}{workbench.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{workbench_8h}{workbench.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{moc__workbench_8cpp}{moc\+\_\+workbench.\+cpp}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{workbench_8cpp}{workbench.\+cpp}}\end{DoxyCompactItemize}

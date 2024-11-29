@@ -1,0 +1,100 @@
+\hypertarget{finalstorage_8cpp_source}{}\doxysection{finalstorage.\+cpp}
+\label{finalstorage_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/finalstorage.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/finalstorage.cpp}}
+\mbox{\hyperlink{finalstorage_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{finalstorage_8h}{finalstorage.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{viewinterface_8h}{viewinterface.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00004}00004 \textcolor{comment}{//The following list is used to collect all finalstorages and calculate the number.}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00005}00005 QList<Finalstorage*>* \mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{Finalstorage::listOfFinalstorages}} = \textcolor{keyword}{new} QList<Finalstorage*>;}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00013}\mbox{\hyperlink{class_finalstorage_a0f39ed274293c3af16fad9a8830ee72f}{00013}} \mbox{\hyperlink{class_finalstorage_a0f39ed274293c3af16fad9a8830ee72f}{Finalstorage::Finalstorage}}(\mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log, \mbox{\hyperlink{class_order_manager}{OrderManager}}* orderManager, \mbox{\hyperlink{class_view_interface}{ViewInterface}}* viewInterface) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00014}00014     \mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}} = \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa066a17b0ad96be18b62d39d39e7ecb07}{Agent::Type::finalstorage}};}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00016}00016     \mbox{\hyperlink{class_agent_af3fee8d5146a2de3dc9e6709118964a9}{\_log}} = log;}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00017}00017     \_orderManager = orderManager;}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00019}00019     \mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{listOfFinalstorages}}-\/>append(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00021}00021     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_finalstorage_a4c4ad07c6cf8ee1ca244c9446b3002ac}{numberOfWorkbenches}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00022}00022         \_workbenches[i] = \textcolor{keyword}{new} \mbox{\hyperlink{class_workbench}{Workbench}}();}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00023}00023     \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00025}00025     QObject::connect(viewInterface, \&\mbox{\hyperlink{class_view_interface_a420f348c126d10f52aef1aa311150724}{ViewInterface::partTakenFromFinalstorage}}, \textcolor{keyword}{this}, \&\mbox{\hyperlink{class_finalstorage_a445b76bf239a929f7b2326ae1b1e7ec2}{Finalstorage::partTakenFromFinalstorage}});}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00027}00027     \_mqttInterface = \textcolor{keyword}{new} \mbox{\hyperlink{class_mqtt_interface}{MqttInterface}}(\mbox{\hyperlink{class_agent_af3fee8d5146a2de3dc9e6709118964a9}{\_log}}); \textcolor{comment}{//provide neccessary params for RFID-\/Constructor}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00028}00028     \_rfid = \textcolor{keyword}{new} \mbox{\hyperlink{class_r_f_i_d}{RFID}}(\_mqttInterface);}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00030}00030     offerServiceFinalstorage();}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00031}00031 \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00036}\mbox{\hyperlink{class_finalstorage_a4d6236f107da59de34d1a9c59011a4b3}{00036}} \mbox{\hyperlink{class_finalstorage_a4d6236f107da59de34d1a9c59011a4b3}{Finalstorage::\string~Finalstorage}}() \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00037}00037     \textcolor{keywordflow}{for} (uint i = 0; i < \mbox{\hyperlink{class_finalstorage_a4c4ad07c6cf8ee1ca244c9446b3002ac}{numberOfWorkbenches}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00038}00038         \textcolor{keyword}{delete} \_workbenches[i];}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00039}00039     \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00040}00040     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{listOfFinalstorages}}-\/>length(); i++) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00041}00041         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{listOfFinalstorages}}-\/>at(i) == \textcolor{keyword}{this}) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00042}00042             \mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{listOfFinalstorages}}-\/>removeAt(i);}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00043}00043         \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00045}00045     \textcolor{keyword}{delete} \_rfid;}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00046}00046 \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00053}\mbox{\hyperlink{class_finalstorage_a445b76bf239a929f7b2326ae1b1e7ec2}{00053}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_finalstorage_a445b76bf239a929f7b2326ae1b1e7ec2}{Finalstorage::partTakenFromFinalstorage}}(\textcolor{keywordtype}{int} finalstorage, \textcolor{keywordtype}{int} workbench)}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00054}00054 \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00055}00055     \textcolor{keywordflow}{if} (finalstorage == \mbox{\hyperlink{class_finalstorage_ad1f1da9b70c73e7d335bb4109da1fb45}{getFinalstorageNumber}}()) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00056}00056         \_orderManager-\/>\mbox{\hyperlink{class_order_manager_a89037ce41f446ebfa56d060de9c6be86}{partRemovedFromFinalstorage}}(\_workbenches[workbench]-\/>getPart());}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00057}00057         \_workbenches[workbench]-\/>takePartFromPlace();}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00058}00058         offerServiceFinalstorage();}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00065}00065 \textcolor{keywordtype}{void} Finalstorage::offerServiceFinalstorage()}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00066}00066 \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00067}00067     \mbox{\hyperlink{class_agent_aed9efac0cb124cc00f170c1e47adcd47}{Agent::listOfServicesFinalstorage}}-\/>append(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00068}00068     \mbox{\hyperlink{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}{Agent::organizeHelp}}(\mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}});}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00069}00069 \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00076}\mbox{\hyperlink{class_finalstorage_a49c73300530111c0a97fe6d12332c4eb}{00076}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_finalstorage_a49c73300530111c0a97fe6d12332c4eb}{Finalstorage::takeService}}(\mbox{\hyperlink{class_agent}{Agent}} *agent)}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00077}00077 \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00078}00078     \textcolor{keywordflow}{if}(agent-\/>\mbox{\hyperlink{class_agent_ad61c9a576e4b13067c4255ad521c1f26}{getType}}() == \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfaf4c9385f1902f7334b00b9b4ecd164de}{Type::part}}) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00079}00079         \mbox{\hyperlink{class_part}{Part}}* part = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_part}{Part}}*\textcolor{keyword}{>}(agent);}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00080}00080         \textcolor{keywordtype}{int} workbench = \mbox{\hyperlink{class_finalstorage_a82da522b9a5ace052651b197b2f58297}{getFreeWorkbenchNumber}}();}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00081}00081         \textcolor{keywordflow}{if} (workbench < 1) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00082}00082             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00083}00083         \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00084}00084         \_workbenches[workbench -\/ 1]-\/>setPartToPlace(part);}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00085}00085         part-\/>\mbox{\hyperlink{class_part_a99e5f1f51d0e0d55f01d06045c972c9c}{updateNextPosition}}(\textcolor{keyword}{false}, \mbox{\hyperlink{class_finalstorage_ad1f1da9b70c73e7d335bb4109da1fb45}{getFinalstorageNumber}}(), workbench);}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00086}00086     \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00087}00087     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_finalstorage_a4c4ad07c6cf8ee1ca244c9446b3002ac}{numberOfWorkbenches}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00088}00088         \textcolor{keywordflow}{if} (\_workbenches[i]-\/>isPlaceFree()) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00089}00089             offerServiceFinalstorage();}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00090}00090         \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00091}00091     \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00092}00092 \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00097}\mbox{\hyperlink{class_finalstorage_a82da522b9a5ace052651b197b2f58297}{00097}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_finalstorage_a82da522b9a5ace052651b197b2f58297}{Finalstorage::getFreeWorkbenchNumber}}()}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00098}00098 \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00099}00099     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_finalstorage_a4c4ad07c6cf8ee1ca244c9446b3002ac}{numberOfWorkbenches}}; i++) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00100}00100         \textcolor{keywordflow}{if} (\_workbenches[i]-\/>isPlaceFree()) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00101}00101             \textcolor{keywordflow}{return} (i + 1);}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00102}00102         \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00103}00103     \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00104}00104     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00105}00105 \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00106}00106 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00110}\mbox{\hyperlink{class_finalstorage_ad1f1da9b70c73e7d335bb4109da1fb45}{00110}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_finalstorage_ad1f1da9b70c73e7d335bb4109da1fb45}{Finalstorage::getFinalstorageNumber}}()}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00111}00111 \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00112}00112     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{listOfFinalstorages}}-\/>length(); i++) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00113}00113         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{listOfFinalstorages}}-\/>at(i) == \textcolor{keyword}{this}) \{}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00114}00114             \textcolor{keywordflow}{return} (i + 1);}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00115}00115         \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00116}00116     \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00118}00118     \mbox{\hyperlink{class_agent_af3fee8d5146a2de3dc9e6709118964a9}{\_log}}-\/>\mbox{\hyperlink{class_csv_interpreter_a5ea68a0704e0b03d6fad49131bd4a704}{writeLogData}}(\textcolor{stringliteral}{"{}Fertigteillagernummer konnte nicht vergeben werden."{}});}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00119}00119     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00120}00120 \}}
+\DoxyCodeLine{\Hypertarget{finalstorage_8cpp_source_l00121}00121 }
+
+\end{DoxyCode}

@@ -1,0 +1,46 @@
+\hypertarget{prestorage_8h_source}{}\doxysection{prestorage.\+h}
+\label{prestorage_8h_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/prestorage.h@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/prestorage.h}}
+\mbox{\hyperlink{prestorage_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef PRESTORAGE\_H}}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00002}00002 \textcolor{preprocessor}{\#define PRESTORAGE\_H}}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00004}00004 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{agent_8h}{agent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ordermanager_8h}{ordermanager.h}}>}}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{workbench_8h}{workbench.h}}>}}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{rfid_8h}{rfid.h}}>}}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{mqttinterface_8h}{mqttinterface.h}}>}}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00016}\mbox{\hyperlink{class_prestorage}{00016}} \textcolor{keyword}{class }\mbox{\hyperlink{class_prestorage}{Prestorage}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_agent}{Agent}}}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00017}00017 \{}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00018}00018     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00019}00019 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00020}\mbox{\hyperlink{class_prestorage_a389292ad0cf943fbd2f595ed60f73562}{00020}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_prestorage_a389292ad0cf943fbd2f595ed60f73562}{numberOfWorkbenches}} = 2;}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00021}\mbox{\hyperlink{class_prestorage_a10b951c52df9d8b3dfe1a22e275b2332}{00021}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_prestorage_a10b951c52df9d8b3dfe1a22e275b2332}{numberOfPrestorages}} = 2;}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00023}\mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{00023}}     \textcolor{keyword}{static} QList<Prestorage*>* \mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{listOfPrestorages}};}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00025}00025     \mbox{\hyperlink{class_prestorage_a580e3f21c6e553d2107461b663f66571}{Prestorage}}(\mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log, \mbox{\hyperlink{class_order_manager}{OrderManager}}* orderManager);}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00026}00026     \mbox{\hyperlink{class_prestorage_aa81a9471fb66eee1746736ba43f0d343}{\string~Prestorage}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00028}00028     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_prestorage_af8618606cfe67ff727cd92682876ff77}{takeService}}(\mbox{\hyperlink{class_agent}{Agent}}* agent) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00029}00029     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_prestorage_a08e8d730975af16a3558e4bdbb0969fd}{getFreeWorkbenchNumber}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00031}\mbox{\hyperlink{class_prestorage_a7ca65e0496ced6d8f8bf7bd642ac3be6}{00031}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_prestorage_a7ca65e0496ced6d8f8bf7bd642ac3be6}{partSetToPrestorage}}(\textcolor{keywordtype}{int} workbench);}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00032}00032     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_prestorage_a84b55fb22a4fa3b85608cda8b364bc4b}{getPrestorageNumber}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00034}00034 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00035}00035     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_prestorage_a914786485f18c5724b6fec93ec656a95}{partTakenFromPrestorage}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00037}00037 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00038}00038     std::array<Workbench*, numberOfWorkbenches> \_workbenches;}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00039}00039     \mbox{\hyperlink{class_r_f_i_d}{RFID}}* \_rfid;}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00040}00040     \mbox{\hyperlink{class_mqtt_interface}{MqttInterface}}* \_mqttInterface; \textcolor{comment}{// AS: added to provide neccessary params for RFID-\/Constructor}}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00041}00041     \mbox{\hyperlink{class_order_manager}{OrderManager}}* \_orderManager;}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00043}00043     \textcolor{keywordtype}{void} offerServicePrestorage(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00044}00044 \};}
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{prestorage_8h_source_l00046}00046 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PRESTORAGE\_H}}
+
+\end{DoxyCode}

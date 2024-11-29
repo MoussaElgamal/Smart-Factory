@@ -1,0 +1,31 @@
+\hypertarget{rfid_8h_source}{}\doxysection{rfid.\+h}
+\label{rfid_8h_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/rfid.h@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/rfid.h}}
+\mbox{\hyperlink{rfid_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef RFID\_H}}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00002}00002 \textcolor{preprocessor}{\#define RFID\_H}}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{mqttinterface_8h}{mqttinterface.h}}>}}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00012}\mbox{\hyperlink{class_r_f_i_d}{00012}} \textcolor{keyword}{class }\mbox{\hyperlink{class_r_f_i_d}{RFID}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00013}00013 \{}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00014}00014     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00016}00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00017}00017     \mbox{\hyperlink{class_r_f_i_d_a808859ba9d9e9cf6c9f1dfbec6eef0ef}{RFID}}(\mbox{\hyperlink{class_mqtt_interface}{MqttInterface}} *mqttInterface);}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00018}00018     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_r_f_i_d_a206ec174766f8de226f5a3c96e2967d4}{readSerialNumberFromTag}}(\textcolor{keywordtype}{int} station);}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00019}00019     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_f_i_d_a14bd62a53ba24bffeb34738beaf42d8c}{writeSerialNumberToTag}}(\textcolor{keywordtype}{int} station, \textcolor{keywordtype}{int} serialNumber);}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00020}00020 signals:}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00021}00021     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_f_i_d_a626a840e2e5643b0984f9843bedfe2ea}{serialNumberRead}}(\textcolor{keywordtype}{int} station, \textcolor{keywordtype}{int} serialNumber);}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00022}00022 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00023}00023     \textcolor{keywordtype}{void} onMessageReceived(\textcolor{keyword}{const} QString \&topic, \textcolor{keyword}{const} QString \&message);}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00024}00024 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00025}00025     \mbox{\hyperlink{class_mqtt_interface}{MqttInterface}} *\_mqttInterface;}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00026}00026     \textcolor{keywordtype}{int} \_lastSerialNumber;}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00027}00027     \textcolor{keywordtype}{int} \_currentStation;}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00028}00028 \};}
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{rfid_8h_source_l00030}00030 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// RFID\_H}}
+
+\end{DoxyCode}

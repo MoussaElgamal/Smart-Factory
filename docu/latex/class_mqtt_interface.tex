@@ -1,0 +1,170 @@
+\hypertarget{class_mqtt_interface}{}\doxysection{Mqtt\+Interface Class Reference}
+\label{class_mqtt_interface}\index{MqttInterface@{MqttInterface}}
+
+
+This class is used as an interface for the MQTT communication.  
+
+
+
+
+{\ttfamily \#include $<$mqttinterface.\+h$>$}
+
+Inheritance diagram for Mqtt\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mqtt_interface}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mqtt_interface_a826fc1a59c823fffba509bed1e18ede1}{connected}} ()
+\item 
+void \mbox{\hyperlink{class_mqtt_interface_aeb04e04f7107f689496327b3dbfc31b2}{disconnected}} ()
+\item 
+void \mbox{\hyperlink{class_mqtt_interface_a4d23080b20afc6d6a80b618a40623e3a}{message\+Received}} (const QString \&topic, const QString \&message)
+\item 
+void \mbox{\hyperlink{class_mqtt_interface_a2151fa68abf7365be4f7fcaf454e0e17}{update\+Robot\+Status\+Signal}} (int status)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mqtt_interface_a5499688a482dcba33ac2a22a5a459d16}{Mqtt\+Interface}} (\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$log)
+\item 
+void \mbox{\hyperlink{class_mqtt_interface_a04bfb7cd7834b5e90ee38f793f923379}{send\+Robot\+Job}} (int robot, int job)
+\item 
+int \mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{publish\+Message\+To\+Topic}} (const QString \&topic, const QString \&message)
+\item 
+QString \mbox{\hyperlink{class_mqtt_interface_a5f40f376fa89dbd45c4257e89b814935}{subscribe\+Message\+From\+Topic}} (const QString \&topic)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$ \mbox{\hyperlink{class_mqtt_interface_a7cb74ed463568289c32f668f34392504}{\+\_\+log}}
+\item 
+bool \mbox{\hyperlink{class_mqtt_interface_a57e4b5a439f7874fb8b90d418202acd5}{\+\_\+mqtt\+Connected}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used as an interface for the MQTT communication. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{mqttinterface_8h_source_l00016}{16}} of file \mbox{\hyperlink{mqttinterface_8h_source}{mqttinterface.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_mqtt_interface_a5499688a482dcba33ac2a22a5a459d16}\label{class_mqtt_interface_a5499688a482dcba33ac2a22a5a459d16}} 
+\index{MqttInterface@{MqttInterface}!MqttInterface@{MqttInterface}}
+\index{MqttInterface@{MqttInterface}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{MqttInterface()}{MqttInterface()}}
+{\footnotesize\ttfamily Mqtt\+Interface\+::\+Mqtt\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$}]{log }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mqttinterface_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{mqttinterface_8cpp_source}{mqttinterface.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_mqtt_interface_a826fc1a59c823fffba509bed1e18ede1}\label{class_mqtt_interface_a826fc1a59c823fffba509bed1e18ede1}} 
+\index{MqttInterface@{MqttInterface}!connected@{connected}}
+\index{connected@{connected}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{connected}{connected}}
+{\footnotesize\ttfamily void Mqtt\+Interface\+::connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__mqttinterface_8cpp_source_l00192}{192}} of file \mbox{\hyperlink{moc__mqttinterface_8cpp_source}{moc\+\_\+mqttinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_mqtt_interface_aeb04e04f7107f689496327b3dbfc31b2}\label{class_mqtt_interface_aeb04e04f7107f689496327b3dbfc31b2}} 
+\index{MqttInterface@{MqttInterface}!disconnected@{disconnected}}
+\index{disconnected@{disconnected}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{disconnected}{disconnected}}
+{\footnotesize\ttfamily void Mqtt\+Interface\+::disconnected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_mqtt_interface_a4d23080b20afc6d6a80b618a40623e3a}\label{class_mqtt_interface_a4d23080b20afc6d6a80b618a40623e3a}} 
+\index{MqttInterface@{MqttInterface}!messageReceived@{messageReceived}}
+\index{messageReceived@{messageReceived}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{messageReceived}{messageReceived}}
+{\footnotesize\ttfamily void Mqtt\+Interface\+::message\+Received (\begin{DoxyParamCaption}\item[{const QString \&}]{topic,  }\item[{const QString \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__mqttinterface_8cpp_source_l00198}{198}} of file \mbox{\hyperlink{moc__mqttinterface_8cpp_source}{moc\+\_\+mqttinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}\label{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}} 
+\index{MqttInterface@{MqttInterface}!publishMessageToTopic@{publishMessageToTopic}}
+\index{publishMessageToTopic@{publishMessageToTopic}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{publishMessageToTopic()}{publishMessageToTopic()}}
+{\footnotesize\ttfamily int Mqtt\+Interface\+::publish\+Message\+To\+Topic (\begin{DoxyParamCaption}\item[{const QString \&}]{topic,  }\item[{const QString \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mqttinterface_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{mqttinterface_8cpp_source}{mqttinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_mqtt_interface_a04bfb7cd7834b5e90ee38f793f923379}\label{class_mqtt_interface_a04bfb7cd7834b5e90ee38f793f923379}} 
+\index{MqttInterface@{MqttInterface}!sendRobotJob@{sendRobotJob}}
+\index{sendRobotJob@{sendRobotJob}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{sendRobotJob()}{sendRobotJob()}}
+{\footnotesize\ttfamily void Mqtt\+Interface\+::send\+Robot\+Job (\begin{DoxyParamCaption}\item[{int}]{robot,  }\item[{int}]{job }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mqttinterface_8cpp_source_l00102}{102}} of file \mbox{\hyperlink{mqttinterface_8cpp_source}{mqttinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_mqtt_interface_a5f40f376fa89dbd45c4257e89b814935}\label{class_mqtt_interface_a5f40f376fa89dbd45c4257e89b814935}} 
+\index{MqttInterface@{MqttInterface}!subscribeMessageFromTopic@{subscribeMessageFromTopic}}
+\index{subscribeMessageFromTopic@{subscribeMessageFromTopic}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{subscribeMessageFromTopic()}{subscribeMessageFromTopic()}}
+{\footnotesize\ttfamily QString Mqtt\+Interface\+::subscribe\+Message\+From\+Topic (\begin{DoxyParamCaption}\item[{const QString \&}]{topic }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{mqttinterface_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{mqttinterface_8cpp_source}{mqttinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_mqtt_interface_a2151fa68abf7365be4f7fcaf454e0e17}\label{class_mqtt_interface_a2151fa68abf7365be4f7fcaf454e0e17}} 
+\index{MqttInterface@{MqttInterface}!updateRobotStatusSignal@{updateRobotStatusSignal}}
+\index{updateRobotStatusSignal@{updateRobotStatusSignal}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{updateRobotStatusSignal}{updateRobotStatusSignal}}
+{\footnotesize\ttfamily void Mqtt\+Interface\+::update\+Robot\+Status\+Signal (\begin{DoxyParamCaption}\item[{int}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__mqttinterface_8cpp_source_l00205}{205}} of file \mbox{\hyperlink{moc__mqttinterface_8cpp_source}{moc\+\_\+mqttinterface.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_mqtt_interface_a7cb74ed463568289c32f668f34392504}\label{class_mqtt_interface_a7cb74ed463568289c32f668f34392504}} 
+\index{MqttInterface@{MqttInterface}!\_log@{\_log}}
+\index{\_log@{\_log}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{\_log}{\_log}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}}$\ast$ Mqtt\+Interface\+::\+\_\+log}
+
+
+
+Definition at line \mbox{\hyperlink{mqttinterface_8h_source_l00023}{23}} of file \mbox{\hyperlink{mqttinterface_8h_source}{mqttinterface.\+h}}.
+
+\mbox{\Hypertarget{class_mqtt_interface_a57e4b5a439f7874fb8b90d418202acd5}\label{class_mqtt_interface_a57e4b5a439f7874fb8b90d418202acd5}} 
+\index{MqttInterface@{MqttInterface}!\_mqttConnected@{\_mqttConnected}}
+\index{\_mqttConnected@{\_mqttConnected}!MqttInterface@{MqttInterface}}
+\doxysubsubsection{\texorpdfstring{\_mqttConnected}{\_mqttConnected}}
+{\footnotesize\ttfamily bool Mqtt\+Interface\+::\+\_\+mqtt\+Connected = false}
+
+
+
+Definition at line \mbox{\hyperlink{mqttinterface_8h_source_l00030}{30}} of file \mbox{\hyperlink{mqttinterface_8h_source}{mqttinterface.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{mqttinterface_8h}{mqttinterface.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{moc__mqttinterface_8cpp}{moc\+\_\+mqttinterface.\+cpp}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{mqttinterface_8cpp}{mqttinterface.\+cpp}}\end{DoxyCompactItemize}

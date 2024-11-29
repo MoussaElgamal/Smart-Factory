@@ -1,0 +1,222 @@
+\hypertarget{class_machine}{}\doxysection{Machine Class Reference}
+\label{class_machine}\index{Machine@{Machine}}
+
+
+This class represents a production machine.  
+
+
+
+
+{\ttfamily \#include $<$machine.\+h$>$}
+
+Inheritance diagram for Machine\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_machine}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_machine_ad07e59970f5ba76a678e04fa1e177cc2}{work\+Cycle\+Finished}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_machine_ad07e59970f5ba76a678e04fa1e177cc2}{Machine\+::work\+Cycle\+Finished}} ends the production and informs the part. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_machine_a0eff027badbd14f72f6cd97376241666}{start\+Work\+Cycle}} (const int \&workbench, const int \&cycle\+Time)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_machine_a0eff027badbd14f72f6cd97376241666}{Machine\+::start\+Work\+Cycle}} starts the production timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_machine_a47d1f6f22c96e2be1235d5b4f4189acd}{part\+Taken\+From\+Machine}} ()
+\begin{DoxyCompactList}\small\item\em When the part is removed from the machine, a new service offer is placed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_machine_a46aa39c8c3bbee2600ce136166a6c4fb}{Machine}} (\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$log)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_machine_a46aa39c8c3bbee2600ce136166a6c4fb}{Machine\+::\+Machine}} creates a new machine with its workbenches and connects it to the view interface. The service of producing is provided. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_machine_a0fa0467985ec16cf6b7aff8895b3400c}{$\sim$\+Machine}} (void)
+\begin{DoxyCompactList}\small\item\em The destructor deletes all created workbenches and removes the machine from the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_machine_a5ac458f89e1526454da5cde68403f95b}{take\+Service}} (\mbox{\hyperlink{class_agent}{Agent}} $\ast$agent) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_machine}{Machine}}\+:take\+Service is called when one part reacts to the offered service. The service starts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_machine_acfa890787be0c2e88bb848da96931f8b}{get\+Machine\+Number}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_machine_aaf9a19a7fe4e1a3e47b66bd3f9ddda9a}{number\+Of\+Machines}} = 4
+\item 
+static constexpr int \mbox{\hyperlink{class_machine_af34892f2a2dc086e9306037cf5defb05}{number\+Of\+Workbenches}} = 2
+\item 
+static QList$<$ \mbox{\hyperlink{class_machine}{Machine}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_machine_af4432f5adfe1268898e6ff2c29524b42}{list\+Of\+Machines}} = new QList$<$\mbox{\hyperlink{class_machine}{Machine}}$\ast$$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class represents a production machine. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben
+\end{DoxyAuthor}
+A machine has a RFID-\/\+Reader and two production places. Machines are agents. 
+
+Definition at line \mbox{\hyperlink{machine_8h_source_l00019}{19}} of file \mbox{\hyperlink{machine_8h_source}{machine.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_machine_a46aa39c8c3bbee2600ce136166a6c4fb}\label{class_machine_a46aa39c8c3bbee2600ce136166a6c4fb}} 
+\index{Machine@{Machine}!Machine@{Machine}}
+\index{Machine@{Machine}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{Machine()}{Machine()}}
+{\footnotesize\ttfamily Machine\+::\+Machine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$}]{log }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_machine_a46aa39c8c3bbee2600ce136166a6c4fb}{Machine\+::\+Machine}} creates a new machine with its workbenches and connects it to the view interface. The service of producing is provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & parameter log is used for filling the logfile. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{machine_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{machine_8cpp_source}{machine.\+cpp}}.
+
+\mbox{\Hypertarget{class_machine_a0fa0467985ec16cf6b7aff8895b3400c}\label{class_machine_a0fa0467985ec16cf6b7aff8895b3400c}} 
+\index{Machine@{Machine}!````~Machine@{$\sim$Machine}}
+\index{````~Machine@{$\sim$Machine}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{$\sim$Machine()}{~Machine()}}
+{\footnotesize\ttfamily Machine\+::$\sim$\+Machine (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The destructor deletes all created workbenches and removes the machine from the list. 
+
+
+
+Definition at line \mbox{\hyperlink{machine_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{machine_8cpp_source}{machine.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_machine_acfa890787be0c2e88bb848da96931f8b}\label{class_machine_acfa890787be0c2e88bb848da96931f8b}} 
+\index{Machine@{Machine}!getMachineNumber@{getMachineNumber}}
+\index{getMachineNumber@{getMachineNumber}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{getMachineNumber()}{getMachineNumber()}}
+{\footnotesize\ttfamily int Machine\+::get\+Machine\+Number (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+This method returns a free workbench for production. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{machine_8cpp_source_l00104}{104}} of file \mbox{\hyperlink{machine_8cpp_source}{machine.\+cpp}}.
+
+\mbox{\Hypertarget{class_machine_a47d1f6f22c96e2be1235d5b4f4189acd}\label{class_machine_a47d1f6f22c96e2be1235d5b4f4189acd}} 
+\index{Machine@{Machine}!partTakenFromMachine@{partTakenFromMachine}}
+\index{partTakenFromMachine@{partTakenFromMachine}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{partTakenFromMachine}{partTakenFromMachine}}
+{\footnotesize\ttfamily void Machine\+::part\+Taken\+From\+Machine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+When the part is removed from the machine, a new service offer is placed. 
+
+
+
+Definition at line \mbox{\hyperlink{machine_8cpp_source_l00069}{69}} of file \mbox{\hyperlink{machine_8cpp_source}{machine.\+cpp}}.
+
+\mbox{\Hypertarget{class_machine_a0eff027badbd14f72f6cd97376241666}\label{class_machine_a0eff027badbd14f72f6cd97376241666}} 
+\index{Machine@{Machine}!startWorkCycle@{startWorkCycle}}
+\index{startWorkCycle@{startWorkCycle}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{startWorkCycle}{startWorkCycle}}
+{\footnotesize\ttfamily void Machine\+::start\+Work\+Cycle (\begin{DoxyParamCaption}\item[{const int \&}]{workbench,  }\item[{const int \&}]{cycle\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_machine_a0eff027badbd14f72f6cd97376241666}{Machine\+::start\+Work\+Cycle}} starts the production timer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parameter} & workbench defines which workbench is producing. \\
+\hline
+{\em Parameter} & cycle\+Time defines how long the part is produced in this machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{machine_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{machine_8cpp_source}{machine.\+cpp}}.
+
+\mbox{\Hypertarget{class_machine_a5ac458f89e1526454da5cde68403f95b}\label{class_machine_a5ac458f89e1526454da5cde68403f95b}} 
+\index{Machine@{Machine}!takeService@{takeService}}
+\index{takeService@{takeService}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{takeService()}{takeService()}}
+{\footnotesize\ttfamily void Machine\+::take\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_agent}{Agent}} $\ast$}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_machine}{Machine}}\+:take\+Service is called when one part reacts to the offered service. The service starts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parameter} & agent defines the part to produce. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_agent_adc1723360ca832e8fca798a6c18ca331}{Agent}}.
+
+
+
+Definition at line \mbox{\hyperlink{machine_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{machine_8cpp_source}{machine.\+cpp}}.
+
+\mbox{\Hypertarget{class_machine_ad07e59970f5ba76a678e04fa1e177cc2}\label{class_machine_ad07e59970f5ba76a678e04fa1e177cc2}} 
+\index{Machine@{Machine}!workCycleFinished@{workCycleFinished}}
+\index{workCycleFinished@{workCycleFinished}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{workCycleFinished}{workCycleFinished}}
+{\footnotesize\ttfamily void Machine\+::work\+Cycle\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_machine_ad07e59970f5ba76a678e04fa1e177cc2}{Machine\+::work\+Cycle\+Finished}} ends the production and informs the part. 
+
+
+
+Definition at line \mbox{\hyperlink{machine_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{machine_8cpp_source}{machine.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_machine_af4432f5adfe1268898e6ff2c29524b42}\label{class_machine_af4432f5adfe1268898e6ff2c29524b42}} 
+\index{Machine@{Machine}!listOfMachines@{listOfMachines}}
+\index{listOfMachines@{listOfMachines}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{listOfMachines}{listOfMachines}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_machine}{Machine}} $\ast$ $>$ $\ast$ Machine\+::list\+Of\+Machines = new QList$<$\mbox{\hyperlink{class_machine}{Machine}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{machine_8h_source_l00027}{27}} of file \mbox{\hyperlink{machine_8h_source}{machine.\+h}}.
+
+\mbox{\Hypertarget{class_machine_aaf9a19a7fe4e1a3e47b66bd3f9ddda9a}\label{class_machine_aaf9a19a7fe4e1a3e47b66bd3f9ddda9a}} 
+\index{Machine@{Machine}!numberOfMachines@{numberOfMachines}}
+\index{numberOfMachines@{numberOfMachines}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{numberOfMachines}{numberOfMachines}}
+{\footnotesize\ttfamily constexpr int Machine\+::number\+Of\+Machines = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{machine_8h_source_l00024}{24}} of file \mbox{\hyperlink{machine_8h_source}{machine.\+h}}.
+
+\mbox{\Hypertarget{class_machine_af34892f2a2dc086e9306037cf5defb05}\label{class_machine_af34892f2a2dc086e9306037cf5defb05}} 
+\index{Machine@{Machine}!numberOfWorkbenches@{numberOfWorkbenches}}
+\index{numberOfWorkbenches@{numberOfWorkbenches}!Machine@{Machine}}
+\doxysubsubsection{\texorpdfstring{numberOfWorkbenches}{numberOfWorkbenches}}
+{\footnotesize\ttfamily constexpr int Machine\+::number\+Of\+Workbenches = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{machine_8h_source_l00025}{25}} of file \mbox{\hyperlink{machine_8h_source}{machine.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{machine_8h}{machine.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{machine_8cpp}{machine.\+cpp}}\end{DoxyCompactItemize}

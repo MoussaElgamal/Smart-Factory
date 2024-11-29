@@ -1,0 +1,98 @@
+\hypertarget{agent_8cpp_source}{}\doxysection{agent.\+cpp}
+\label{agent_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/agent.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/agent.cpp}}
+\mbox{\hyperlink{agent_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{agent_8h}{agent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00003}00003 \textcolor{comment}{/* The following lists are used to collect requests and services by the agents.}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00004}00004 \textcolor{comment}{ * Therefor there is one list per possible requests. This ensures, that only}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00005}00005 \textcolor{comment}{ * agents can be connect, which belong together.}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00006}00006 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00007}00007 \textcolor{comment}{ * If one agent is added to one list, the function organizeHelp() has to be called.}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00008}00008 \textcolor{comment}{ * This function connects agents by request and service.}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00009}00009 \textcolor{comment}{ *}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00010}00010 \textcolor{comment}{ * These attributes and method are static and belong to no object. Agents are}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00011}00011 \textcolor{comment}{ * registrating themselves.}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00012}00012 \textcolor{comment}{ */}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00014}00014 \textcolor{comment}{//list of open requests}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00015}00015 QList<Agent*>* \mbox{\hyperlink{class_agent_a81300dafd2abdb23af8359b37347bb6b}{Agent::listOfOpenRequestsCharge}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00016}00016 QList<Agent*>* \mbox{\hyperlink{class_agent_a46e374be6b15316f6e8159058f60fad0}{Agent::listOfOpenRequestsTransport}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00017}00017 QList<QList<Agent*>*>* \mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{Agent::listOfOpenRequestsProduction}} = \textcolor{keyword}{new} QList<QList<Agent*>*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00018}00018 QList<Agent*>* \mbox{\hyperlink{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}{Agent::listOfOpenRequestsFinalstorage}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00019}00019 QList<Agent*>* \mbox{\hyperlink{class_agent_a0bc033cded1611f932c14b9aa6016599}{Agent::listOfOpenRequestsPrestorage}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00020}00020 QList<Agent*>* \mbox{\hyperlink{class_agent_a550e89c90cdb00a5b7425ef3e2e9fd0c}{Agent::listOfOpenRequestsPart}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00022}00022 \textcolor{comment}{//list of services}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00023}00023 QList<Agent*>* \mbox{\hyperlink{class_agent_a72ffab9912ff6f564f7790547d470987}{Agent::listOfServicesCharge}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00024}00024 QList<Agent*>* \mbox{\hyperlink{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}{Agent::listOfServicesTransport}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00025}00025 QList<QList<Agent*>*>* \mbox{\hyperlink{class_agent_af020b5ba1e477dc19bfcd907697c329e}{Agent::listOfServicesProduction}} = \textcolor{keyword}{new} QList<QList<Agent*>*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00026}00026 QList<Agent*>* \mbox{\hyperlink{class_agent_aed9efac0cb124cc00f170c1e47adcd47}{Agent::listOfServicesFinalstorage}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00027}00027 QList<Agent*>* \mbox{\hyperlink{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}{Agent::listOfServicesPrestorage}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00028}00028 QList<Agent*>* \mbox{\hyperlink{class_agent_a4f1c5c12163b3dd6ea81d93846c98b04}{Agent::listOfServicesPart}} = \textcolor{keyword}{new} QList<Agent*>;}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00033}\mbox{\hyperlink{class_agent_a3b95867e426dba7c93b45a0c5af4cf45}{00033}} \mbox{\hyperlink{class_agent_a3b95867e426dba7c93b45a0c5af4cf45}{Agent::Agent}}() \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00035}00035 \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00040}\mbox{\hyperlink{class_agent_af247dac4f407e2839b61be6bd3887b39}{00040}} \mbox{\hyperlink{class_agent_af247dac4f407e2839b61be6bd3887b39}{Agent::\string~Agent}}() \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00041}00041 \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00047}\mbox{\hyperlink{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}{00047}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}{Agent::organizeHelp}}(\mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} type)}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00048}00048 \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00049}00049     \textcolor{keywordflow}{switch} (type) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00050}00050         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa14754f13e5280c5d49d2ae536c2d57e2}{Type::machine}}:}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00051}00051             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{listOfOpenRequestsProduction}}-\/>length(); i++) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00052}00052                 \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{listOfOpenRequestsProduction}}-\/>at(i)-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00053}00053                     \mbox{\hyperlink{class_agent_af020b5ba1e477dc19bfcd907697c329e}{listOfServicesProduction}}-\/>at(i)-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{listOfOpenRequestsProduction}}-\/>at(i)-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00054}00054                 \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00055}00055             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00056}00056             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00057}00057         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa066a17b0ad96be18b62d39d39e7ecb07}{Type::finalstorage}}:}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00058}00058             \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}{listOfOpenRequestsFinalstorage}}-\/>empty()) \&\& !(\mbox{\hyperlink{class_agent_aed9efac0cb124cc00f170c1e47adcd47}{listOfServicesFinalstorage}}-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00059}00059                 \mbox{\hyperlink{class_agent_aed9efac0cb124cc00f170c1e47adcd47}{listOfServicesFinalstorage}}-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}{listOfOpenRequestsFinalstorage}}-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00060}00060             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00061}00061             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00062}00062         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfaad4cec7e12be0aef3c170fc3728c4d83}{Type::prestorage}}:}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00063}00063             \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_a0bc033cded1611f932c14b9aa6016599}{listOfOpenRequestsPrestorage}}-\/>empty()) \&\& !(\mbox{\hyperlink{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}{listOfServicesPrestorage}}-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00064}00064                 \mbox{\hyperlink{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}{listOfServicesPrestorage}}-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_a0bc033cded1611f932c14b9aa6016599}{listOfOpenRequestsPrestorage}}-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00065}00065             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00066}00066             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00067}00067         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa87b7cb79481f317bde90c116cf36084b}{Type::robot}}:}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00068}00068             \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_a46e374be6b15316f6e8159058f60fad0}{listOfOpenRequestsTransport}}-\/>empty()) \&\& !(\mbox{\hyperlink{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}{listOfServicesTransport}}-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00069}00069                 \mbox{\hyperlink{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}{listOfServicesTransport}}-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_a46e374be6b15316f6e8159058f60fad0}{listOfOpenRequestsTransport}}-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00070}00070             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00071}00071             \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_a81300dafd2abdb23af8359b37347bb6b}{listOfOpenRequestsCharge}}-\/>empty()) \&\& !(\mbox{\hyperlink{class_agent_a72ffab9912ff6f564f7790547d470987}{listOfServicesCharge}}-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00072}00072                 \mbox{\hyperlink{class_agent_a72ffab9912ff6f564f7790547d470987}{listOfServicesCharge}}-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_a81300dafd2abdb23af8359b37347bb6b}{listOfOpenRequestsCharge}}-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00073}00073             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00074}00074             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00075}00075         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa57a398f84a172e11d8b3d376942be1de}{Type::chargingPlace}}:}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00076}00076             \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_a81300dafd2abdb23af8359b37347bb6b}{listOfOpenRequestsCharge}}-\/>empty()) \&\& !(\mbox{\hyperlink{class_agent_a72ffab9912ff6f564f7790547d470987}{listOfServicesCharge}}-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00077}00077                 \mbox{\hyperlink{class_agent_a72ffab9912ff6f564f7790547d470987}{listOfServicesCharge}}-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_a81300dafd2abdb23af8359b37347bb6b}{listOfOpenRequestsCharge}}-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00078}00078             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00079}00079             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00080}00080         \textcolor{keywordflow}{case} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfaf4c9385f1902f7334b00b9b4ecd164de}{Type::part}}:}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00081}00081             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{listOfOpenRequestsProduction}}-\/>length(); i++) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00082}00082                 \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{listOfOpenRequestsProduction}}-\/>at(i)-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00083}00083                     \mbox{\hyperlink{class_agent_af020b5ba1e477dc19bfcd907697c329e}{listOfServicesProduction}}-\/>at(i)-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{listOfOpenRequestsProduction}}-\/>at(i)-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00084}00084                 \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00085}00085             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00086}00086             \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_a46e374be6b15316f6e8159058f60fad0}{listOfOpenRequestsTransport}}-\/>empty()) \&\& !(\mbox{\hyperlink{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}{listOfServicesTransport}}-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00087}00087                 \mbox{\hyperlink{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}{listOfServicesTransport}}-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_a46e374be6b15316f6e8159058f60fad0}{listOfOpenRequestsTransport}}-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00088}00088             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00089}00089             \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_a550e89c90cdb00a5b7425ef3e2e9fd0c}{listOfOpenRequestsPart}}-\/>empty()) \&\& !(\mbox{\hyperlink{class_agent_a4f1c5c12163b3dd6ea81d93846c98b04}{listOfServicesPart}}-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00090}00090                 \mbox{\hyperlink{class_agent_a4f1c5c12163b3dd6ea81d93846c98b04}{listOfServicesPart}}-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_a550e89c90cdb00a5b7425ef3e2e9fd0c}{listOfOpenRequestsPart}}-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00091}00091             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00092}00092             \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}{listOfOpenRequestsFinalstorage}}-\/>empty()) \&\& !(\mbox{\hyperlink{class_agent_aed9efac0cb124cc00f170c1e47adcd47}{listOfServicesFinalstorage}}-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00093}00093                 \mbox{\hyperlink{class_agent_aed9efac0cb124cc00f170c1e47adcd47}{listOfServicesFinalstorage}}-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}{listOfOpenRequestsFinalstorage}}-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00094}00094             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00095}00095             \textcolor{keywordflow}{if}(!(\mbox{\hyperlink{class_agent_a0bc033cded1611f932c14b9aa6016599}{listOfOpenRequestsPrestorage}}-\/>empty()) \&\& !(\mbox{\hyperlink{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}{listOfServicesPrestorage}}-\/>empty())) \{}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00096}00096                 \mbox{\hyperlink{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}{listOfServicesPrestorage}}-\/>takeFirst()-\/>takeService(\mbox{\hyperlink{class_agent_a0bc033cded1611f932c14b9aa6016599}{listOfOpenRequestsPrestorage}}-\/>takeFirst());}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00097}00097             \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00098}00098             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00099}00099     \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00100}00100 \}}
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00101}00101 }
+\DoxyCodeLine{\Hypertarget{agent_8cpp_source_l00102}00102 }
+
+\end{DoxyCode}

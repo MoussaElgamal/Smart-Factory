@@ -1,0 +1,191 @@
+\hypertarget{part_8cpp_source}{}\doxysection{part.\+cpp}
+\label{part_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/part.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/part.cpp}}
+\mbox{\hyperlink{part_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{part_8h}{part.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00010}\mbox{\hyperlink{class_part_aa036ee48bed9e21e6d9d558d2fbc6c9b}{00010}} \mbox{\hyperlink{class_part_aa036ee48bed9e21e6d9d558d2fbc6c9b}{Part::Part}}(\mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log, \textcolor{keywordtype}{int} orderId, QList<int>* listOfMachines, QList<int>* listOfTimes) \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00011}00011     \_orderId = orderId;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00012}00012     \mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}} = \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfaf4c9385f1902f7334b00b9b4ecd164de}{Agent::Type::part}};}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00013}00013     \_log = log;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00015}00015     \_listOfMachines = listOfMachines;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00016}00016     \_listOfTimes = listOfTimes;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00018}00018     \_position = \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a5e543256c480ac577d30f76f9120eb74}{Part::Position::undefined}};}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00020}00020     requestServiceProductionOrStorage();}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00021}00021 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00026}\mbox{\hyperlink{class_part_a1710faabd37355a2a4380b904ea37642}{00026}} \mbox{\hyperlink{class_part_a1710faabd37355a2a4380b904ea37642}{Part::\string~Part}}()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00027}00027 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00028}00028     \textcolor{keyword}{delete} \_listOfMachines;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00029}00029     \textcolor{keyword}{delete} \_listOfTimes;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00036}\mbox{\hyperlink{class_part_a62678bdfc5b62f7cee1c60cd441780c9}{00036}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a62678bdfc5b62f7cee1c60cd441780c9}{Part::setPosition}}(\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} position)}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00037}00037 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00038}00038     \_position = position;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00039}00039     \textcolor{keywordflow}{if} (position != \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a87b7cb79481f317bde90c116cf36084b}{Part::Position::robot}}) \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00040}00040         \mbox{\hyperlink{class_part_a5762391b8731da6fc77ddde648203dcf}{transportDone}}();}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00041}00041     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00042}00042         emit \mbox{\hyperlink{class_part_aa9a787e38d7208b0f5994cce72b764f4}{partTakenFromMachine}}();}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00043}00043     \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00044}00044 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00049}\mbox{\hyperlink{class_part_aef485d58ba3459acc193e348789d0e90}{00049}} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part::Position}} \mbox{\hyperlink{class_part_aef485d58ba3459acc193e348789d0e90}{Part::getPosition}}()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00050}00050 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00051}00051     \textcolor{keywordflow}{return} \_position;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00052}00052 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00057}\mbox{\hyperlink{class_part_a7540d4d229e9fda3728d136554675e7e}{00057}} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part::Position}} \mbox{\hyperlink{class_part_a7540d4d229e9fda3728d136554675e7e}{Part::getNextPosition}}()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00058}00058 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00059}00059     \textcolor{keywordflow}{return} \_nextPosition;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00060}00060 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00065}\mbox{\hyperlink{class_part_a055da473cf07133069d4c3c3eb9aa078}{00065}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_part_a055da473cf07133069d4c3c3eb9aa078}{Part::isCheckedIn}}()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00066}00066 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00067}00067     \textcolor{keywordflow}{return} \_checkedIn;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00068}00068 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00073}\mbox{\hyperlink{class_part_a8907a2012fe540ff0a953d755d4d10f3}{00073}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_part_a8907a2012fe540ff0a953d755d4d10f3}{Part::isCheckOutRequested}}()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00074}00074 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00075}00075     \textcolor{keywordflow}{return} \_checkOutRequested;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00076}00076 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00081}\mbox{\hyperlink{class_part_a4c59de1d50fbcfdb6f07a93677e0e85d}{00081}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a4c59de1d50fbcfdb6f07a93677e0e85d}{Part::machineCycleReady}}()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00082}00082 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00083}00083     requestServiceProductionOrStorage();}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00084}00084     \_checkOutRequested = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00085}00085 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00090}\mbox{\hyperlink{class_part_a5762391b8731da6fc77ddde648203dcf}{00090}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a5762391b8731da6fc77ddde648203dcf}{Part::transportDone}}()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00091}00091 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00092}00092     emit \mbox{\hyperlink{class_part_ac868a9656f5803d051b19fc1f8bab93e}{transportDoneSignal}}(\_workbench, \_actMachineCycleTime);}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00093}00093 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00101}\mbox{\hyperlink{class_part_a99e5f1f51d0e0d55f01d06045c972c9c}{00101}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a99e5f1f51d0e0d55f01d06045c972c9c}{Part::updateNextPosition}}(\textcolor{keywordtype}{bool} isStorage, \textcolor{keywordtype}{int} number, \textcolor{keywordtype}{int} workbench)}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00102}00102 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00103}00103     \_workbench = 0; \textcolor{comment}{//delete last workbench number}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00105}00105     \textcolor{keywordflow}{if} (isStorage) \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00106}00106         \textcolor{keywordflow}{if} (number > 0 \&\& number <= 2 \&\& workbench > 0 \&\& workbench <= 2) \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00107}00107             \textcolor{keywordtype}{int} nextPosition = (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8addfd5b2988e35ee1a83866ccf1144c14}{Part::Position::finalstorage1place1}}) -\/ 1 + ((number -\/ 1) * 2) + workbench);}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00108}00108             \_nextPosition = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part::Position}}\textcolor{keyword}{>}(nextPosition);}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00109}00109             \_listOfMachines-\/>removeFirst();}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00110}00110             \_workbench = workbench;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00111}00111         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00112}00112             QString s;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00113}00113             s.append(\textcolor{stringliteral}{"{}Fehler bei der Berechnung einer neuen Position für das Bauteil. Speicher "{}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00114}00114             s.append(QString::number(number));}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00115}00115             s.append(\textcolor{stringliteral}{"{} und Werkbank "{}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00116}00116             s.append(QString::number(workbench));}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00117}00117             s.append(\textcolor{stringliteral}{"{} können nicht zugeordnet werden. "{}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00118}00118             \_log-\/>\mbox{\hyperlink{class_csv_interpreter_a5ea68a0704e0b03d6fad49131bd4a704}{writeLogData}}(s);}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00119}00119             \textcolor{keywordflow}{return}; \textcolor{comment}{//don't start transport}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00120}00120         \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00121}00121     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00122}00122         \textcolor{keywordflow}{if} (number > 0 \&\& number <= 4 \&\& workbench > 0 \&\& workbench <= 2) \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00123}00123             \textcolor{keywordtype}{int} nextPosition = (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8abcb99b2de06626fd9712e48f10ec3c73}{Part::Position::machine1place1}}) -\/ 1 + ((number -\/ 1) * 2) + workbench);}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00124}00124             \_nextPosition = \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part::Position}}\textcolor{keyword}{>}(nextPosition);}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00125}00125             \_actMachineCycleTime = \_listOfTimes-\/>takeFirst();}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00126}00126             \_listOfMachines-\/>removeFirst();}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00127}00127             \_workbench = workbench;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00128}00128         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00129}00129             QString s;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00130}00130             s.append(\textcolor{stringliteral}{"{}Fehler bei der Berechnung einer neuen Position für das Bauteil. Maschine "{}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00131}00131             s.append(QString::number(number));}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00132}00132             s.append(\textcolor{stringliteral}{"{} und Werkbank "{}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00133}00133             s.append(QString::number(workbench));}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00134}00134             s.append(\textcolor{stringliteral}{"{} können nicht zugeordnet werden. "{}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00135}00135             \_log-\/>\mbox{\hyperlink{class_csv_interpreter_a5ea68a0704e0b03d6fad49131bd4a704}{writeLogData}}(s);}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00136}00136             \textcolor{keywordflow}{return}; \textcolor{comment}{//don't start transport}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00137}00137         \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00138}00138     \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00139}00139     requestServiceTransport(); \textcolor{comment}{//request robot for transport to machine / storage}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00140}00140 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00145}\mbox{\hyperlink{class_part_a5163d8915e7ab2e42ece9c219db4ac00}{00145}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a5163d8915e7ab2e42ece9c219db4ac00}{Part::checkIn}}()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00146}00146 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00147}00147     \_checkedIn = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00148}00148     emit \mbox{\hyperlink{class_part_a1b4ef50fb217c3193aaf2c81942dd4cc}{checkInSuccessful}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00149}00149 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00154}\mbox{\hyperlink{class_part_a934073bec1e66379b1c21fc5a7682dd3}{00154}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a934073bec1e66379b1c21fc5a7682dd3}{Part::checkOut}}()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00155}00155 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00156}00156     \_checkedIn = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00157}00157     \_checkOutRequested = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00158}00158     emit \mbox{\hyperlink{class_part_a7317323b0ee968682c48b66947c9f7c3}{checkOutSuccessful}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00159}00159 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00160}00160 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00164}00164 \textcolor{keywordtype}{int} Part::getNextMachine()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00165}00165 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00166}00166     \textcolor{keywordflow}{if} (\_listOfMachines-\/>isEmpty()) \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00167}00167         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00168}00168     \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00169}00169     \textcolor{keywordflow}{switch} (\textcolor{keyword}{static\_cast<}\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part::Position}}\textcolor{keyword}{>}(\_listOfMachines-\/>first())) \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00170}00170     \textcolor{keywordflow}{case} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8abcb99b2de06626fd9712e48f10ec3c73}{Part::Position::machine1place1}}:}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00171}00171     \textcolor{keywordflow}{case} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a6d7fc526394079bfc3299b2b2e364b40}{Part::Position::machine1place2}}:}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00172}00172         \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00173}00173     \textcolor{keywordflow}{case} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8abaf8edaf6652d0e08d68263cffd8f4b7}{Part::Position::machine2place1}}:}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00174}00174     \textcolor{keywordflow}{case} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a84fbc80d8bd3e95728c621a2e81d8ce5}{Part::Position::machine2place2}}:}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00175}00175         \textcolor{keywordflow}{return} 2;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00176}00176     \textcolor{keywordflow}{case} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a489209b726a37812fa12d8a9a6980ee3}{Part::Position::machine3place1}}:}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00177}00177     \textcolor{keywordflow}{case} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a61ea04e7c84132f250e211e12f8b0435}{Part::Position::machine3place2}}:}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00178}00178         \textcolor{keywordflow}{return} 3;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00179}00179     \textcolor{keywordflow}{case} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8af34f81cbb50a1a0b5058c71dd2b8af7a}{Part::Position::machine4place1}}:}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00180}00180     \textcolor{keywordflow}{case} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8adc03bee6b550422ce2d174ff91d2b57c}{Part::Position::machine4place2}}:}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00181}00181         \textcolor{keywordflow}{return} 4;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00182}00182     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00183}00183         \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00184}00184     \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00185}00185 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00190}00190 \textcolor{keywordtype}{void} Part::requestServiceProductionOrStorage()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00191}00191 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00192}00192     \textcolor{keywordflow}{if}(getNextMachine() <= 0) \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00193}00193         requestServiceFinalstorage();}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00194}00194     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00195}00195         requestServiceProduction();}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00196}00196     \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00197}00197 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00198}00198 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00202}00202 \textcolor{keywordtype}{void} Part::requestServiceProduction()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00203}00203 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00204}00204     \mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{Agent::listOfOpenRequestsProduction}}-\/>at(getNextMachine() -\/ 1)-\/>append(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00205}00205 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00206}00206     \mbox{\hyperlink{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}{Agent::organizeHelp}}(\mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00207}00207 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00212}00212 \textcolor{keywordtype}{void} Part::requestServiceTransport()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00213}00213 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00214}00214     \mbox{\hyperlink{class_agent_a46e374be6b15316f6e8159058f60fad0}{Agent::listOfOpenRequestsTransport}}-\/>append(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00215}00215     \mbox{\hyperlink{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}{Agent::organizeHelp}}(\mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00216}00216 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00217}00217 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00221}00221 \textcolor{keywordtype}{void} Part::requestServiceFinalstorage()}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00222}00222 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00223}00223     \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00224}00224         \textcolor{keywordflow}{if}(getNextMachine() != 0) \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00225}00225             QString s;}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00226}00226             s.append(\textcolor{stringliteral}{"{}ungültige Maschine / Speicher in der Liste: "{}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00227}00227             s.append(QString::number(getNextMachine()));}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00228}00228             \_log-\/>\mbox{\hyperlink{class_csv_interpreter_a5ea68a0704e0b03d6fad49131bd4a704}{writeLogData}}(s);}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00229}00229             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00230}00230         \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00232}00232         \mbox{\hyperlink{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}{Agent::listOfOpenRequestsFinalstorage}}-\/>append(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00233}00233 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00234}00234         \mbox{\hyperlink{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}{Agent::organizeHelp}}(\mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}});}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00235}00235     \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00236}00236 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00242}00242 \textcolor{keywordtype}{void} Part::takeService(\mbox{\hyperlink{class_agent}{Agent}}* agent)}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00243}00243 \{}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00244}00244     \textcolor{keywordflow}{if} (agent == \textcolor{keyword}{nullptr} || agent != \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00245}00245     \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00246}00246 \}}
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00247}00247 }
+\DoxyCodeLine{\Hypertarget{part_8cpp_source_l00248}00248 }
+
+\end{DoxyCode}

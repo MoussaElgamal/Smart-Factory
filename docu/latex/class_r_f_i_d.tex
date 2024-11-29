@@ -1,0 +1,96 @@
+\hypertarget{class_r_f_i_d}{}\doxysection{RFID Class Reference}
+\label{class_r_f_i_d}\index{RFID@{RFID}}
+
+
+This class is used to manage \mbox{\hyperlink{class_r_f_i_d}{RFID}} reader on a machine.  
+
+
+
+
+{\ttfamily \#include $<$rfid.\+h$>$}
+
+Inheritance diagram for RFID\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_r_f_i_d}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_r_f_i_d_a626a840e2e5643b0984f9843bedfe2ea}{serial\+Number\+Read}} (int station, int serial\+Number)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_r_f_i_d_a808859ba9d9e9cf6c9f1dfbec6eef0ef}{RFID}} (\mbox{\hyperlink{class_mqtt_interface}{Mqtt\+Interface}} $\ast$mqtt\+Interface)
+\item 
+int \mbox{\hyperlink{class_r_f_i_d_a206ec174766f8de226f5a3c96e2967d4}{read\+Serial\+Number\+From\+Tag}} (int station)
+\item 
+void \mbox{\hyperlink{class_r_f_i_d_a14bd62a53ba24bffeb34738beaf42d8c}{write\+Serial\+Number\+To\+Tag}} (int station, int serial\+Number)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used to manage \mbox{\hyperlink{class_r_f_i_d}{RFID}} reader on a machine. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{rfid_8h_source_l00012}{12}} of file \mbox{\hyperlink{rfid_8h_source}{rfid.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_r_f_i_d_a808859ba9d9e9cf6c9f1dfbec6eef0ef}\label{class_r_f_i_d_a808859ba9d9e9cf6c9f1dfbec6eef0ef}} 
+\index{RFID@{RFID}!RFID@{RFID}}
+\index{RFID@{RFID}!RFID@{RFID}}
+\doxysubsubsection{\texorpdfstring{RFID()}{RFID()}}
+{\footnotesize\ttfamily RFID\+::\+RFID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mqtt_interface}{Mqtt\+Interface}} $\ast$}]{mqtt\+Interface }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfid_8cpp_source_l00003}{3}} of file \mbox{\hyperlink{rfid_8cpp_source}{rfid.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_f_i_d_a206ec174766f8de226f5a3c96e2967d4}\label{class_r_f_i_d_a206ec174766f8de226f5a3c96e2967d4}} 
+\index{RFID@{RFID}!readSerialNumberFromTag@{readSerialNumberFromTag}}
+\index{readSerialNumberFromTag@{readSerialNumberFromTag}!RFID@{RFID}}
+\doxysubsubsection{\texorpdfstring{readSerialNumberFromTag()}{readSerialNumberFromTag()}}
+{\footnotesize\ttfamily int RFID\+::read\+Serial\+Number\+From\+Tag (\begin{DoxyParamCaption}\item[{int}]{station }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfid_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{rfid_8cpp_source}{rfid.\+cpp}}.
+
+\mbox{\Hypertarget{class_r_f_i_d_a626a840e2e5643b0984f9843bedfe2ea}\label{class_r_f_i_d_a626a840e2e5643b0984f9843bedfe2ea}} 
+\index{RFID@{RFID}!serialNumberRead@{serialNumberRead}}
+\index{serialNumberRead@{serialNumberRead}!RFID@{RFID}}
+\doxysubsubsection{\texorpdfstring{serialNumberRead}{serialNumberRead}}
+{\footnotesize\ttfamily void RFID\+::serial\+Number\+Read (\begin{DoxyParamCaption}\item[{int}]{station,  }\item[{int}]{serial\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__rfid_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{moc__rfid_8cpp_source}{moc\+\_\+rfid.\+cpp}}.
+
+\mbox{\Hypertarget{class_r_f_i_d_a14bd62a53ba24bffeb34738beaf42d8c}\label{class_r_f_i_d_a14bd62a53ba24bffeb34738beaf42d8c}} 
+\index{RFID@{RFID}!writeSerialNumberToTag@{writeSerialNumberToTag}}
+\index{writeSerialNumberToTag@{writeSerialNumberToTag}!RFID@{RFID}}
+\doxysubsubsection{\texorpdfstring{writeSerialNumberToTag()}{writeSerialNumberToTag()}}
+{\footnotesize\ttfamily void RFID\+::write\+Serial\+Number\+To\+Tag (\begin{DoxyParamCaption}\item[{int}]{station,  }\item[{int}]{serial\+Number }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{rfid_8cpp_source_l00034}{34}} of file \mbox{\hyperlink{rfid_8cpp_source}{rfid.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{rfid_8h}{rfid.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{moc__rfid_8cpp}{moc\+\_\+rfid.\+cpp}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{rfid_8cpp}{rfid.\+cpp}}\end{DoxyCompactItemize}

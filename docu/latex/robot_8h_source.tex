@@ -1,0 +1,128 @@
+\hypertarget{robot_8h_source}{}\doxysection{robot.\+h}
+\label{robot_8h_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/robot.h@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/robot.h}}
+\mbox{\hyperlink{robot_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef ROBOT\_H}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00002}00002 \textcolor{preprocessor}{\#define ROBOT\_H}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{mqttinterface_8h}{mqttinterface.h}}>}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{agent_8h}{agent.h}}>}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{part_8h}{part.h}}>}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ordermanager_8h}{ordermanager.h}}>}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00018}00018 \textcolor{keyword}{class }\mbox{\hyperlink{class_view_interface}{ViewInterface}};}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00020}\mbox{\hyperlink{class_robot}{00020}} \textcolor{keyword}{class }\mbox{\hyperlink{class_robot}{Robot}}:\textcolor{keyword}{public} \mbox{\hyperlink{class_agent}{Agent}}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00022}00022     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00024}00024 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00025}\mbox{\hyperlink{class_robot_a1ab320c4edf211adc0e04a5c2428db80}{00025}}     \textcolor{keyword}{constexpr} \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a1ab320c4edf211adc0e04a5c2428db80}{numberOfRobots}} = 4;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00026}\mbox{\hyperlink{class_robot_ac5225b0e3d53cfcd4e631ca9faa692d8}{00026}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ac5225b0e3d53cfcd4e631ca9faa692d8}{minChargeLevelAlarm}} = 20; \textcolor{comment}{//percent}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00027}\mbox{\hyperlink{class_robot_aba4da871f29a6a63a28abe1f5164410d}{00027}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_aba4da871f29a6a63a28abe1f5164410d}{minChargeLevelError}} = 5; \textcolor{comment}{//percent}}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00029}\mbox{\hyperlink{class_robot_a0682c4eb073a91a06957f92b1054d8ef}{00029}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a0682c4eb073a91a06957f92b1054d8ef}{noJob}} = 0;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00030}\mbox{\hyperlink{class_robot_ac3596a72be5f00e315eb262a2fd7e715}{00030}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ac3596a72be5f00e315eb262a2fd7e715}{statusError}} = 0;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00031}\mbox{\hyperlink{class_robot_add1cacd868120596666d2204217993d2}{00031}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_add1cacd868120596666d2204217993d2}{statusReady}} = 1;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00032}\mbox{\hyperlink{class_robot_ade1a898f5a1beae36ae08cdeac5aa789}{00032}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ade1a898f5a1beae36ae08cdeac5aa789}{statusPositionReached}} = 2;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00033}\mbox{\hyperlink{class_robot_a81d803865826fb8b9b4f8e29864230d1}{00033}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a81d803865826fb8b9b4f8e29864230d1}{jobNrToHome}} = 2;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00034}\mbox{\hyperlink{class_robot_a6871d35ba6a964112e821e6ef31058dd}{00034}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a6871d35ba6a964112e821e6ef31058dd}{jobNrToChargingPlace1}} = 3;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00035}\mbox{\hyperlink{class_robot_a0162e92a33017549a99256c6a8f3db6c}{00035}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a0162e92a33017549a99256c6a8f3db6c}{jobNrToChargingPlace2}} = 4;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00036}\mbox{\hyperlink{class_robot_a7f50471fdbf0cfd346f2ff6e10571366}{00036}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a7f50471fdbf0cfd346f2ff6e10571366}{jobNrToPrestorage1Place1Pick}} = 5;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00037}\mbox{\hyperlink{class_robot_ae95be8a526b7a99acc08161f2cebe8ed}{00037}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ae95be8a526b7a99acc08161f2cebe8ed}{jobNrToPrestorage1Place1Place}} = 6;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00038}\mbox{\hyperlink{class_robot_ab181f67ce692eb7700b0681f586c0458}{00038}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ab181f67ce692eb7700b0681f586c0458}{jobNrToPrestorage1Place2Pick}} = 7;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00039}\mbox{\hyperlink{class_robot_a15fd4b73c45c491bb73a63f193e26f4c}{00039}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a15fd4b73c45c491bb73a63f193e26f4c}{jobNrToPrestorage1Place2Place}} = 8;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00040}\mbox{\hyperlink{class_robot_a92a5e1ad74b7b2728e919f6d1b699375}{00040}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a92a5e1ad74b7b2728e919f6d1b699375}{jobNrToPrestorage1Rfid}} = 9;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00041}\mbox{\hyperlink{class_robot_a1accf09afb8c440680443cf49a364eea}{00041}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a1accf09afb8c440680443cf49a364eea}{jobNrToPrestorage2Place1Pick}} = 10;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00042}\mbox{\hyperlink{class_robot_adc4da33a06f24dcd7dfb1957b89e0997}{00042}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_adc4da33a06f24dcd7dfb1957b89e0997}{jobNrToPrestorage2Place1Place}} = 11;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00043}\mbox{\hyperlink{class_robot_a1208647b1956f6bece243a70de4ec7ee}{00043}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a1208647b1956f6bece243a70de4ec7ee}{jobNrToPrestorage2Place2Pick}} = 12;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00044}\mbox{\hyperlink{class_robot_ab9a2c99e5a40ab19909efb16f9d61202}{00044}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ab9a2c99e5a40ab19909efb16f9d61202}{jobNrToPrestorage2Place2Place}} = 13;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00045}\mbox{\hyperlink{class_robot_a0ae9169607b9c4181542cb880acdc1f6}{00045}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a0ae9169607b9c4181542cb880acdc1f6}{jobNrToPrestorage2Rfid}} = 14;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00046}\mbox{\hyperlink{class_robot_a3dc717a19f4a09dd7811aca159afa24c}{00046}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a3dc717a19f4a09dd7811aca159afa24c}{jobNrToMachine1Place1Pick}} = 15;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00047}\mbox{\hyperlink{class_robot_a20ec4658ae85a39d93501adb89af897e}{00047}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a20ec4658ae85a39d93501adb89af897e}{jobNrToMachine1Place1Place}} = 16;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00048}\mbox{\hyperlink{class_robot_a47f5c27a11da795390f792227c5b23db}{00048}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a47f5c27a11da795390f792227c5b23db}{jobNrToMachine1Place2Pick}} = 17;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00049}\mbox{\hyperlink{class_robot_a249c9437741694e8ccbfce257476f95b}{00049}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a249c9437741694e8ccbfce257476f95b}{jobNrToMachine1Place2Place}} = 18;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00050}\mbox{\hyperlink{class_robot_a18f5942417baf18e1d21fe2a1ce94c2d}{00050}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a18f5942417baf18e1d21fe2a1ce94c2d}{jobNrToMachine1Rfid}} = 19;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00051}\mbox{\hyperlink{class_robot_a6f1a4025bc706491eb93fd8a070850df}{00051}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a6f1a4025bc706491eb93fd8a070850df}{jobNrToMachine2Place1Pick}} = 20;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00052}\mbox{\hyperlink{class_robot_ace2b6351f1ffdd673fedc5252e344125}{00052}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ace2b6351f1ffdd673fedc5252e344125}{jobNrToMachine2Place1Place}} = 21;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00053}\mbox{\hyperlink{class_robot_ab05530bcf4225d30386047c0365d1905}{00053}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ab05530bcf4225d30386047c0365d1905}{jobNrToMachine2Place2Pick}} = 22;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00054}\mbox{\hyperlink{class_robot_ac6ed6dc5f2f06d55e4a69099bed377e8}{00054}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ac6ed6dc5f2f06d55e4a69099bed377e8}{jobNrToMachine2Place2Place}} = 23;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00055}\mbox{\hyperlink{class_robot_a0e44346bff2baf70a904e5bceb905697}{00055}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a0e44346bff2baf70a904e5bceb905697}{jobNrToMachine2Rfid}} = 24;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00056}\mbox{\hyperlink{class_robot_a6fa41a8e8506691b07010642e62114cd}{00056}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a6fa41a8e8506691b07010642e62114cd}{jobNrToMachine3Place1Pick}} = 25;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00057}\mbox{\hyperlink{class_robot_a06b111c48f569fa864bdd4be9d7b2616}{00057}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a06b111c48f569fa864bdd4be9d7b2616}{jobNrToMachine3Place1Place}} = 26;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00058}\mbox{\hyperlink{class_robot_a34b202e958aa0650cb227a4ebd1e7f9a}{00058}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a34b202e958aa0650cb227a4ebd1e7f9a}{jobNrToMachine3Place2Pick}} = 27;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00059}\mbox{\hyperlink{class_robot_a6f424a4b7dd7f9377d6ae513c8ddba70}{00059}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a6f424a4b7dd7f9377d6ae513c8ddba70}{jobNrToMachine3Place2Place}} = 28;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00060}\mbox{\hyperlink{class_robot_a2947533bd81a9f7a4aad1da633b58f7a}{00060}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a2947533bd81a9f7a4aad1da633b58f7a}{jobNrToMachine3Rfid}} = 29;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00061}\mbox{\hyperlink{class_robot_a5dd295ea59ea722ca2c8e4c3a956d9d5}{00061}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a5dd295ea59ea722ca2c8e4c3a956d9d5}{jobNrToMachine4Place1Pick}} = 30;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00062}\mbox{\hyperlink{class_robot_aab4372a3a98b2496c97a3d0571bfc23f}{00062}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_aab4372a3a98b2496c97a3d0571bfc23f}{jobNrToMachine4Place1Place}} = 31;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00063}\mbox{\hyperlink{class_robot_acf81b6186be83e02f112b1fc4d7ca60a}{00063}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_acf81b6186be83e02f112b1fc4d7ca60a}{jobNrToMachine4Place2Pick}} = 32;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00064}\mbox{\hyperlink{class_robot_a2627bfc33245feed12aeda3b8c85deeb}{00064}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a2627bfc33245feed12aeda3b8c85deeb}{jobNrToMachine4Place2Place}} = 33;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00065}\mbox{\hyperlink{class_robot_a463df5186cc5f99909b708814cbb9b1a}{00065}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a463df5186cc5f99909b708814cbb9b1a}{jobNrToMachine4Rfid}} = 34;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00066}\mbox{\hyperlink{class_robot_a892a3f98148ea1ba5b83b6cbfb3b9171}{00066}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a892a3f98148ea1ba5b83b6cbfb3b9171}{jobNrToFinalstorage1Place1Pick}} = 35;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00067}\mbox{\hyperlink{class_robot_a260d5a5e06704759a55a2119bf1ed526}{00067}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a260d5a5e06704759a55a2119bf1ed526}{jobNrToFinalstorage1Place1Place}} = 36;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00068}\mbox{\hyperlink{class_robot_a9c4984b7037365164735f3cba2c4bc0e}{00068}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a9c4984b7037365164735f3cba2c4bc0e}{jobNrToFinalstorage1Place2Pick}} = 37;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00069}\mbox{\hyperlink{class_robot_a31c9bc4e074f18a7442d7051e3030182}{00069}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a31c9bc4e074f18a7442d7051e3030182}{jobNrToFinalstorage1Place2Place}} = 38;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00070}\mbox{\hyperlink{class_robot_a094375fbce2e682b60e4a2deab8c320d}{00070}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a094375fbce2e682b60e4a2deab8c320d}{jobNrToFinalstorage1Rfid}} = 39;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00071}\mbox{\hyperlink{class_robot_a9a098f66378070c3c5c0ca95595f75d9}{00071}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a9a098f66378070c3c5c0ca95595f75d9}{jobNrToFinalstorage2Place1Pick}} = 40;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00072}\mbox{\hyperlink{class_robot_ab56ea71d2f979bd93e613549723be8f2}{00072}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ab56ea71d2f979bd93e613549723be8f2}{jobNrToFinalstorage2Place1Place}} = 41;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00073}\mbox{\hyperlink{class_robot_a831f51566183c9fcb4b223b489a54a62}{00073}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a831f51566183c9fcb4b223b489a54a62}{jobNrToFinalstorage2Place2Pick}} = 42;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00074}\mbox{\hyperlink{class_robot_a34911b7152c4323c7cfeb4305ef575b1}{00074}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a34911b7152c4323c7cfeb4305ef575b1}{jobNrToFinalstorage2Place2Place}} = 43;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00075}\mbox{\hyperlink{class_robot_a8c16d7fe5833fef04ce0ac1de71aa36b}{00075}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_a8c16d7fe5833fef04ce0ac1de71aa36b}{jobNrToFinalstorage2Rfid}} = 44;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00076}\mbox{\hyperlink{class_robot_abbc8e3c073af1f57962245c866f197e7}{00076}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_abbc8e3c073af1f57962245c866f197e7}{jobNrToPickUp}} = 45;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00077}\mbox{\hyperlink{class_robot_ac5d4aac61f7d648cb84bd38b11a9ddfd}{00077}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ac5d4aac61f7d648cb84bd38b11a9ddfd}{jobNrToPlaceDown}} = 46;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00079}\mbox{\hyperlink{class_robot_a9fd193228c637ec1de60f59b39967ade}{00079}}     \textcolor{keyword}{static} QList<Robot*>* \mbox{\hyperlink{class_robot_a9fd193228c637ec1de60f59b39967ade}{listOfRobots}};}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00081}00081     \mbox{\hyperlink{class_robot_aa46ca32fc19d6e82ced06af94da27e42}{Robot}}(\mbox{\hyperlink{class_mqtt_interface}{MqttInterface}}* mqttInterface, \mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log, \mbox{\hyperlink{class_view_interface}{ViewInterface}}* viewInterface);}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00082}00082     \mbox{\hyperlink{class_robot_a524aa0aecd1583232760b71e8151323e}{\string~Robot}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00084}00084     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_robot_a74d4b5a91de6e3e27b0a293732750aba}{setCharge}}(\textcolor{keywordtype}{int} charge);}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00085}00085     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ad90e64ae53fa79acd54fb859f5a809c2}{getCharge}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00086}00086     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_aecfc332aac6d1929d8fdc9476eac5157}{getStatus}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00087}\mbox{\hyperlink{class_robot_ab283919f42912c5d5b17faca07b4381d}{00087}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_robot_ab283919f42912c5d5b17faca07b4381d}{getRobotId}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00088}00088     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_robot_a7c957e222bb34f01009dfebdbe3d2322}{isPartInGripper}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00090}00090     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_robot_a683275e0ec17852eea7adac2a7a0570b}{updatePosition}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} x, \textcolor{keyword}{const} \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00091}00091     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_robot_a13962f903dab54a8eb8b4b1555975b6a}{getPosition}}(\textcolor{keywordtype}{int} \&x, \textcolor{keywordtype}{int} \&y);}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00093}00093     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_robot_a661ad7a316df047df95e7967fd6326c9}{calculateJob}}(\mbox{\hyperlink{class_part}{Part}}* part, \textcolor{keywordtype}{int} chargingPlace = 0);}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00095}00095     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_robot_a88be290e55b90d84aacb324b354147c2}{takeService}}(\mbox{\hyperlink{class_agent}{Agent}}* agent) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00097}00097 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00098}00098     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_robot_a2f382c30682c93df3d009f56de8565f5}{updateStatus}}(\textcolor{keywordtype}{int} status);}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00100}00100 signals:}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00101}00101     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_robot_a4fbe8ef3df304389420970653029643c}{onError}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&errorNumber);}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00103}00103 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00104}00104     \textcolor{keywordtype}{int} \_job = 0;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00105}00105     \textcolor{keywordtype}{int} \_charge = 0;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00106}00106     \textcolor{keywordtype}{int} \_errorNumber = 0;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00107}00107     \textcolor{keywordtype}{int} \_status;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00109}00109     \textcolor{keywordtype}{int} \_posX = 0;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00110}00110     \textcolor{keywordtype}{int} \_posY = 0;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00112}00112     \mbox{\hyperlink{class_mqtt_interface}{MqttInterface}}* \_mqttInterface;}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00114}00114     \mbox{\hyperlink{class_part}{Part}}* \_part = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00116}00116     \textcolor{keywordtype}{bool} \_waitForCharge = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00117}00117 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00118}00118     \textcolor{keywordtype}{int} getRobotNumber(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00120}00120     \textcolor{keywordtype}{void} offerServiceTransport(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00121}00121     \textcolor{keywordtype}{void} removeServiceTransport(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00122}00122     \textcolor{keywordtype}{void} requestServiceCharge(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00124}00124     \textcolor{keywordtype}{void} sendJob(\textcolor{keywordtype}{int} job);}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00126}00126     \textcolor{keywordtype}{void} throwError(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&errorNumber);}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00127}00127 \};}
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{robot_8h_source_l00129}00129 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ROBOT\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,208 @@
+\hypertarget{class_prestorage}{}\doxysection{Prestorage Class Reference}
+\label{class_prestorage}\index{Prestorage@{Prestorage}}
+
+
+This class represents a prestorage.  
+
+
+
+
+{\ttfamily \#include $<$prestorage.\+h$>$}
+
+Inheritance diagram for Prestorage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_prestorage}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_prestorage_a914786485f18c5724b6fec93ec656a95}{part\+Taken\+From\+Prestorage}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_prestorage_a914786485f18c5724b6fec93ec656a95}{Prestorage\+::part\+Taken\+From\+Prestorage}} is called, when a part is taken from the storage and a new service offer is placed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_prestorage_a580e3f21c6e553d2107461b663f66571}{Prestorage}} (\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$log, \mbox{\hyperlink{class_order_manager}{Order\+Manager}} $\ast$order\+Manager)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_prestorage_a580e3f21c6e553d2107461b663f66571}{Prestorage\+::\+Prestorage}} creates a new prestorage with its workbenches and connects it to the view interface. The service of storing is provided. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_prestorage_aa81a9471fb66eee1746736ba43f0d343}{$\sim$\+Prestorage}} (void)
+\begin{DoxyCompactList}\small\item\em The destructor deletes all created workbenches and removes the prestorage from the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_prestorage_af8618606cfe67ff727cd92682876ff77}{take\+Service}} (\mbox{\hyperlink{class_agent}{Agent}} $\ast$agent) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_prestorage_af8618606cfe67ff727cd92682876ff77}{Prestorage\+::take\+Service}} handels the service of the prestorage. The part is assigned to a free position. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_prestorage_a08e8d730975af16a3558e4bdbb0969fd}{get\+Free\+Workbench\+Number}} (void)
+\item 
+void \mbox{\hyperlink{class_prestorage_a7ca65e0496ced6d8f8bf7bd642ac3be6}{part\+Set\+To\+Prestorage}} (int workbench)
+\item 
+int \mbox{\hyperlink{class_prestorage_a84b55fb22a4fa3b85608cda8b364bc4b}{get\+Prestorage\+Number}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_prestorage_a389292ad0cf943fbd2f595ed60f73562}{number\+Of\+Workbenches}} = 2
+\item 
+static constexpr int \mbox{\hyperlink{class_prestorage_a10b951c52df9d8b3dfe1a22e275b2332}{number\+Of\+Prestorages}} = 2
+\item 
+static QList$<$ \mbox{\hyperlink{class_prestorage}{Prestorage}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_prestorage_a274595dbaf96df134229c9982a3ccc21}{list\+Of\+Prestorages}} = new QList$<$\mbox{\hyperlink{class_prestorage}{Prestorage}}$\ast$$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class represents a prestorage. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben
+\end{DoxyAuthor}
+A prestorage has a RFID-\/\+Reader and two storage places. Prestorages are agents. 
+
+Definition at line \mbox{\hyperlink{prestorage_8h_source_l00016}{16}} of file \mbox{\hyperlink{prestorage_8h_source}{prestorage.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_prestorage_a580e3f21c6e553d2107461b663f66571}\label{class_prestorage_a580e3f21c6e553d2107461b663f66571}} 
+\index{Prestorage@{Prestorage}!Prestorage@{Prestorage}}
+\index{Prestorage@{Prestorage}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{Prestorage()}{Prestorage()}}
+{\footnotesize\ttfamily Prestorage\+::\+Prestorage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$}]{log,  }\item[{\mbox{\hyperlink{class_order_manager}{Order\+Manager}} $\ast$}]{order\+Manager }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_prestorage_a580e3f21c6e553d2107461b663f66571}{Prestorage\+::\+Prestorage}} creates a new prestorage with its workbenches and connects it to the view interface. The service of storing is provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parameter} & log is needed to write actions and errors into the logfile. \\
+\hline
+{\em order\+Manager} & represents the ordermanager in the production plant. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{prestorage_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{prestorage_8cpp_source}{prestorage.\+cpp}}.
+
+\mbox{\Hypertarget{class_prestorage_aa81a9471fb66eee1746736ba43f0d343}\label{class_prestorage_aa81a9471fb66eee1746736ba43f0d343}} 
+\index{Prestorage@{Prestorage}!````~Prestorage@{$\sim$Prestorage}}
+\index{````~Prestorage@{$\sim$Prestorage}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{$\sim$Prestorage()}{~Prestorage()}}
+{\footnotesize\ttfamily Prestorage\+::$\sim$\+Prestorage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The destructor deletes all created workbenches and removes the prestorage from the list. 
+
+
+
+Definition at line \mbox{\hyperlink{prestorage_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{prestorage_8cpp_source}{prestorage.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_prestorage_a08e8d730975af16a3558e4bdbb0969fd}\label{class_prestorage_a08e8d730975af16a3558e4bdbb0969fd}} 
+\index{Prestorage@{Prestorage}!getFreeWorkbenchNumber@{getFreeWorkbenchNumber}}
+\index{getFreeWorkbenchNumber@{getFreeWorkbenchNumber}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{getFreeWorkbenchNumber()}{getFreeWorkbenchNumber()}}
+{\footnotesize\ttfamily int Prestorage\+::get\+Free\+Workbench\+Number (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the next free workbench by number. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prestorage_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{prestorage_8cpp_source}{prestorage.\+cpp}}.
+
+\mbox{\Hypertarget{class_prestorage_a84b55fb22a4fa3b85608cda8b364bc4b}\label{class_prestorage_a84b55fb22a4fa3b85608cda8b364bc4b}} 
+\index{Prestorage@{Prestorage}!getPrestorageNumber@{getPrestorageNumber}}
+\index{getPrestorageNumber@{getPrestorageNumber}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{getPrestorageNumber()}{getPrestorageNumber()}}
+{\footnotesize\ttfamily int Prestorage\+::get\+Prestorage\+Number (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the number of this prestorage. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{prestorage_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{prestorage_8cpp_source}{prestorage.\+cpp}}.
+
+\mbox{\Hypertarget{class_prestorage_a7ca65e0496ced6d8f8bf7bd642ac3be6}\label{class_prestorage_a7ca65e0496ced6d8f8bf7bd642ac3be6}} 
+\index{Prestorage@{Prestorage}!partSetToPrestorage@{partSetToPrestorage}}
+\index{partSetToPrestorage@{partSetToPrestorage}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{partSetToPrestorage()}{partSetToPrestorage()}}
+{\footnotesize\ttfamily void Prestorage\+::part\+Set\+To\+Prestorage (\begin{DoxyParamCaption}\item[{int}]{workbench }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_prestorage_a914786485f18c5724b6fec93ec656a95}\label{class_prestorage_a914786485f18c5724b6fec93ec656a95}} 
+\index{Prestorage@{Prestorage}!partTakenFromPrestorage@{partTakenFromPrestorage}}
+\index{partTakenFromPrestorage@{partTakenFromPrestorage}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{partTakenFromPrestorage}{partTakenFromPrestorage}}
+{\footnotesize\ttfamily void Prestorage\+::part\+Taken\+From\+Prestorage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_prestorage_a914786485f18c5724b6fec93ec656a95}{Prestorage\+::part\+Taken\+From\+Prestorage}} is called, when a part is taken from the storage and a new service offer is placed. 
+
+
+
+Definition at line \mbox{\hyperlink{prestorage_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{prestorage_8cpp_source}{prestorage.\+cpp}}.
+
+\mbox{\Hypertarget{class_prestorage_af8618606cfe67ff727cd92682876ff77}\label{class_prestorage_af8618606cfe67ff727cd92682876ff77}} 
+\index{Prestorage@{Prestorage}!takeService@{takeService}}
+\index{takeService@{takeService}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{takeService()}{takeService()}}
+{\footnotesize\ttfamily void Prestorage\+::take\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_agent}{Agent}} $\ast$}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_prestorage_af8618606cfe67ff727cd92682876ff77}{Prestorage\+::take\+Service}} handels the service of the prestorage. The part is assigned to a free position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & contains the part to store. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_agent_adc1723360ca832e8fca798a6c18ca331}{Agent}}.
+
+
+
+Definition at line \mbox{\hyperlink{prestorage_8cpp_source_l00066}{66}} of file \mbox{\hyperlink{prestorage_8cpp_source}{prestorage.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_prestorage_a274595dbaf96df134229c9982a3ccc21}\label{class_prestorage_a274595dbaf96df134229c9982a3ccc21}} 
+\index{Prestorage@{Prestorage}!listOfPrestorages@{listOfPrestorages}}
+\index{listOfPrestorages@{listOfPrestorages}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{listOfPrestorages}{listOfPrestorages}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_prestorage}{Prestorage}} $\ast$ $>$ $\ast$ Prestorage\+::list\+Of\+Prestorages = new QList$<$\mbox{\hyperlink{class_prestorage}{Prestorage}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{prestorage_8h_source_l00023}{23}} of file \mbox{\hyperlink{prestorage_8h_source}{prestorage.\+h}}.
+
+\mbox{\Hypertarget{class_prestorage_a10b951c52df9d8b3dfe1a22e275b2332}\label{class_prestorage_a10b951c52df9d8b3dfe1a22e275b2332}} 
+\index{Prestorage@{Prestorage}!numberOfPrestorages@{numberOfPrestorages}}
+\index{numberOfPrestorages@{numberOfPrestorages}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{numberOfPrestorages}{numberOfPrestorages}}
+{\footnotesize\ttfamily constexpr int Prestorage\+::number\+Of\+Prestorages = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{prestorage_8h_source_l00021}{21}} of file \mbox{\hyperlink{prestorage_8h_source}{prestorage.\+h}}.
+
+\mbox{\Hypertarget{class_prestorage_a389292ad0cf943fbd2f595ed60f73562}\label{class_prestorage_a389292ad0cf943fbd2f595ed60f73562}} 
+\index{Prestorage@{Prestorage}!numberOfWorkbenches@{numberOfWorkbenches}}
+\index{numberOfWorkbenches@{numberOfWorkbenches}!Prestorage@{Prestorage}}
+\doxysubsubsection{\texorpdfstring{numberOfWorkbenches}{numberOfWorkbenches}}
+{\footnotesize\ttfamily constexpr int Prestorage\+::number\+Of\+Workbenches = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{prestorage_8h_source_l00020}{20}} of file \mbox{\hyperlink{prestorage_8h_source}{prestorage.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{prestorage_8h}{prestorage.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{prestorage_8cpp}{prestorage.\+cpp}}\end{DoxyCompactItemize}

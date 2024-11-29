@@ -1,0 +1,118 @@
+\hypertarget{class_order_manager}{}\doxysection{Order\+Manager Class Reference}
+\label{class_order_manager}\index{OrderManager@{OrderManager}}
+
+
+{\ttfamily \#include $<$ordermanager.\+h$>$}
+
+Inheritance diagram for Order\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_order_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_order_manager_ae8f455262adafa06d841c1312cbe6b6d}{set\+Number\+Of\+Pallets}} (const int \&pallets)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_order_manager_ae8f455262adafa06d841c1312cbe6b6d}{Order\+Manager\+::set\+Number\+Of\+Pallets}} is called by the view to increase or decrease the number of available pallets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_order_manager_a56810e5febb15bf62f36a928903d815a}{Order\+Manager}} (\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$log, \mbox{\hyperlink{class_sql_interface}{Sql\+Interface}} $\ast$sql\+Interface)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_order_manager_a56810e5febb15bf62f36a928903d815a}{Order\+Manager\+::\+Order\+Manager}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_order_manager_ab3642ba8fdccd202c34f6a6d7fd1d5dc}{load\+Next\+Order}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_order_manager_ab3642ba8fdccd202c34f6a6d7fd1d5dc}{Order\+Manager\+::load\+Next\+Order}} is triggered, when a new part is below the rfid reader. It checks whether a new order can be placed on the pallet and starts it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_order_manager_a89037ce41f446ebfa56d060de9c6be86}{part\+Removed\+From\+Finalstorage}} (\mbox{\hyperlink{class_part}{Part}} $\ast$part)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_order_manager_a89037ce41f446ebfa56d060de9c6be86}{Order\+Manager\+::part\+Removed\+From\+Finalstorage}} is called, when the part is removed from the storage. The part will be deleted and a new free pallet exists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{ordermanager_8h_source_l00009}{9}} of file \mbox{\hyperlink{ordermanager_8h_source}{ordermanager.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_order_manager_a56810e5febb15bf62f36a928903d815a}\label{class_order_manager_a56810e5febb15bf62f36a928903d815a}} 
+\index{OrderManager@{OrderManager}!OrderManager@{OrderManager}}
+\index{OrderManager@{OrderManager}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{OrderManager()}{OrderManager()}}
+{\footnotesize\ttfamily Order\+Manager\+::\+Order\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$}]{log,  }\item[{\mbox{\hyperlink{class_sql_interface}{Sql\+Interface}} $\ast$}]{sql\+Interface }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_order_manager_a56810e5febb15bf62f36a928903d815a}{Order\+Manager\+::\+Order\+Manager}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & contains a pointer to the logger. \\
+\hline
+{\em sql\+Interface} & is used to connect the sql interface to the order manager. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ordermanager_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{ordermanager_8cpp_source}{ordermanager.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_order_manager_ab3642ba8fdccd202c34f6a6d7fd1d5dc}\label{class_order_manager_ab3642ba8fdccd202c34f6a6d7fd1d5dc}} 
+\index{OrderManager@{OrderManager}!loadNextOrder@{loadNextOrder}}
+\index{loadNextOrder@{loadNextOrder}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{loadNextOrder()}{loadNextOrder()}}
+{\footnotesize\ttfamily void Order\+Manager\+::load\+Next\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_order_manager_ab3642ba8fdccd202c34f6a6d7fd1d5dc}{Order\+Manager\+::load\+Next\+Order}} is triggered, when a new part is below the rfid reader. It checks whether a new order can be placed on the pallet and starts it. 
+
+
+
+Definition at line \mbox{\hyperlink{ordermanager_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{ordermanager_8cpp_source}{ordermanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_order_manager_a89037ce41f446ebfa56d060de9c6be86}\label{class_order_manager_a89037ce41f446ebfa56d060de9c6be86}} 
+\index{OrderManager@{OrderManager}!partRemovedFromFinalstorage@{partRemovedFromFinalstorage}}
+\index{partRemovedFromFinalstorage@{partRemovedFromFinalstorage}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{partRemovedFromFinalstorage()}{partRemovedFromFinalstorage()}}
+{\footnotesize\ttfamily void Order\+Manager\+::part\+Removed\+From\+Finalstorage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_part}{Part}} $\ast$}]{part }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_order_manager_a89037ce41f446ebfa56d060de9c6be86}{Order\+Manager\+::part\+Removed\+From\+Finalstorage}} is called, when the part is removed from the storage. The part will be deleted and a new free pallet exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em part} & defines the part to remove. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ordermanager_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{ordermanager_8cpp_source}{ordermanager.\+cpp}}.
+
+\mbox{\Hypertarget{class_order_manager_ae8f455262adafa06d841c1312cbe6b6d}\label{class_order_manager_ae8f455262adafa06d841c1312cbe6b6d}} 
+\index{OrderManager@{OrderManager}!setNumberOfPallets@{setNumberOfPallets}}
+\index{setNumberOfPallets@{setNumberOfPallets}!OrderManager@{OrderManager}}
+\doxysubsubsection{\texorpdfstring{setNumberOfPallets}{setNumberOfPallets}}
+{\footnotesize\ttfamily void Order\+Manager\+::set\+Number\+Of\+Pallets (\begin{DoxyParamCaption}\item[{const int \&}]{pallets }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_order_manager_ae8f455262adafa06d841c1312cbe6b6d}{Order\+Manager\+::set\+Number\+Of\+Pallets}} is called by the view to increase or decrease the number of available pallets. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pallets} & contains the number of existing pallets after update. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{ordermanager_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{ordermanager_8cpp_source}{ordermanager.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{ordermanager_8h}{ordermanager.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{ordermanager_8cpp}{ordermanager.\+cpp}}\end{DoxyCompactItemize}

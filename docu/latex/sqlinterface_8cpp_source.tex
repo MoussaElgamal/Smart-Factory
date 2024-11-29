@@ -1,0 +1,100 @@
+\hypertarget{sqlinterface_8cpp_source}{}\doxysection{sqlinterface.\+cpp}
+\label{sqlinterface_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/sqlinterface.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/sqlinterface.cpp}}
+\mbox{\hyperlink{sqlinterface_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{sqlinterface_8h}{sqlinterface.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00006}\mbox{\hyperlink{class_sql_interface_af0ae3b4ebf24877f2ba4896fc4ea84cf}{00006}} \mbox{\hyperlink{class_sql_interface_af0ae3b4ebf24877f2ba4896fc4ea84cf}{SqlInterface::SqlInterface}}() \{\}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00011}\mbox{\hyperlink{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}{00011}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}{SqlInterface::connectToDatabase}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00012}00012     db = QSqlDatabase::addDatabase(\textcolor{stringliteral}{"{}QMYSQL"{}});}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00013}00013     db.setHostName(\textcolor{stringliteral}{"{}192.168.0.4"{}});}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00014}00014     db.setDatabaseName(\textcolor{stringliteral}{"{}db\_gw1"{}});}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00015}00015     db.setUserName(\textcolor{stringliteral}{"{}root"{}});}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00016}00016     db.setPassword(\textcolor{stringliteral}{"{}pass"{}});}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00017}00017     db.setPort(3306);}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00019}00019     \textcolor{keywordflow}{if} (!db.open()) \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00020}00020         \textcolor{comment}{// Wenn die Verbindung fehlschlägt}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00021}00021         qDebug() << \textcolor{stringliteral}{"{}Error: Could not connect to the database."{}};}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00022}00022         qDebug() << \textcolor{stringliteral}{"{}Error details: "{}} << db.lastError().text();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00023}00023     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00024}00024         \textcolor{comment}{// Wenn die Verbindung erfolgreich ist}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00025}00025         qDebug() << \textcolor{stringliteral}{"{}Database connected successfully!"{}};}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00026}00026     \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00028}00028     \textcolor{comment}{// Datenbankverbindung schließen}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00029}00029     \textcolor{comment}{//db.close(); //am Ende wieder schließen}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00030}00030 \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00035}\mbox{\hyperlink{class_sql_interface_ae7ad5ef7f03f53ff6a9fcefaa936cbad}{00035}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sql_interface_ae7ad5ef7f03f53ff6a9fcefaa936cbad}{SqlInterface::closeDatabaseConnection}}(\textcolor{keywordtype}{void}) \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00036}00036     \textcolor{keywordflow}{if} (db.isOpen()) \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00037}00037         db.close();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00038}00038         QSqlDatabase::removeDatabase(QSqlDatabase::defaultConnection);}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00040}00040         qDebug() << \textcolor{stringliteral}{"{}Database connection closed."{}};}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00042}00042 \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00051}\mbox{\hyperlink{class_sql_interface_a19ff32bbe485e8218eb5978973ae0515}{00051}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sql_interface_a19ff32bbe485e8218eb5978973ae0515}{SqlInterface::nextID}}(\textcolor{keywordtype}{int}\& orderId, QList<int>* listOfMachines, QList<int>* listOfTimes, \textcolor{keywordtype}{bool}\& readOrderOk)}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00052}00052 \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00053}00053     readOrderOk = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00054}00054     \mbox{\hyperlink{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}{connectToDatabase}}();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00056}00056     \textcolor{comment}{// Schritt 1: Bestellposition mit kleinster BestellpositionNrPK und Status 1 finden}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00057}00057     QSqlQuery queryFindOrder(db);}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00058}00058     queryFindOrder.prepare(\textcolor{stringliteral}{"{}SELECT * FROM t05bestellposition WHERE StatusNrFK = 1 ORDER BY BestellpositionNrPK ASC LIMIT 1"{}});}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00060}00060     \textcolor{keywordflow}{if} (queryFindOrder.exec() \&\& queryFindOrder.next()) \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00061}00061         \textcolor{keywordtype}{int} bestellpositionNrPK = queryFindOrder.value(\textcolor{stringliteral}{"{}BestellpositionNrPK"{}}).toInt();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00062}00062         \textcolor{keywordtype}{int} artikelNrFK = queryFindOrder.value(\textcolor{stringliteral}{"{}ArtikelNrFK"{}}).toInt();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00064}00064         qDebug() << \textcolor{stringliteral}{"{}BestellpositionNrPK: "{}} << bestellpositionNrPK;}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00066}00066         orderId = bestellpositionNrPK;}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00068}00068         \textcolor{comment}{// Schritt 2: Arbeitsschritte aus Tabelle 4 basierend auf ArtikelNrFK abrufen}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00069}00069         QSqlQuery queryFindSteps(db);}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00070}00070         queryFindSteps.prepare(\textcolor{stringliteral}{"{}SELECT * FROM t04schritte WHERE ArtikelNrFK = :artikelNrFK ORDER BY SchrittNrPK ASC"{}});}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00071}00071         queryFindSteps.bindValue(\textcolor{stringliteral}{"{}:artikelNrFK"{}}, artikelNrFK);}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00073}00073         \textcolor{keywordflow}{if} (queryFindSteps.exec()) \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00074}00074             \textcolor{keywordflow}{while} (queryFindSteps.next()) \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00075}00075                 \textcolor{keywordtype}{int} maschine = queryFindSteps.value(\textcolor{stringliteral}{"{}Maschine"{}}).toInt();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00076}00076                 \textcolor{keywordtype}{int} dauer = queryFindSteps.value(\textcolor{stringliteral}{"{}Dauer"{}}).toInt();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00078}00078                 \textcolor{comment}{// Maschinen und Dauer in die Listen hinzufügen}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00079}00079                 listOfMachines-\/>append(maschine);}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00080}00080                 listOfTimes-\/>append(dauer);}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00082}00082                 qDebug() << \textcolor{stringliteral}{"{}Maschine: "{}} << maschine << \textcolor{stringliteral}{"{}, Dauer: "{}} << dauer << \textcolor{stringliteral}{"{} Minuten"{}};}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00083}00083             \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00085}00085             readOrderOk = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00087}00087             QSqlQuery queryUpdateStatus(db);}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00088}00088             queryUpdateStatus.prepare(\textcolor{stringliteral}{"{}UPDATE t05bestellposition SET StatusNrFK = 2 WHERE BestellpositionNrPK = :bestellpositionNrPK"{}});}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00089}00089             queryUpdateStatus.bindValue(\textcolor{stringliteral}{"{}:bestellpositionNrPK"{}}, bestellpositionNrPK);}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00090}00090             \textcolor{keywordflow}{if} (queryUpdateStatus.exec()) \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00091}00091                 qDebug() << \textcolor{stringliteral}{"{}Status der BestellpositionNrPK "{}} << bestellpositionNrPK << \textcolor{stringliteral}{"{} auf 'in Bearbeitung' gesetzt."{}};}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00092}00092             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00093}00093                 qDebug() << \textcolor{stringliteral}{"{}Fehler beim Aktualisieren des Status: "{}} << queryUpdateStatus.lastError().text();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00094}00094             \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00096}00096         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00097}00097             qDebug() << \textcolor{stringliteral}{"{}Fehler beim Abrufen der Arbeitsschritte: "{}} << queryFindSteps.lastError().text();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00098}00098         \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00099}00099     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00100}00100         qDebug() << \textcolor{stringliteral}{"{}Keine Bestellposition mit Status 1 gefunden."{}};}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00101}00101     \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00103}00103     \mbox{\hyperlink{class_sql_interface_ae7ad5ef7f03f53ff6a9fcefaa936cbad}{closeDatabaseConnection}}();}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00104}00104 \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00105}00105 }
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00111}\mbox{\hyperlink{class_sql_interface_ae0aa968d559aff1e4c3ba770dffe5ddf}{00111}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_sql_interface_ae0aa968d559aff1e4c3ba770dffe5ddf}{SqlInterface::sendOrder}}(\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{Part::ProductType}} productType, \textcolor{keywordtype}{int} parts)}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00112}00112 \{}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00113}00113     \textcolor{comment}{//TODO}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00114}00114 \}}
+\DoxyCodeLine{\Hypertarget{sqlinterface_8cpp_source_l00115}00115 }
+
+\end{DoxyCode}

@@ -1,0 +1,926 @@
+\hypertarget{class_robot}{}\doxysection{Robot Class Reference}
+\label{class_robot}\index{Robot@{Robot}}
+
+
+{\ttfamily \#include $<$robot.\+h$>$}
+
+Inheritance diagram for Robot\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_robot}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_robot_a2f382c30682c93df3d009f56de8565f5}{update\+Status}} (int status)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_robot_a2f382c30682c93df3d009f56de8565f5}{Robot\+::update\+Status}} is called when a new status is sent via mqtt interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_robot_a4fbe8ef3df304389420970653029643c}{on\+Error}} (const int \&error\+Number)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_robot_aa46ca32fc19d6e82ced06af94da27e42}{Robot}} (\mbox{\hyperlink{class_mqtt_interface}{Mqtt\+Interface}} $\ast$mqtt\+Interface, \mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$log, \mbox{\hyperlink{class_view_interface}{View\+Interface}} $\ast$view\+Interface)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_robot_aa46ca32fc19d6e82ced06af94da27e42}{Robot\+::\+Robot}} creates a new robot and connects it to the mqtt and view interface. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_robot_a524aa0aecd1583232760b71e8151323e}{$\sim$\+Robot}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_robot_a524aa0aecd1583232760b71e8151323e}{Robot\+::$\sim$\+Robot}} removes the robot from the list of robots. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robot_a74d4b5a91de6e3e27b0a293732750aba}{set\+Charge}} (int charge)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_robot_a74d4b5a91de6e3e27b0a293732750aba}{Robot\+::set\+Charge}} sets the charge of the robot in percent. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_robot_ad90e64ae53fa79acd54fb859f5a809c2}{get\+Charge}} (void)
+\item 
+int \mbox{\hyperlink{class_robot_aecfc332aac6d1929d8fdc9476eac5157}{get\+Status}} (void)
+\item 
+int \mbox{\hyperlink{class_robot_ab283919f42912c5d5b17faca07b4381d}{get\+Robot\+Id}} (void)
+\item 
+bool \mbox{\hyperlink{class_robot_a7c957e222bb34f01009dfebdbe3d2322}{is\+Part\+In\+Gripper}} (void)
+\item 
+void \mbox{\hyperlink{class_robot_a683275e0ec17852eea7adac2a7a0570b}{update\+Position}} (const int x, const int y)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_robot_a683275e0ec17852eea7adac2a7a0570b}{Robot\+::update\+Position}} updates the position of the robot in x and y coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robot_a13962f903dab54a8eb8b4b1555975b6a}{get\+Position}} (int \&x, int \&y)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_robot_a13962f903dab54a8eb8b4b1555975b6a}{Robot\+::get\+Position}} returns the actual coordinates of the robot by reference. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robot_a661ad7a316df047df95e7967fd6326c9}{calculate\+Job}} (\mbox{\hyperlink{class_part}{Part}} $\ast$part, int charging\+Place=0)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_robot_a661ad7a316df047df95e7967fd6326c9}{Robot\+::calculate\+Job}} calculates the actual job to perform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_robot_a88be290e55b90d84aacb324b354147c2}{take\+Service}} (\mbox{\hyperlink{class_agent}{Agent}} $\ast$agent) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_robot_a88be290e55b90d84aacb324b354147c2}{Robot\+::take\+Service}} starts the transport service of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a1ab320c4edf211adc0e04a5c2428db80}{number\+Of\+Robots}} = 4
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ac5225b0e3d53cfcd4e631ca9faa692d8}{min\+Charge\+Level\+Alarm}} = 20
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_aba4da871f29a6a63a28abe1f5164410d}{min\+Charge\+Level\+Error}} = 5
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a0682c4eb073a91a06957f92b1054d8ef}{no\+Job}} = 0
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ac3596a72be5f00e315eb262a2fd7e715}{status\+Error}} = 0
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_add1cacd868120596666d2204217993d2}{status\+Ready}} = 1
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ade1a898f5a1beae36ae08cdeac5aa789}{status\+Position\+Reached}} = 2
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a81d803865826fb8b9b4f8e29864230d1}{job\+Nr\+To\+Home}} = 2
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a6871d35ba6a964112e821e6ef31058dd}{job\+Nr\+To\+Charging\+Place1}} = 3
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a0162e92a33017549a99256c6a8f3db6c}{job\+Nr\+To\+Charging\+Place2}} = 4
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a7f50471fdbf0cfd346f2ff6e10571366}{job\+Nr\+To\+Prestorage1\+Place1\+Pick}} = 5
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ae95be8a526b7a99acc08161f2cebe8ed}{job\+Nr\+To\+Prestorage1\+Place1\+Place}} = 6
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ab181f67ce692eb7700b0681f586c0458}{job\+Nr\+To\+Prestorage1\+Place2\+Pick}} = 7
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a15fd4b73c45c491bb73a63f193e26f4c}{job\+Nr\+To\+Prestorage1\+Place2\+Place}} = 8
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a92a5e1ad74b7b2728e919f6d1b699375}{job\+Nr\+To\+Prestorage1\+Rfid}} = 9
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a1accf09afb8c440680443cf49a364eea}{job\+Nr\+To\+Prestorage2\+Place1\+Pick}} = 10
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_adc4da33a06f24dcd7dfb1957b89e0997}{job\+Nr\+To\+Prestorage2\+Place1\+Place}} = 11
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a1208647b1956f6bece243a70de4ec7ee}{job\+Nr\+To\+Prestorage2\+Place2\+Pick}} = 12
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ab9a2c99e5a40ab19909efb16f9d61202}{job\+Nr\+To\+Prestorage2\+Place2\+Place}} = 13
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a0ae9169607b9c4181542cb880acdc1f6}{job\+Nr\+To\+Prestorage2\+Rfid}} = 14
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a3dc717a19f4a09dd7811aca159afa24c}{job\+Nr\+To\+Machine1\+Place1\+Pick}} = 15
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a20ec4658ae85a39d93501adb89af897e}{job\+Nr\+To\+Machine1\+Place1\+Place}} = 16
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a47f5c27a11da795390f792227c5b23db}{job\+Nr\+To\+Machine1\+Place2\+Pick}} = 17
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a249c9437741694e8ccbfce257476f95b}{job\+Nr\+To\+Machine1\+Place2\+Place}} = 18
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a18f5942417baf18e1d21fe2a1ce94c2d}{job\+Nr\+To\+Machine1\+Rfid}} = 19
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a6f1a4025bc706491eb93fd8a070850df}{job\+Nr\+To\+Machine2\+Place1\+Pick}} = 20
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ace2b6351f1ffdd673fedc5252e344125}{job\+Nr\+To\+Machine2\+Place1\+Place}} = 21
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ab05530bcf4225d30386047c0365d1905}{job\+Nr\+To\+Machine2\+Place2\+Pick}} = 22
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ac6ed6dc5f2f06d55e4a69099bed377e8}{job\+Nr\+To\+Machine2\+Place2\+Place}} = 23
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a0e44346bff2baf70a904e5bceb905697}{job\+Nr\+To\+Machine2\+Rfid}} = 24
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a6fa41a8e8506691b07010642e62114cd}{job\+Nr\+To\+Machine3\+Place1\+Pick}} = 25
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a06b111c48f569fa864bdd4be9d7b2616}{job\+Nr\+To\+Machine3\+Place1\+Place}} = 26
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a34b202e958aa0650cb227a4ebd1e7f9a}{job\+Nr\+To\+Machine3\+Place2\+Pick}} = 27
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a6f424a4b7dd7f9377d6ae513c8ddba70}{job\+Nr\+To\+Machine3\+Place2\+Place}} = 28
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a2947533bd81a9f7a4aad1da633b58f7a}{job\+Nr\+To\+Machine3\+Rfid}} = 29
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a5dd295ea59ea722ca2c8e4c3a956d9d5}{job\+Nr\+To\+Machine4\+Place1\+Pick}} = 30
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_aab4372a3a98b2496c97a3d0571bfc23f}{job\+Nr\+To\+Machine4\+Place1\+Place}} = 31
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_acf81b6186be83e02f112b1fc4d7ca60a}{job\+Nr\+To\+Machine4\+Place2\+Pick}} = 32
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a2627bfc33245feed12aeda3b8c85deeb}{job\+Nr\+To\+Machine4\+Place2\+Place}} = 33
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a463df5186cc5f99909b708814cbb9b1a}{job\+Nr\+To\+Machine4\+Rfid}} = 34
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a892a3f98148ea1ba5b83b6cbfb3b9171}{job\+Nr\+To\+Finalstorage1\+Place1\+Pick}} = 35
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a260d5a5e06704759a55a2119bf1ed526}{job\+Nr\+To\+Finalstorage1\+Place1\+Place}} = 36
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a9c4984b7037365164735f3cba2c4bc0e}{job\+Nr\+To\+Finalstorage1\+Place2\+Pick}} = 37
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a31c9bc4e074f18a7442d7051e3030182}{job\+Nr\+To\+Finalstorage1\+Place2\+Place}} = 38
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a094375fbce2e682b60e4a2deab8c320d}{job\+Nr\+To\+Finalstorage1\+Rfid}} = 39
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a9a098f66378070c3c5c0ca95595f75d9}{job\+Nr\+To\+Finalstorage2\+Place1\+Pick}} = 40
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ab56ea71d2f979bd93e613549723be8f2}{job\+Nr\+To\+Finalstorage2\+Place1\+Place}} = 41
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a831f51566183c9fcb4b223b489a54a62}{job\+Nr\+To\+Finalstorage2\+Place2\+Pick}} = 42
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a34911b7152c4323c7cfeb4305ef575b1}{job\+Nr\+To\+Finalstorage2\+Place2\+Place}} = 43
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_a8c16d7fe5833fef04ce0ac1de71aa36b}{job\+Nr\+To\+Finalstorage2\+Rfid}} = 44
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_abbc8e3c073af1f57962245c866f197e7}{job\+Nr\+To\+Pick\+Up}} = 45
+\item 
+static constexpr int \mbox{\hyperlink{class_robot_ac5d4aac61f7d648cb84bd38b11a9ddfd}{job\+Nr\+To\+Place\+Down}} = 46
+\item 
+static QList$<$ \mbox{\hyperlink{class_robot}{Robot}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_robot_a9fd193228c637ec1de60f59b39967ade}{list\+Of\+Robots}} = new QList$<$\mbox{\hyperlink{class_robot}{Robot}}$\ast$$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00020}{20}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_robot_aa46ca32fc19d6e82ced06af94da27e42}\label{class_robot_aa46ca32fc19d6e82ced06af94da27e42}} 
+\index{Robot@{Robot}!Robot@{Robot}}
+\index{Robot@{Robot}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{Robot()}{Robot()}}
+{\footnotesize\ttfamily Robot\+::\+Robot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mqtt_interface}{Mqtt\+Interface}} $\ast$}]{mqtt\+Interface,  }\item[{\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$}]{log,  }\item[{\mbox{\hyperlink{class_view_interface}{View\+Interface}} $\ast$}]{view\+Interface }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_robot_aa46ca32fc19d6e82ced06af94da27e42}{Robot\+::\+Robot}} creates a new robot and connects it to the mqtt and view interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mqtt\+Interface} & connects the robot to the mqtt interface. \\
+\hline
+{\em log} & connects the robot to the logger. \\
+\hline
+{\em view\+Interface} & is a pointer to connect the robot to the view interface \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_a524aa0aecd1583232760b71e8151323e}\label{class_robot_a524aa0aecd1583232760b71e8151323e}} 
+\index{Robot@{Robot}!````~Robot@{$\sim$Robot}}
+\index{````~Robot@{$\sim$Robot}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{$\sim$Robot()}{~Robot()}}
+{\footnotesize\ttfamily Robot\+::$\sim$\+Robot (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_robot_a524aa0aecd1583232760b71e8151323e}{Robot\+::$\sim$\+Robot}} removes the robot from the list of robots. 
+
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_robot_a661ad7a316df047df95e7967fd6326c9}\label{class_robot_a661ad7a316df047df95e7967fd6326c9}} 
+\index{Robot@{Robot}!calculateJob@{calculateJob}}
+\index{calculateJob@{calculateJob}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{calculateJob()}{calculateJob()}}
+{\footnotesize\ttfamily void Robot\+::calculate\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_part}{Part}} $\ast$}]{part,  }\item[{int}]{charging\+Place = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_robot_a661ad7a316df047df95e7967fd6326c9}{Robot\+::calculate\+Job}} calculates the actual job to perform. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em part} & contains the part to handle. Can be empty if charging is needed or ready. \\
+\hline
+{\em charging\+Place} & contains the charging place to get charge from. Can be empty. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00213}{213}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_ad90e64ae53fa79acd54fb859f5a809c2}\label{class_robot_ad90e64ae53fa79acd54fb859f5a809c2}} 
+\index{Robot@{Robot}!getCharge@{getCharge}}
+\index{getCharge@{getCharge}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{getCharge()}{getCharge()}}
+{\footnotesize\ttfamily int Robot\+::get\+Charge (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the actual charge of the robot in percent. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00074}{74}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_a13962f903dab54a8eb8b4b1555975b6a}\label{class_robot_a13962f903dab54a8eb8b4b1555975b6a}} 
+\index{Robot@{Robot}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily void Robot\+::get\+Position (\begin{DoxyParamCaption}\item[{int \&}]{x,  }\item[{int \&}]{y }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_robot_a13962f903dab54a8eb8b4b1555975b6a}{Robot\+::get\+Position}} returns the actual coordinates of the robot by reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & contains the x coordinate. \\
+\hline
+{\em y} & contains the y coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_ab283919f42912c5d5b17faca07b4381d}\label{class_robot_ab283919f42912c5d5b17faca07b4381d}} 
+\index{Robot@{Robot}!getRobotId@{getRobotId}}
+\index{getRobotId@{getRobotId}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{getRobotId()}{getRobotId()}}
+{\footnotesize\ttfamily int Robot\+::get\+Robot\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_robot_aecfc332aac6d1929d8fdc9476eac5157}\label{class_robot_aecfc332aac6d1929d8fdc9476eac5157}} 
+\index{Robot@{Robot}!getStatus@{getStatus}}
+\index{getStatus@{getStatus}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{getStatus()}{getStatus()}}
+{\footnotesize\ttfamily int Robot\+::get\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns the status number of the robot. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00082}{82}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_a7c957e222bb34f01009dfebdbe3d2322}\label{class_robot_a7c957e222bb34f01009dfebdbe3d2322}} 
+\index{Robot@{Robot}!isPartInGripper@{isPartInGripper}}
+\index{isPartInGripper@{isPartInGripper}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{isPartInGripper()}{isPartInGripper()}}
+{\footnotesize\ttfamily bool Robot\+::is\+Part\+In\+Gripper (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns whether a part is inside the gipper. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_a4fbe8ef3df304389420970653029643c}\label{class_robot_a4fbe8ef3df304389420970653029643c}} 
+\index{Robot@{Robot}!onError@{onError}}
+\index{onError@{onError}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{onError}{onError}}
+{\footnotesize\ttfamily void Robot\+::on\+Error (\begin{DoxyParamCaption}\item[{const int \&}]{error\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__robot_8cpp_source_l00150}{150}} of file \mbox{\hyperlink{moc__robot_8cpp_source}{moc\+\_\+robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_a74d4b5a91de6e3e27b0a293732750aba}\label{class_robot_a74d4b5a91de6e3e27b0a293732750aba}} 
+\index{Robot@{Robot}!setCharge@{setCharge}}
+\index{setCharge@{setCharge}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{setCharge()}{setCharge()}}
+{\footnotesize\ttfamily void Robot\+::set\+Charge (\begin{DoxyParamCaption}\item[{int}]{charge }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_robot_a74d4b5a91de6e3e27b0a293732750aba}{Robot\+::set\+Charge}} sets the charge of the robot in percent. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em charge} & contains the charge to set to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_a88be290e55b90d84aacb324b354147c2}\label{class_robot_a88be290e55b90d84aacb324b354147c2}} 
+\index{Robot@{Robot}!takeService@{takeService}}
+\index{takeService@{takeService}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{takeService()}{takeService()}}
+{\footnotesize\ttfamily void Robot\+::take\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_agent}{Agent}} $\ast$}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_robot_a88be290e55b90d84aacb324b354147c2}{Robot\+::take\+Service}} starts the transport service of the robot. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em agent} & contains the part to handle. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_agent_adc1723360ca832e8fca798a6c18ca331}{Agent}}.
+
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_a683275e0ec17852eea7adac2a7a0570b}\label{class_robot_a683275e0ec17852eea7adac2a7a0570b}} 
+\index{Robot@{Robot}!updatePosition@{updatePosition}}
+\index{updatePosition@{updatePosition}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{updatePosition()}{updatePosition()}}
+{\footnotesize\ttfamily void Robot\+::update\+Position (\begin{DoxyParamCaption}\item[{const int}]{x,  }\item[{const int}]{y }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_robot_a683275e0ec17852eea7adac2a7a0570b}{Robot\+::update\+Position}} updates the position of the robot in x and y coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & contains the x coordinate. \\
+\hline
+{\em y} & contains the y coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00100}{100}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+\mbox{\Hypertarget{class_robot_a2f382c30682c93df3d009f56de8565f5}\label{class_robot_a2f382c30682c93df3d009f56de8565f5}} 
+\index{Robot@{Robot}!updateStatus@{updateStatus}}
+\index{updateStatus@{updateStatus}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{updateStatus}{updateStatus}}
+{\footnotesize\ttfamily void Robot\+::update\+Status (\begin{DoxyParamCaption}\item[{int}]{status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_robot_a2f382c30682c93df3d009f56de8565f5}{Robot\+::update\+Status}} is called when a new status is sent via mqtt interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em status} & contains the status number of the robot. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{robot_8cpp_source_l00121}{121}} of file \mbox{\hyperlink{robot_8cpp_source}{robot.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_robot_a6871d35ba6a964112e821e6ef31058dd}\label{class_robot_a6871d35ba6a964112e821e6ef31058dd}} 
+\index{Robot@{Robot}!jobNrToChargingPlace1@{jobNrToChargingPlace1}}
+\index{jobNrToChargingPlace1@{jobNrToChargingPlace1}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToChargingPlace1}{jobNrToChargingPlace1}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Charging\+Place1 = 3\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00034}{34}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a0162e92a33017549a99256c6a8f3db6c}\label{class_robot_a0162e92a33017549a99256c6a8f3db6c}} 
+\index{Robot@{Robot}!jobNrToChargingPlace2@{jobNrToChargingPlace2}}
+\index{jobNrToChargingPlace2@{jobNrToChargingPlace2}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToChargingPlace2}{jobNrToChargingPlace2}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Charging\+Place2 = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00035}{35}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a892a3f98148ea1ba5b83b6cbfb3b9171}\label{class_robot_a892a3f98148ea1ba5b83b6cbfb3b9171}} 
+\index{Robot@{Robot}!jobNrToFinalstorage1Place1Pick@{jobNrToFinalstorage1Place1Pick}}
+\index{jobNrToFinalstorage1Place1Pick@{jobNrToFinalstorage1Place1Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage1Place1Pick}{jobNrToFinalstorage1Place1Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage1\+Place1\+Pick = 35\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00066}{66}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a260d5a5e06704759a55a2119bf1ed526}\label{class_robot_a260d5a5e06704759a55a2119bf1ed526}} 
+\index{Robot@{Robot}!jobNrToFinalstorage1Place1Place@{jobNrToFinalstorage1Place1Place}}
+\index{jobNrToFinalstorage1Place1Place@{jobNrToFinalstorage1Place1Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage1Place1Place}{jobNrToFinalstorage1Place1Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage1\+Place1\+Place = 36\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00067}{67}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a9c4984b7037365164735f3cba2c4bc0e}\label{class_robot_a9c4984b7037365164735f3cba2c4bc0e}} 
+\index{Robot@{Robot}!jobNrToFinalstorage1Place2Pick@{jobNrToFinalstorage1Place2Pick}}
+\index{jobNrToFinalstorage1Place2Pick@{jobNrToFinalstorage1Place2Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage1Place2Pick}{jobNrToFinalstorage1Place2Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage1\+Place2\+Pick = 37\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00068}{68}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a31c9bc4e074f18a7442d7051e3030182}\label{class_robot_a31c9bc4e074f18a7442d7051e3030182}} 
+\index{Robot@{Robot}!jobNrToFinalstorage1Place2Place@{jobNrToFinalstorage1Place2Place}}
+\index{jobNrToFinalstorage1Place2Place@{jobNrToFinalstorage1Place2Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage1Place2Place}{jobNrToFinalstorage1Place2Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage1\+Place2\+Place = 38\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00069}{69}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a094375fbce2e682b60e4a2deab8c320d}\label{class_robot_a094375fbce2e682b60e4a2deab8c320d}} 
+\index{Robot@{Robot}!jobNrToFinalstorage1Rfid@{jobNrToFinalstorage1Rfid}}
+\index{jobNrToFinalstorage1Rfid@{jobNrToFinalstorage1Rfid}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage1Rfid}{jobNrToFinalstorage1Rfid}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage1\+Rfid = 39\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00070}{70}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a9a098f66378070c3c5c0ca95595f75d9}\label{class_robot_a9a098f66378070c3c5c0ca95595f75d9}} 
+\index{Robot@{Robot}!jobNrToFinalstorage2Place1Pick@{jobNrToFinalstorage2Place1Pick}}
+\index{jobNrToFinalstorage2Place1Pick@{jobNrToFinalstorage2Place1Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage2Place1Pick}{jobNrToFinalstorage2Place1Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage2\+Place1\+Pick = 40\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00071}{71}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ab56ea71d2f979bd93e613549723be8f2}\label{class_robot_ab56ea71d2f979bd93e613549723be8f2}} 
+\index{Robot@{Robot}!jobNrToFinalstorage2Place1Place@{jobNrToFinalstorage2Place1Place}}
+\index{jobNrToFinalstorage2Place1Place@{jobNrToFinalstorage2Place1Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage2Place1Place}{jobNrToFinalstorage2Place1Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage2\+Place1\+Place = 41\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00072}{72}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a831f51566183c9fcb4b223b489a54a62}\label{class_robot_a831f51566183c9fcb4b223b489a54a62}} 
+\index{Robot@{Robot}!jobNrToFinalstorage2Place2Pick@{jobNrToFinalstorage2Place2Pick}}
+\index{jobNrToFinalstorage2Place2Pick@{jobNrToFinalstorage2Place2Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage2Place2Pick}{jobNrToFinalstorage2Place2Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage2\+Place2\+Pick = 42\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00073}{73}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a34911b7152c4323c7cfeb4305ef575b1}\label{class_robot_a34911b7152c4323c7cfeb4305ef575b1}} 
+\index{Robot@{Robot}!jobNrToFinalstorage2Place2Place@{jobNrToFinalstorage2Place2Place}}
+\index{jobNrToFinalstorage2Place2Place@{jobNrToFinalstorage2Place2Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage2Place2Place}{jobNrToFinalstorage2Place2Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage2\+Place2\+Place = 43\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00074}{74}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a8c16d7fe5833fef04ce0ac1de71aa36b}\label{class_robot_a8c16d7fe5833fef04ce0ac1de71aa36b}} 
+\index{Robot@{Robot}!jobNrToFinalstorage2Rfid@{jobNrToFinalstorage2Rfid}}
+\index{jobNrToFinalstorage2Rfid@{jobNrToFinalstorage2Rfid}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToFinalstorage2Rfid}{jobNrToFinalstorage2Rfid}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Finalstorage2\+Rfid = 44\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00075}{75}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a81d803865826fb8b9b4f8e29864230d1}\label{class_robot_a81d803865826fb8b9b4f8e29864230d1}} 
+\index{Robot@{Robot}!jobNrToHome@{jobNrToHome}}
+\index{jobNrToHome@{jobNrToHome}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToHome}{jobNrToHome}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Home = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00033}{33}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a3dc717a19f4a09dd7811aca159afa24c}\label{class_robot_a3dc717a19f4a09dd7811aca159afa24c}} 
+\index{Robot@{Robot}!jobNrToMachine1Place1Pick@{jobNrToMachine1Place1Pick}}
+\index{jobNrToMachine1Place1Pick@{jobNrToMachine1Place1Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine1Place1Pick}{jobNrToMachine1Place1Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine1\+Place1\+Pick = 15\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00046}{46}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a20ec4658ae85a39d93501adb89af897e}\label{class_robot_a20ec4658ae85a39d93501adb89af897e}} 
+\index{Robot@{Robot}!jobNrToMachine1Place1Place@{jobNrToMachine1Place1Place}}
+\index{jobNrToMachine1Place1Place@{jobNrToMachine1Place1Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine1Place1Place}{jobNrToMachine1Place1Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine1\+Place1\+Place = 16\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00047}{47}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a47f5c27a11da795390f792227c5b23db}\label{class_robot_a47f5c27a11da795390f792227c5b23db}} 
+\index{Robot@{Robot}!jobNrToMachine1Place2Pick@{jobNrToMachine1Place2Pick}}
+\index{jobNrToMachine1Place2Pick@{jobNrToMachine1Place2Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine1Place2Pick}{jobNrToMachine1Place2Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine1\+Place2\+Pick = 17\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00048}{48}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a249c9437741694e8ccbfce257476f95b}\label{class_robot_a249c9437741694e8ccbfce257476f95b}} 
+\index{Robot@{Robot}!jobNrToMachine1Place2Place@{jobNrToMachine1Place2Place}}
+\index{jobNrToMachine1Place2Place@{jobNrToMachine1Place2Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine1Place2Place}{jobNrToMachine1Place2Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine1\+Place2\+Place = 18\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00049}{49}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a18f5942417baf18e1d21fe2a1ce94c2d}\label{class_robot_a18f5942417baf18e1d21fe2a1ce94c2d}} 
+\index{Robot@{Robot}!jobNrToMachine1Rfid@{jobNrToMachine1Rfid}}
+\index{jobNrToMachine1Rfid@{jobNrToMachine1Rfid}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine1Rfid}{jobNrToMachine1Rfid}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine1\+Rfid = 19\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00050}{50}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a6f1a4025bc706491eb93fd8a070850df}\label{class_robot_a6f1a4025bc706491eb93fd8a070850df}} 
+\index{Robot@{Robot}!jobNrToMachine2Place1Pick@{jobNrToMachine2Place1Pick}}
+\index{jobNrToMachine2Place1Pick@{jobNrToMachine2Place1Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine2Place1Pick}{jobNrToMachine2Place1Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine2\+Place1\+Pick = 20\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00051}{51}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ace2b6351f1ffdd673fedc5252e344125}\label{class_robot_ace2b6351f1ffdd673fedc5252e344125}} 
+\index{Robot@{Robot}!jobNrToMachine2Place1Place@{jobNrToMachine2Place1Place}}
+\index{jobNrToMachine2Place1Place@{jobNrToMachine2Place1Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine2Place1Place}{jobNrToMachine2Place1Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine2\+Place1\+Place = 21\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00052}{52}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ab05530bcf4225d30386047c0365d1905}\label{class_robot_ab05530bcf4225d30386047c0365d1905}} 
+\index{Robot@{Robot}!jobNrToMachine2Place2Pick@{jobNrToMachine2Place2Pick}}
+\index{jobNrToMachine2Place2Pick@{jobNrToMachine2Place2Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine2Place2Pick}{jobNrToMachine2Place2Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine2\+Place2\+Pick = 22\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00053}{53}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ac6ed6dc5f2f06d55e4a69099bed377e8}\label{class_robot_ac6ed6dc5f2f06d55e4a69099bed377e8}} 
+\index{Robot@{Robot}!jobNrToMachine2Place2Place@{jobNrToMachine2Place2Place}}
+\index{jobNrToMachine2Place2Place@{jobNrToMachine2Place2Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine2Place2Place}{jobNrToMachine2Place2Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine2\+Place2\+Place = 23\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00054}{54}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a0e44346bff2baf70a904e5bceb905697}\label{class_robot_a0e44346bff2baf70a904e5bceb905697}} 
+\index{Robot@{Robot}!jobNrToMachine2Rfid@{jobNrToMachine2Rfid}}
+\index{jobNrToMachine2Rfid@{jobNrToMachine2Rfid}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine2Rfid}{jobNrToMachine2Rfid}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine2\+Rfid = 24\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00055}{55}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a6fa41a8e8506691b07010642e62114cd}\label{class_robot_a6fa41a8e8506691b07010642e62114cd}} 
+\index{Robot@{Robot}!jobNrToMachine3Place1Pick@{jobNrToMachine3Place1Pick}}
+\index{jobNrToMachine3Place1Pick@{jobNrToMachine3Place1Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine3Place1Pick}{jobNrToMachine3Place1Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine3\+Place1\+Pick = 25\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00056}{56}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a06b111c48f569fa864bdd4be9d7b2616}\label{class_robot_a06b111c48f569fa864bdd4be9d7b2616}} 
+\index{Robot@{Robot}!jobNrToMachine3Place1Place@{jobNrToMachine3Place1Place}}
+\index{jobNrToMachine3Place1Place@{jobNrToMachine3Place1Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine3Place1Place}{jobNrToMachine3Place1Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine3\+Place1\+Place = 26\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00057}{57}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a34b202e958aa0650cb227a4ebd1e7f9a}\label{class_robot_a34b202e958aa0650cb227a4ebd1e7f9a}} 
+\index{Robot@{Robot}!jobNrToMachine3Place2Pick@{jobNrToMachine3Place2Pick}}
+\index{jobNrToMachine3Place2Pick@{jobNrToMachine3Place2Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine3Place2Pick}{jobNrToMachine3Place2Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine3\+Place2\+Pick = 27\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00058}{58}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a6f424a4b7dd7f9377d6ae513c8ddba70}\label{class_robot_a6f424a4b7dd7f9377d6ae513c8ddba70}} 
+\index{Robot@{Robot}!jobNrToMachine3Place2Place@{jobNrToMachine3Place2Place}}
+\index{jobNrToMachine3Place2Place@{jobNrToMachine3Place2Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine3Place2Place}{jobNrToMachine3Place2Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine3\+Place2\+Place = 28\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00059}{59}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a2947533bd81a9f7a4aad1da633b58f7a}\label{class_robot_a2947533bd81a9f7a4aad1da633b58f7a}} 
+\index{Robot@{Robot}!jobNrToMachine3Rfid@{jobNrToMachine3Rfid}}
+\index{jobNrToMachine3Rfid@{jobNrToMachine3Rfid}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine3Rfid}{jobNrToMachine3Rfid}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine3\+Rfid = 29\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00060}{60}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a5dd295ea59ea722ca2c8e4c3a956d9d5}\label{class_robot_a5dd295ea59ea722ca2c8e4c3a956d9d5}} 
+\index{Robot@{Robot}!jobNrToMachine4Place1Pick@{jobNrToMachine4Place1Pick}}
+\index{jobNrToMachine4Place1Pick@{jobNrToMachine4Place1Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine4Place1Pick}{jobNrToMachine4Place1Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine4\+Place1\+Pick = 30\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00061}{61}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_aab4372a3a98b2496c97a3d0571bfc23f}\label{class_robot_aab4372a3a98b2496c97a3d0571bfc23f}} 
+\index{Robot@{Robot}!jobNrToMachine4Place1Place@{jobNrToMachine4Place1Place}}
+\index{jobNrToMachine4Place1Place@{jobNrToMachine4Place1Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine4Place1Place}{jobNrToMachine4Place1Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine4\+Place1\+Place = 31\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00062}{62}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_acf81b6186be83e02f112b1fc4d7ca60a}\label{class_robot_acf81b6186be83e02f112b1fc4d7ca60a}} 
+\index{Robot@{Robot}!jobNrToMachine4Place2Pick@{jobNrToMachine4Place2Pick}}
+\index{jobNrToMachine4Place2Pick@{jobNrToMachine4Place2Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine4Place2Pick}{jobNrToMachine4Place2Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine4\+Place2\+Pick = 32\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00063}{63}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a2627bfc33245feed12aeda3b8c85deeb}\label{class_robot_a2627bfc33245feed12aeda3b8c85deeb}} 
+\index{Robot@{Robot}!jobNrToMachine4Place2Place@{jobNrToMachine4Place2Place}}
+\index{jobNrToMachine4Place2Place@{jobNrToMachine4Place2Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine4Place2Place}{jobNrToMachine4Place2Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine4\+Place2\+Place = 33\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00064}{64}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a463df5186cc5f99909b708814cbb9b1a}\label{class_robot_a463df5186cc5f99909b708814cbb9b1a}} 
+\index{Robot@{Robot}!jobNrToMachine4Rfid@{jobNrToMachine4Rfid}}
+\index{jobNrToMachine4Rfid@{jobNrToMachine4Rfid}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToMachine4Rfid}{jobNrToMachine4Rfid}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Machine4\+Rfid = 34\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00065}{65}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_abbc8e3c073af1f57962245c866f197e7}\label{class_robot_abbc8e3c073af1f57962245c866f197e7}} 
+\index{Robot@{Robot}!jobNrToPickUp@{jobNrToPickUp}}
+\index{jobNrToPickUp@{jobNrToPickUp}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPickUp}{jobNrToPickUp}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Pick\+Up = 45\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00076}{76}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ac5d4aac61f7d648cb84bd38b11a9ddfd}\label{class_robot_ac5d4aac61f7d648cb84bd38b11a9ddfd}} 
+\index{Robot@{Robot}!jobNrToPlaceDown@{jobNrToPlaceDown}}
+\index{jobNrToPlaceDown@{jobNrToPlaceDown}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPlaceDown}{jobNrToPlaceDown}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Place\+Down = 46\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00077}{77}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a7f50471fdbf0cfd346f2ff6e10571366}\label{class_robot_a7f50471fdbf0cfd346f2ff6e10571366}} 
+\index{Robot@{Robot}!jobNrToPrestorage1Place1Pick@{jobNrToPrestorage1Place1Pick}}
+\index{jobNrToPrestorage1Place1Pick@{jobNrToPrestorage1Place1Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage1Place1Pick}{jobNrToPrestorage1Place1Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage1\+Place1\+Pick = 5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00036}{36}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ae95be8a526b7a99acc08161f2cebe8ed}\label{class_robot_ae95be8a526b7a99acc08161f2cebe8ed}} 
+\index{Robot@{Robot}!jobNrToPrestorage1Place1Place@{jobNrToPrestorage1Place1Place}}
+\index{jobNrToPrestorage1Place1Place@{jobNrToPrestorage1Place1Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage1Place1Place}{jobNrToPrestorage1Place1Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage1\+Place1\+Place = 6\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00037}{37}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ab181f67ce692eb7700b0681f586c0458}\label{class_robot_ab181f67ce692eb7700b0681f586c0458}} 
+\index{Robot@{Robot}!jobNrToPrestorage1Place2Pick@{jobNrToPrestorage1Place2Pick}}
+\index{jobNrToPrestorage1Place2Pick@{jobNrToPrestorage1Place2Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage1Place2Pick}{jobNrToPrestorage1Place2Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage1\+Place2\+Pick = 7\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00038}{38}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a15fd4b73c45c491bb73a63f193e26f4c}\label{class_robot_a15fd4b73c45c491bb73a63f193e26f4c}} 
+\index{Robot@{Robot}!jobNrToPrestorage1Place2Place@{jobNrToPrestorage1Place2Place}}
+\index{jobNrToPrestorage1Place2Place@{jobNrToPrestorage1Place2Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage1Place2Place}{jobNrToPrestorage1Place2Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage1\+Place2\+Place = 8\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00039}{39}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a92a5e1ad74b7b2728e919f6d1b699375}\label{class_robot_a92a5e1ad74b7b2728e919f6d1b699375}} 
+\index{Robot@{Robot}!jobNrToPrestorage1Rfid@{jobNrToPrestorage1Rfid}}
+\index{jobNrToPrestorage1Rfid@{jobNrToPrestorage1Rfid}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage1Rfid}{jobNrToPrestorage1Rfid}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage1\+Rfid = 9\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00040}{40}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a1accf09afb8c440680443cf49a364eea}\label{class_robot_a1accf09afb8c440680443cf49a364eea}} 
+\index{Robot@{Robot}!jobNrToPrestorage2Place1Pick@{jobNrToPrestorage2Place1Pick}}
+\index{jobNrToPrestorage2Place1Pick@{jobNrToPrestorage2Place1Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage2Place1Pick}{jobNrToPrestorage2Place1Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage2\+Place1\+Pick = 10\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00041}{41}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_adc4da33a06f24dcd7dfb1957b89e0997}\label{class_robot_adc4da33a06f24dcd7dfb1957b89e0997}} 
+\index{Robot@{Robot}!jobNrToPrestorage2Place1Place@{jobNrToPrestorage2Place1Place}}
+\index{jobNrToPrestorage2Place1Place@{jobNrToPrestorage2Place1Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage2Place1Place}{jobNrToPrestorage2Place1Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage2\+Place1\+Place = 11\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00042}{42}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a1208647b1956f6bece243a70de4ec7ee}\label{class_robot_a1208647b1956f6bece243a70de4ec7ee}} 
+\index{Robot@{Robot}!jobNrToPrestorage2Place2Pick@{jobNrToPrestorage2Place2Pick}}
+\index{jobNrToPrestorage2Place2Pick@{jobNrToPrestorage2Place2Pick}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage2Place2Pick}{jobNrToPrestorage2Place2Pick}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage2\+Place2\+Pick = 12\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00043}{43}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ab9a2c99e5a40ab19909efb16f9d61202}\label{class_robot_ab9a2c99e5a40ab19909efb16f9d61202}} 
+\index{Robot@{Robot}!jobNrToPrestorage2Place2Place@{jobNrToPrestorage2Place2Place}}
+\index{jobNrToPrestorage2Place2Place@{jobNrToPrestorage2Place2Place}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage2Place2Place}{jobNrToPrestorage2Place2Place}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage2\+Place2\+Place = 13\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00044}{44}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a0ae9169607b9c4181542cb880acdc1f6}\label{class_robot_a0ae9169607b9c4181542cb880acdc1f6}} 
+\index{Robot@{Robot}!jobNrToPrestorage2Rfid@{jobNrToPrestorage2Rfid}}
+\index{jobNrToPrestorage2Rfid@{jobNrToPrestorage2Rfid}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{jobNrToPrestorage2Rfid}{jobNrToPrestorage2Rfid}}
+{\footnotesize\ttfamily constexpr int Robot\+::job\+Nr\+To\+Prestorage2\+Rfid = 14\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00045}{45}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a9fd193228c637ec1de60f59b39967ade}\label{class_robot_a9fd193228c637ec1de60f59b39967ade}} 
+\index{Robot@{Robot}!listOfRobots@{listOfRobots}}
+\index{listOfRobots@{listOfRobots}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{listOfRobots}{listOfRobots}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_robot}{Robot}} $\ast$ $>$ $\ast$ Robot\+::list\+Of\+Robots = new QList$<$\mbox{\hyperlink{class_robot}{Robot}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00079}{79}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ac5225b0e3d53cfcd4e631ca9faa692d8}\label{class_robot_ac5225b0e3d53cfcd4e631ca9faa692d8}} 
+\index{Robot@{Robot}!minChargeLevelAlarm@{minChargeLevelAlarm}}
+\index{minChargeLevelAlarm@{minChargeLevelAlarm}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{minChargeLevelAlarm}{minChargeLevelAlarm}}
+{\footnotesize\ttfamily constexpr int Robot\+::min\+Charge\+Level\+Alarm = 20\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00026}{26}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_aba4da871f29a6a63a28abe1f5164410d}\label{class_robot_aba4da871f29a6a63a28abe1f5164410d}} 
+\index{Robot@{Robot}!minChargeLevelError@{minChargeLevelError}}
+\index{minChargeLevelError@{minChargeLevelError}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{minChargeLevelError}{minChargeLevelError}}
+{\footnotesize\ttfamily constexpr int Robot\+::min\+Charge\+Level\+Error = 5\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00027}{27}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a0682c4eb073a91a06957f92b1054d8ef}\label{class_robot_a0682c4eb073a91a06957f92b1054d8ef}} 
+\index{Robot@{Robot}!noJob@{noJob}}
+\index{noJob@{noJob}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{noJob}{noJob}}
+{\footnotesize\ttfamily constexpr int Robot\+::no\+Job = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00029}{29}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_a1ab320c4edf211adc0e04a5c2428db80}\label{class_robot_a1ab320c4edf211adc0e04a5c2428db80}} 
+\index{Robot@{Robot}!numberOfRobots@{numberOfRobots}}
+\index{numberOfRobots@{numberOfRobots}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{numberOfRobots}{numberOfRobots}}
+{\footnotesize\ttfamily constexpr int Robot\+::number\+Of\+Robots = 4\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00025}{25}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ac3596a72be5f00e315eb262a2fd7e715}\label{class_robot_ac3596a72be5f00e315eb262a2fd7e715}} 
+\index{Robot@{Robot}!statusError@{statusError}}
+\index{statusError@{statusError}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{statusError}{statusError}}
+{\footnotesize\ttfamily constexpr int Robot\+::status\+Error = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00030}{30}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_ade1a898f5a1beae36ae08cdeac5aa789}\label{class_robot_ade1a898f5a1beae36ae08cdeac5aa789}} 
+\index{Robot@{Robot}!statusPositionReached@{statusPositionReached}}
+\index{statusPositionReached@{statusPositionReached}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{statusPositionReached}{statusPositionReached}}
+{\footnotesize\ttfamily constexpr int Robot\+::status\+Position\+Reached = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00032}{32}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+\mbox{\Hypertarget{class_robot_add1cacd868120596666d2204217993d2}\label{class_robot_add1cacd868120596666d2204217993d2}} 
+\index{Robot@{Robot}!statusReady@{statusReady}}
+\index{statusReady@{statusReady}!Robot@{Robot}}
+\doxysubsubsection{\texorpdfstring{statusReady}{statusReady}}
+{\footnotesize\ttfamily constexpr int Robot\+::status\+Ready = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{robot_8h_source_l00031}{31}} of file \mbox{\hyperlink{robot_8h_source}{robot.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{robot_8h}{robot.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{moc__robot_8cpp}{moc\+\_\+robot.\+cpp}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{robot_8cpp}{robot.\+cpp}}\end{DoxyCompactItemize}

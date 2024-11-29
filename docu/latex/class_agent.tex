@@ -1,0 +1,419 @@
+\hypertarget{class_agent}{}\doxysection{Agent Class Reference}
+\label{class_agent}\index{Agent@{Agent}}
+
+
+Abstract parent class for all agents.  
+
+
+
+
+{\ttfamily \#include $<$agent.\+h$>$}
+
+Inheritance diagram for Agent\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.692308cm]{class_agent}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{State}} \{ \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399acb5e100e5a9a3e7f6d1fd97512215282}{error}}
+, \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399aaa2d6e4f578eb0cfaba23beef76c2194}{free}}
+, \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399a7f005c3fa691e77c52d3297cc2699072}{reserved}}
+, \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399a01868918c8cec5bc8773e98ae11a0f54}{allocated}}
+ \}
+\begin{DoxyCompactList}\small\item\em The State enum encapsulates all possible states of agents. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} \{ \newline
+\mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa57a398f84a172e11d8b3d376942be1de}{charging\+Place}}
+, \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa87b7cb79481f317bde90c116cf36084b}{robot}}
+, \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa14754f13e5280c5d49d2ae536c2d57e2}{machine}}
+, \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfaf4c9385f1902f7334b00b9b4ecd164de}{part}}
+, \newline
+\mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfa066a17b0ad96be18b62d39d39e7ecb07}{finalstorage}}
+, \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bfaad4cec7e12be0aef3c170fc3728c4d83}{prestorage}}
+ \}
+\begin{DoxyCompactList}\small\item\em The Type enum encapsulates all possible types of agents. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_agent_a3b95867e426dba7c93b45a0c5af4cf45}{Agent}} (void)
+\begin{DoxyCompactList}\small\item\em Agents have an empty constructor. Agents can\textquotesingle{}t be created, because \mbox{\hyperlink{class_agent}{Agent}} is an abstract class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_agent_af247dac4f407e2839b61be6bd3887b39}{$\sim$\+Agent}} (void)
+\begin{DoxyCompactList}\small\item\em Agents have an empty destructor. Agents can\textquotesingle{}t be created, because \mbox{\hyperlink{class_agent}{Agent}} is an abstract class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} \mbox{\hyperlink{class_agent_ad61c9a576e4b13067c4255ad521c1f26}{get\+Type}} (void)
+\item 
+\mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{State}} \mbox{\hyperlink{class_agent_a2d33e97461571f20bdae864e86d9e345}{get\+State}} (void)
+\item 
+virtual void \mbox{\hyperlink{class_agent_adc1723360ca832e8fca798a6c18ca331}{take\+Service}} (\mbox{\hyperlink{class_agent}{Agent}} $\ast$agent)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}{organize\+Help}} (\mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} type)
+\begin{DoxyCompactList}\small\item\em This method connects agents with request and service by lists of services and requests. It has to be called, when a new agent is added to one list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$ \mbox{\hyperlink{class_agent_af3fee8d5146a2de3dc9e6709118964a9}{\+\_\+log}}
+\item 
+\mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} \mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\+\_\+type}}
+\item 
+\mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{State}} \mbox{\hyperlink{class_agent_ab42b9ba4a88f358c1f182f62d89e9a8f}{\+\_\+state}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_a81300dafd2abdb23af8359b37347bb6b}{list\+Of\+Open\+Requests\+Charge}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_a46e374be6b15316f6e8159058f60fad0}{list\+Of\+Open\+Requests\+Transport}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\item 
+static QList$<$ QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{list\+Of\+Open\+Requests\+Production}} = new QList$<$QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$$\ast$$>$
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}{list\+Of\+Open\+Requests\+Finalstorage}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_a0bc033cded1611f932c14b9aa6016599}{list\+Of\+Open\+Requests\+Prestorage}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_a550e89c90cdb00a5b7425ef3e2e9fd0c}{list\+Of\+Open\+Requests\+Part}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_a72ffab9912ff6f564f7790547d470987}{list\+Of\+Services\+Charge}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}{list\+Of\+Services\+Transport}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\item 
+static QList$<$ QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_af020b5ba1e477dc19bfcd907697c329e}{list\+Of\+Services\+Production}} = new QList$<$QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$$\ast$$>$
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_aed9efac0cb124cc00f170c1e47adcd47}{list\+Of\+Services\+Finalstorage}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}{list\+Of\+Services\+Prestorage}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\item 
+static QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_agent_a4f1c5c12163b3dd6ea81d93846c98b04}{list\+Of\+Services\+Part}} = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract parent class for all agents. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben
+\end{DoxyAuthor}
+This class is used as parent class for all agents. Child classes gain methods for requesting and offering jobs. Agents are controlled by the control unit. 
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00017}{17}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_agent_ab6f02589f842ffc7bca081f9ca016399}\label{class_agent_ab6f02589f842ffc7bca081f9ca016399}} 
+\index{Agent@{Agent}!State@{State}}
+\index{State@{State}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{Agent\+::\+State}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The State enum encapsulates all possible states of agents. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{error@{error}!Agent@{Agent}}\index{Agent@{Agent}!error@{error}}}\mbox{\Hypertarget{class_agent_ab6f02589f842ffc7bca081f9ca016399acb5e100e5a9a3e7f6d1fd97512215282}\label{class_agent_ab6f02589f842ffc7bca081f9ca016399acb5e100e5a9a3e7f6d1fd97512215282}} 
+error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{free@{free}!Agent@{Agent}}\index{Agent@{Agent}!free@{free}}}\mbox{\Hypertarget{class_agent_ab6f02589f842ffc7bca081f9ca016399aaa2d6e4f578eb0cfaba23beef76c2194}\label{class_agent_ab6f02589f842ffc7bca081f9ca016399aaa2d6e4f578eb0cfaba23beef76c2194}} 
+free&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{reserved@{reserved}!Agent@{Agent}}\index{Agent@{Agent}!reserved@{reserved}}}\mbox{\Hypertarget{class_agent_ab6f02589f842ffc7bca081f9ca016399a7f005c3fa691e77c52d3297cc2699072}\label{class_agent_ab6f02589f842ffc7bca081f9ca016399a7f005c3fa691e77c52d3297cc2699072}} 
+reserved&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{allocated@{allocated}!Agent@{Agent}}\index{Agent@{Agent}!allocated@{allocated}}}\mbox{\Hypertarget{class_agent_ab6f02589f842ffc7bca081f9ca016399a01868918c8cec5bc8773e98ae11a0f54}\label{class_agent_ab6f02589f842ffc7bca081f9ca016399a01868918c8cec5bc8773e98ae11a0f54}} 
+allocated&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00027}{27}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a74c335b513eeb92231976477006c63bf}\label{class_agent_a74c335b513eeb92231976477006c63bf}} 
+\index{Agent@{Agent}!Type@{Type}}
+\index{Type@{Type}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Agent\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+The Type enum encapsulates all possible types of agents. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{chargingPlace@{chargingPlace}!Agent@{Agent}}\index{Agent@{Agent}!chargingPlace@{chargingPlace}}}\mbox{\Hypertarget{class_agent_a74c335b513eeb92231976477006c63bfa57a398f84a172e11d8b3d376942be1de}\label{class_agent_a74c335b513eeb92231976477006c63bfa57a398f84a172e11d8b3d376942be1de}} 
+charging\+Place&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{robot@{robot}!Agent@{Agent}}\index{Agent@{Agent}!robot@{robot}}}\mbox{\Hypertarget{class_agent_a74c335b513eeb92231976477006c63bfa87b7cb79481f317bde90c116cf36084b}\label{class_agent_a74c335b513eeb92231976477006c63bfa87b7cb79481f317bde90c116cf36084b}} 
+robot&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine@{machine}!Agent@{Agent}}\index{Agent@{Agent}!machine@{machine}}}\mbox{\Hypertarget{class_agent_a74c335b513eeb92231976477006c63bfa14754f13e5280c5d49d2ae536c2d57e2}\label{class_agent_a74c335b513eeb92231976477006c63bfa14754f13e5280c5d49d2ae536c2d57e2}} 
+machine&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{part@{part}!Agent@{Agent}}\index{Agent@{Agent}!part@{part}}}\mbox{\Hypertarget{class_agent_a74c335b513eeb92231976477006c63bfaf4c9385f1902f7334b00b9b4ecd164de}\label{class_agent_a74c335b513eeb92231976477006c63bfaf4c9385f1902f7334b00b9b4ecd164de}} 
+part&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{finalstorage@{finalstorage}!Agent@{Agent}}\index{Agent@{Agent}!finalstorage@{finalstorage}}}\mbox{\Hypertarget{class_agent_a74c335b513eeb92231976477006c63bfa066a17b0ad96be18b62d39d39e7ecb07}\label{class_agent_a74c335b513eeb92231976477006c63bfa066a17b0ad96be18b62d39d39e7ecb07}} 
+finalstorage&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prestorage@{prestorage}!Agent@{Agent}}\index{Agent@{Agent}!prestorage@{prestorage}}}\mbox{\Hypertarget{class_agent_a74c335b513eeb92231976477006c63bfaad4cec7e12be0aef3c170fc3728c4d83}\label{class_agent_a74c335b513eeb92231976477006c63bfaad4cec7e12be0aef3c170fc3728c4d83}} 
+prestorage&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00032}{32}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_agent_a3b95867e426dba7c93b45a0c5af4cf45}\label{class_agent_a3b95867e426dba7c93b45a0c5af4cf45}} 
+\index{Agent@{Agent}!Agent@{Agent}}
+\index{Agent@{Agent}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{Agent()}{Agent()}}
+{\footnotesize\ttfamily Agent\+::\+Agent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Agents have an empty constructor. Agents can\textquotesingle{}t be created, because \mbox{\hyperlink{class_agent}{Agent}} is an abstract class. 
+
+
+
+Definition at line \mbox{\hyperlink{agent_8cpp_source_l00033}{33}} of file \mbox{\hyperlink{agent_8cpp_source}{agent.\+cpp}}.
+
+\mbox{\Hypertarget{class_agent_af247dac4f407e2839b61be6bd3887b39}\label{class_agent_af247dac4f407e2839b61be6bd3887b39}} 
+\index{Agent@{Agent}!````~Agent@{$\sim$Agent}}
+\index{````~Agent@{$\sim$Agent}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{$\sim$Agent()}{~Agent()}}
+{\footnotesize\ttfamily Agent\+::$\sim$\+Agent (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Agents have an empty destructor. Agents can\textquotesingle{}t be created, because \mbox{\hyperlink{class_agent}{Agent}} is an abstract class. 
+
+
+
+Definition at line \mbox{\hyperlink{agent_8cpp_source_l00040}{40}} of file \mbox{\hyperlink{agent_8cpp_source}{agent.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_agent_a2d33e97461571f20bdae864e86d9e345}\label{class_agent_a2d33e97461571f20bdae864e86d9e345}} 
+\index{Agent@{Agent}!getState@{getState}}
+\index{getState@{getState}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{State}} Agent\+::get\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00035}{35}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_ad61c9a576e4b13067c4255ad521c1f26}\label{class_agent_ad61c9a576e4b13067c4255ad521c1f26}} 
+\index{Agent@{Agent}!getType@{getType}}
+\index{getType@{getType}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} Agent\+::get\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00034}{34}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}\label{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}} 
+\index{Agent@{Agent}!organizeHelp@{organizeHelp}}
+\index{organizeHelp@{organizeHelp}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{organizeHelp()}{organizeHelp()}}
+{\footnotesize\ttfamily void Agent\+::organize\+Help (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+This method connects agents with request and service by lists of services and requests. It has to be called, when a new agent is added to one list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & type parameter is used to specifiy which lists have to be checked for possible combinations. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{agent_8cpp_source_l00047}{47}} of file \mbox{\hyperlink{agent_8cpp_source}{agent.\+cpp}}.
+
+\mbox{\Hypertarget{class_agent_adc1723360ca832e8fca798a6c18ca331}\label{class_agent_adc1723360ca832e8fca798a6c18ca331}} 
+\index{Agent@{Agent}!takeService@{takeService}}
+\index{takeService@{takeService}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{takeService()}{takeService()}}
+{\footnotesize\ttfamily virtual void Agent\+::take\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_agent}{Agent}} $\ast$}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_finalstorage_a49c73300530111c0a97fe6d12332c4eb}{Finalstorage}}, \mbox{\hyperlink{class_machine_a5ac458f89e1526454da5cde68403f95b}{Machine}}, \mbox{\hyperlink{class_prestorage_af8618606cfe67ff727cd92682876ff77}{Prestorage}}, and \mbox{\hyperlink{class_robot_a88be290e55b90d84aacb324b354147c2}{Robot}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_agent_af3fee8d5146a2de3dc9e6709118964a9}\label{class_agent_af3fee8d5146a2de3dc9e6709118964a9}} 
+\index{Agent@{Agent}!\_log@{\_log}}
+\index{\_log@{\_log}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{\_log}{\_log}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}}$\ast$ Agent\+::\+\_\+log}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00038}{38}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_ab42b9ba4a88f358c1f182f62d89e9a8f}\label{class_agent_ab42b9ba4a88f358c1f182f62d89e9a8f}} 
+\index{Agent@{Agent}!\_state@{\_state}}
+\index{\_state@{\_state}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{\_state}{\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{State}} Agent\+::\+\_\+state}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00040}{40}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a9e62a928770a9a9b33d0fff767210fec}\label{class_agent_a9e62a928770a9a9b33d0fff767210fec}} 
+\index{Agent@{Agent}!\_type@{\_type}}
+\index{\_type@{\_type}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} Agent\+::\+\_\+type}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00039}{39}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a81300dafd2abdb23af8359b37347bb6b}\label{class_agent_a81300dafd2abdb23af8359b37347bb6b}} 
+\index{Agent@{Agent}!listOfOpenRequestsCharge@{listOfOpenRequestsCharge}}
+\index{listOfOpenRequestsCharge@{listOfOpenRequestsCharge}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfOpenRequestsCharge}{listOfOpenRequestsCharge}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Open\+Requests\+Charge = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00043}{43}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}\label{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}} 
+\index{Agent@{Agent}!listOfOpenRequestsFinalstorage@{listOfOpenRequestsFinalstorage}}
+\index{listOfOpenRequestsFinalstorage@{listOfOpenRequestsFinalstorage}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfOpenRequestsFinalstorage}{listOfOpenRequestsFinalstorage}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Open\+Requests\+Finalstorage = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00046}{46}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a550e89c90cdb00a5b7425ef3e2e9fd0c}\label{class_agent_a550e89c90cdb00a5b7425ef3e2e9fd0c}} 
+\index{Agent@{Agent}!listOfOpenRequestsPart@{listOfOpenRequestsPart}}
+\index{listOfOpenRequestsPart@{listOfOpenRequestsPart}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfOpenRequestsPart}{listOfOpenRequestsPart}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Open\+Requests\+Part = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00048}{48}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a0bc033cded1611f932c14b9aa6016599}\label{class_agent_a0bc033cded1611f932c14b9aa6016599}} 
+\index{Agent@{Agent}!listOfOpenRequestsPrestorage@{listOfOpenRequestsPrestorage}}
+\index{listOfOpenRequestsPrestorage@{listOfOpenRequestsPrestorage}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfOpenRequestsPrestorage}{listOfOpenRequestsPrestorage}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Open\+Requests\+Prestorage = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00047}{47}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}\label{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}} 
+\index{Agent@{Agent}!listOfOpenRequestsProduction@{listOfOpenRequestsProduction}}
+\index{listOfOpenRequestsProduction@{listOfOpenRequestsProduction}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfOpenRequestsProduction}{listOfOpenRequestsProduction}}
+{\footnotesize\ttfamily QList$<$ QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Open\+Requests\+Production = new QList$<$QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00045}{45}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a46e374be6b15316f6e8159058f60fad0}\label{class_agent_a46e374be6b15316f6e8159058f60fad0}} 
+\index{Agent@{Agent}!listOfOpenRequestsTransport@{listOfOpenRequestsTransport}}
+\index{listOfOpenRequestsTransport@{listOfOpenRequestsTransport}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfOpenRequestsTransport}{listOfOpenRequestsTransport}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Open\+Requests\+Transport = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00044}{44}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a72ffab9912ff6f564f7790547d470987}\label{class_agent_a72ffab9912ff6f564f7790547d470987}} 
+\index{Agent@{Agent}!listOfServicesCharge@{listOfServicesCharge}}
+\index{listOfServicesCharge@{listOfServicesCharge}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfServicesCharge}{listOfServicesCharge}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Services\+Charge = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00051}{51}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_aed9efac0cb124cc00f170c1e47adcd47}\label{class_agent_aed9efac0cb124cc00f170c1e47adcd47}} 
+\index{Agent@{Agent}!listOfServicesFinalstorage@{listOfServicesFinalstorage}}
+\index{listOfServicesFinalstorage@{listOfServicesFinalstorage}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfServicesFinalstorage}{listOfServicesFinalstorage}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Services\+Finalstorage = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00054}{54}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_a4f1c5c12163b3dd6ea81d93846c98b04}\label{class_agent_a4f1c5c12163b3dd6ea81d93846c98b04}} 
+\index{Agent@{Agent}!listOfServicesPart@{listOfServicesPart}}
+\index{listOfServicesPart@{listOfServicesPart}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfServicesPart}{listOfServicesPart}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Services\+Part = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00056}{56}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}\label{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}} 
+\index{Agent@{Agent}!listOfServicesPrestorage@{listOfServicesPrestorage}}
+\index{listOfServicesPrestorage@{listOfServicesPrestorage}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfServicesPrestorage}{listOfServicesPrestorage}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Services\+Prestorage = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00055}{55}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_af020b5ba1e477dc19bfcd907697c329e}\label{class_agent_af020b5ba1e477dc19bfcd907697c329e}} 
+\index{Agent@{Agent}!listOfServicesProduction@{listOfServicesProduction}}
+\index{listOfServicesProduction@{listOfServicesProduction}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfServicesProduction}{listOfServicesProduction}}
+{\footnotesize\ttfamily QList$<$ QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Services\+Production = new QList$<$QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00053}{53}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+\mbox{\Hypertarget{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}\label{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}} 
+\index{Agent@{Agent}!listOfServicesTransport@{listOfServicesTransport}}
+\index{listOfServicesTransport@{listOfServicesTransport}!Agent@{Agent}}
+\doxysubsubsection{\texorpdfstring{listOfServicesTransport}{listOfServicesTransport}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_agent}{Agent}} $\ast$ $>$ $\ast$ Agent\+::list\+Of\+Services\+Transport = new QList$<$\mbox{\hyperlink{class_agent}{Agent}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{agent_8h_source_l00052}{52}} of file \mbox{\hyperlink{agent_8h_source}{agent.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{agent_8h}{agent.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{agent_8cpp}{agent.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,199 @@
+\hypertarget{mainwindow_8cpp_source}{}\doxysection{mainwindow.\+cpp}
+\label{mainwindow_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/mainwindow.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/mainwindow.cpp}}
+\mbox{\hyperlink{mainwindow_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mainwindow_8h}{mainwindow.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00002}00002 \textcolor{preprocessor}{\#include "{}qdatetime.h"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ui__mainwindow_8h}{ui\_mainwindow.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00004}00004 \textcolor{preprocessor}{\#include <QSqlError>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00005}00005 \textcolor{preprocessor}{\#include <QSqlQuery>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00006}00006 \textcolor{preprocessor}{\#include <QDebug>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00007}00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{sqlinterface_8h}{sqlinterface.h}}>}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00010}\mbox{\hyperlink{mainwindow_8cpp_a4ecd7f0e6a22b4a5c54a83e94ea5c3a3}{00010}}  \mbox{\hyperlink{class_sql_interface}{SqlInterface}} \mbox{\hyperlink{mainwindow_8cpp_a4ecd7f0e6a22b4a5c54a83e94ea5c3a3}{SqlInterface}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00013}\mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{00013}} \mbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{MainWindow::MainWindow}}(QWidget *parent)}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00014}00014     : QMainWindow(parent)}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00015}00015     , ui(new \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_main_window}{MainWindow}})}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00016}00016 \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00017}00017     ui-\/>\mbox{\hyperlink{class_ui___main_window_acf4a0872c4c77d8f43a2ec66ed849b58}{setupUi}}(\textcolor{keyword}{this});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00020}\mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{00020}} \mbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{MainWindow::\string~MainWindow}}()}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00022}00022     \textcolor{keyword}{delete} ui;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00027}00027 \textcolor{keywordtype}{void} MainWindow::on\_pushButton\_Read\_clicked()}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00028}00028 \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00030}00030     \textcolor{comment}{// Mapping von StatusNrFK zu Statusnamen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00031}00031     QMap<int, QString> statusMapping;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00032}00032     statusMapping[1] = \textcolor{stringliteral}{"{}Wartend"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00033}00033     statusMapping[2] = \textcolor{stringliteral}{"{}In Bearbeitung"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00034}00034     statusMapping[3] = \textcolor{stringliteral}{"{}Abgeschlossen"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00035}00035     \textcolor{comment}{// Füge hier weitere Status hinzu}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00037}00037     \textcolor{comment}{// Mapping von StatusNrFK zu Statusnamen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00038}00038     QMap<int, QString> artikelMapping;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00039}00039     artikelMapping[1] = \textcolor{stringliteral}{"{}A"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00040}00040     artikelMapping[2] = \textcolor{stringliteral}{"{}B"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00041}00041     artikelMapping[3] = \textcolor{stringliteral}{"{}C"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00042}00042     artikelMapping[4] = \textcolor{stringliteral}{"{}D"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00043}00043     \textcolor{comment}{// Füge hier weitere Status hinzu}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00046}00046     \mbox{\hyperlink{class_sql_interface}{SqlInterface}}.\mbox{\hyperlink{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}{connectToDatabase}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00048}00048     \textcolor{comment}{//Befüllen der ersten Tabelle Inhalte aus t02}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00049}00049     QSqlQuery Query\_get\_Data(db);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00050}00050     Query\_get\_Data.prepare(\textcolor{stringliteral}{"{}select*from t02bestellung"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00051}00051     \textcolor{keywordflow}{if} (Query\_get\_Data.exec())}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00052}00052     \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00053}00053         \textcolor{keywordtype}{int} RowNumber=0;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00054}00054         ui-\/>\mbox{\hyperlink{class_ui___main_window_a190f60f6f97c14d5e448ad8b4cc671d3}{tableWidget\_tbl02}}-\/>setRowCount(Query\_get\_Data.size());}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00055}00055         \textcolor{keywordflow}{while} (Query\_get\_Data.next())}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00056}00056         \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00057}00057             ui-\/>\mbox{\hyperlink{class_ui___main_window_a190f60f6f97c14d5e448ad8b4cc671d3}{tableWidget\_tbl02}}-\/>setItem(RowNumber,0, \textcolor{keyword}{new} QTableWidgetItem(QString::number(Query\_get\_Data.value(\textcolor{stringliteral}{"{}BestellNrPK"{}}).toInt())));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00058}00058             ui-\/>\mbox{\hyperlink{class_ui___main_window_a190f60f6f97c14d5e448ad8b4cc671d3}{tableWidget\_tbl02}}-\/>setItem(RowNumber,1, \textcolor{keyword}{new} QTableWidgetItem(QString::number(Query\_get\_Data.value(\textcolor{stringliteral}{"{}KundenNrFK"{}}).toInt())));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00060}00060             \textcolor{keywordtype}{int} statusNrFK = Query\_get\_Data.value(\textcolor{stringliteral}{"{}StatusNrFK"{}}).toInt();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00061}00061             \textcolor{comment}{// Statusname anhand des Mapping abrufen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00062}00062             QString statusName = statusMapping.value(statusNrFK, \textcolor{stringliteral}{"{}Unbekannt"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00063}00063             \textcolor{comment}{// Statusname in die Tabelle einfügen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00064}00064             ui-\/>\mbox{\hyperlink{class_ui___main_window_a190f60f6f97c14d5e448ad8b4cc671d3}{tableWidget\_tbl02}}-\/>setItem(RowNumber, 2, \textcolor{keyword}{new} QTableWidgetItem(statusName));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00066}00066             QDateTime timestamp = Query\_get\_Data.value(\textcolor{stringliteral}{"{}Zeitstempel"{}}).toDateTime();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00067}00067             ui-\/>\mbox{\hyperlink{class_ui___main_window_a190f60f6f97c14d5e448ad8b4cc671d3}{tableWidget\_tbl02}}-\/>setItem(RowNumber, 3, \textcolor{keyword}{new} QTableWidgetItem(timestamp.toString(\textcolor{stringliteral}{"{}dd.MM.yyyy HH:mm:ss"{}})));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00069}00069             RowNumber=RowNumber+1;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00070}00070         \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00071}00071     \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00074}00074     \textcolor{comment}{//Befüllen der zweiten Tabelle Inhalte aus t05}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00075}00075     QSqlQuery Query\_get\_Data\_2(db);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00076}00076     Query\_get\_Data\_2.prepare(\textcolor{stringliteral}{"{}SELECT * FROM t05bestellposition"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00077}00077     \textcolor{keywordflow}{if} (Query\_get\_Data\_2.exec())}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00078}00078     \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00079}00079         \textcolor{keywordtype}{int} RowNumber\_2 = 0;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00080}00080         ui-\/>\mbox{\hyperlink{class_ui___main_window_aaae7ed78e2a9c164bf25360c08bab167}{tableWidget\_tbl05}}-\/>setRowCount(Query\_get\_Data\_2.size());}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00081}00081         \textcolor{keywordflow}{while} (Query\_get\_Data\_2.next())}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00082}00082         \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00083}00083             \textcolor{comment}{// Beispielhafte Spaltenzuweisung für die zweite Tabelle}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00084}00084             ui-\/>\mbox{\hyperlink{class_ui___main_window_aaae7ed78e2a9c164bf25360c08bab167}{tableWidget\_tbl05}}-\/>setItem(RowNumber\_2, 0, \textcolor{keyword}{new} QTableWidgetItem(QString::number(Query\_get\_Data\_2.value(\textcolor{stringliteral}{"{}BestellNrFK"{}}).toInt())));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00085}00085             ui-\/>\mbox{\hyperlink{class_ui___main_window_aaae7ed78e2a9c164bf25360c08bab167}{tableWidget\_tbl05}}-\/>setItem(RowNumber\_2, 1, \textcolor{keyword}{new} QTableWidgetItem(QString::number(Query\_get\_Data\_2.value(\textcolor{stringliteral}{"{}BestellpositionNrPK"{}}).toInt())));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00087}00087             \textcolor{keywordtype}{int} artikelNrFK = Query\_get\_Data\_2.value(\textcolor{stringliteral}{"{}ArtikelNrFK"{}}).toInt();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00088}00088             \textcolor{comment}{// Artikelname anhand des Mapping abrufen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00089}00089             QString artikelName = artikelMapping.value(artikelNrFK, \textcolor{stringliteral}{"{}Unbekannt"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00090}00090             \textcolor{comment}{// Statusname in die Tabelle einfügen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00091}00091             ui-\/>\mbox{\hyperlink{class_ui___main_window_aaae7ed78e2a9c164bf25360c08bab167}{tableWidget\_tbl05}}-\/>setItem(RowNumber\_2, 2, \textcolor{keyword}{new} QTableWidgetItem(artikelName));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00092}00092 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00093}00093             \textcolor{keywordtype}{int} statusNrFK = Query\_get\_Data\_2.value(\textcolor{stringliteral}{"{}StatusNrFK"{}}).toInt();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00094}00094             \textcolor{comment}{// Statusname anhand des Mapping abrufen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00095}00095             QString statusName = statusMapping.value(statusNrFK, \textcolor{stringliteral}{"{}Unbekannt"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00096}00096             \textcolor{comment}{// Statusname in die Tabelle einfügen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00097}00097             ui-\/>\mbox{\hyperlink{class_ui___main_window_aaae7ed78e2a9c164bf25360c08bab167}{tableWidget\_tbl05}}-\/>setItem(RowNumber\_2, 3, \textcolor{keyword}{new} QTableWidgetItem(statusName));}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00098}00098             \textcolor{comment}{// Weitere Spalten einfügen je nach Datenstruktur der Tabelle t03beispiel}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00099}00099 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00100}00100             RowNumber\_2++;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00101}00101         \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00102}00102     \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00103}00103 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00105}00105     \textcolor{comment}{//SqlInterface.closeDatabaseConnection();}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00106}00106 \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00108}00108 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00110}00110 \textcolor{keywordtype}{void} MainWindow::on\_pushButton\_InsertNEW\_clicked()}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00111}00111 \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00113}00113     \textcolor{comment}{// Überprüfen, ob mindestens eine der ComboBoxen eine Anzahl > 0 hat}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00114}00114     \textcolor{keywordtype}{bool} isAnyComboBoxNonZero = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00116}00116     \textcolor{comment}{// Annahme: Die ComboBoxen sind in der UI als comboBox\_AnzA, comboBox\_AnzB, comboBox\_AnzC, comboBox\_AnzD definiert}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00117}00117     QComboBox *comboBoxes[] = \{ui-\/>\mbox{\hyperlink{class_ui___main_window_aa60456461202aff481b88aa3a08de394}{comboBox\_AnzA}}, ui-\/>\mbox{\hyperlink{class_ui___main_window_a5c9ffa19e05ac8e77059169b7b6d63f1}{comboBox\_AnzB}}, ui-\/>\mbox{\hyperlink{class_ui___main_window_a7f4808f570711c76adb881a8e5bc0569}{comboBox\_AnzC}}, ui-\/>\mbox{\hyperlink{class_ui___main_window_a1d059ce55d6cdec211928bd4406f5569}{comboBox\_AnzD}}\};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00118}00118 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00119}00119     \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} comboBox : comboBoxes) \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00120}00120         \textcolor{keywordflow}{if} (comboBox-\/>currentText().toInt() > 0) \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00121}00121             isAnyComboBoxNonZero = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00122}00122             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00123}00123         \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00124}00124     \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00126}00126     \textcolor{comment}{// Wenn alle ComboBoxen 0 sind, Funktion nicht ausführen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00127}00127     \textcolor{keywordflow}{if} (!isAnyComboBoxNonZero) \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00128}00128         qDebug() << \textcolor{stringliteral}{"{}Keine Artikel ausgewählt. Bestellung wird nicht angelegt."{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00129}00129         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00130}00130     \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00132}00132     \mbox{\hyperlink{class_sql_interface}{SqlInterface}}.\mbox{\hyperlink{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}{connectToDatabase}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00133}00133 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00134}00134     QSqlDatabase::database().transaction();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00135}00135     QSqlQuery Query\_Insert\_Data(db);}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00137}00137     QDateTime currentDateTime = QDateTime::currentDateTime();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00139}00139     \textcolor{comment}{// Bestellung in t02bestellung anlegen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00140}00140     Query\_Insert\_Data.prepare(\textcolor{stringliteral}{"{}INSERT INTO t02bestellung (KundenNrFK, StatusNrFK, Zeitstempel) VALUES (:KundenNrFK, :StatusNrFK,:Zeitstempel)"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00141}00141     Query\_Insert\_Data.addBindValue(1);  \textcolor{comment}{// Kundennummer}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00142}00142     Query\_Insert\_Data.addBindValue(1);  \textcolor{comment}{// Status}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00143}00143     Query\_Insert\_Data.addBindValue(currentDateTime);  \textcolor{comment}{// Zeitstempel}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00144}00144 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00145}00145     \textcolor{keywordflow}{if} (!Query\_Insert\_Data.exec()) \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00146}00146         qDebug() << \textcolor{stringliteral}{"{}Insert failed: "{}} << Query\_Insert\_Data.lastError();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00147}00147     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00148}00148         qDebug() << \textcolor{stringliteral}{"{}Insert successful"{}};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00149}00149     \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00150}00150 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00151}00151 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00152}00152     \textcolor{comment}{// Für jede ComboBox eine separate Abfrage}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00153}00153     \textcolor{keyword}{struct }ArtikelBestellung \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00154}00154         QComboBox *comboBox;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00155}00155         \textcolor{keywordtype}{int} artikelNummer;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00156}00156     \};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00158}00158     \textcolor{comment}{// Annahme: Die ComboBoxen sind in der UI als comboBox\_AnzA, comboBox\_AnzB, comboBox\_AnzC, comboBox\_AnzD definiert}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00159}00159     ArtikelBestellung artikelBestellungen[] = \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00160}00160         \{ui-\/>\mbox{\hyperlink{class_ui___main_window_aa60456461202aff481b88aa3a08de394}{comboBox\_AnzA}}, 1\}, \textcolor{comment}{// Artikelnummer für A}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00161}00161         \{ui-\/>\mbox{\hyperlink{class_ui___main_window_a5c9ffa19e05ac8e77059169b7b6d63f1}{comboBox\_AnzB}}, 2\}, \textcolor{comment}{// Artikelnummer für B}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00162}00162         \{ui-\/>\mbox{\hyperlink{class_ui___main_window_a7f4808f570711c76adb881a8e5bc0569}{comboBox\_AnzC}}, 3\}, \textcolor{comment}{// Artikelnummer für C}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00163}00163         \{ui-\/>\mbox{\hyperlink{class_ui___main_window_a1d059ce55d6cdec211928bd4406f5569}{comboBox\_AnzD}}, 4\}  \textcolor{comment}{// Artikelnummer für D}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00164}00164     \};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00166}00166     \textcolor{comment}{// Für jede ComboBox die ausgewählte Anzahl der Artikel in t05bestellposition anlegen}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00167}00167     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&bestellung : artikelBestellungen) \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00168}00168         \textcolor{keywordtype}{int} anzahl = bestellung.comboBox-\/>currentText().toInt();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00170}00170         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < anzahl; ++i) \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00171}00171             Query\_Insert\_Data.prepare(\textcolor{stringliteral}{"{}INSERT INTO t05bestellposition (BestellNrFK, ArtikelNrFK, StatusNrFK) "{}}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00172}00172                                       \textcolor{stringliteral}{"{}VALUES ((SELECT MAX(BestellNrPK) FROM t02bestellung), :ArtikelNrFK, :StatusNrFK)"{}});}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00173}00173             Query\_Insert\_Data.addBindValue(bestellung.artikelNummer);  \textcolor{comment}{// Artikelnummer}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00174}00174             Query\_Insert\_Data.addBindValue(1);  \textcolor{comment}{// Status (Beispielwert)}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00176}00176             \textcolor{keywordflow}{if} (!Query\_Insert\_Data.exec()) \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00177}00177                 qDebug() << \textcolor{stringliteral}{"{}Insert in t05bestellposition failed: "{}} << Query\_Insert\_Data.lastError();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00178}00178                 QSqlDatabase::database().rollback();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00179}00179                 \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00180}00180             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00181}00181                 qDebug() << \textcolor{stringliteral}{"{}Insert in t05bestellposition successful for ArtikelNr: "{}} << bestellung.artikelNummer;}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00182}00182             \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00183}00183         \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00184}00184     \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00186}00186     QSqlDatabase::database().commit();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00187}00187     \mbox{\hyperlink{class_sql_interface}{SqlInterface}}.\mbox{\hyperlink{class_sql_interface_ae7ad5ef7f03f53ff6a9fcefaa936cbad}{closeDatabaseConnection}}();}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00188}00188     on\_pushButton\_Read\_clicked(); \textcolor{comment}{//Anzeige aktualisieren}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00189}00189 \}}
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00190}00190 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00192}00192 }
+\DoxyCodeLine{\Hypertarget{mainwindow_8cpp_source_l00193}00193 }
+
+\end{DoxyCode}

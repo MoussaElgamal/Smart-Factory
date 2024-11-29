@@ -1,0 +1,171 @@
+\hypertarget{class_charging_place}{}\doxysection{Charging\+Place Class Reference}
+\label{class_charging_place}\index{ChargingPlace@{ChargingPlace}}
+
+
+\mbox{\hyperlink{class_charging_place}{Charging\+Place}} coordinates the activity of one specific charging place.  
+
+
+
+
+{\ttfamily \#include $<$chargingplace.\+h$>$}
+
+Inheritance diagram for Charging\+Place\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_charging_place}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_charging_place_a4e4188d15bcbfc50bcf3cdddf3f1e379}{Charging\+Place}} (\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$log)
+\begin{DoxyCompactList}\small\item\em The constructor defines the type of the \mbox{\hyperlink{class_agent}{Agent}} \mbox{\hyperlink{class_charging_place}{Charging\+Place}} and appends it to the list of charging places. After creating a new object the agents starts to offer its service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_charging_place_a60bf73630aee32a0a977594561883bf9}{is\+Occupied}} (void)
+\item 
+void \mbox{\hyperlink{class_charging_place_aaa4a81acf3d90a06dd7941ad8ad7fa44}{charge\+Robot}} (\mbox{\hyperlink{class_robot}{Robot}} $\ast$robot)
+\begin{DoxyCompactList}\small\item\em When this method is called, the charging station starts to charge the robot by calling it to the charging place. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_charging_place_a79b6c5a0a26c48b1ea32237baac4fa20}{get\+Charging\+Place\+Number}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_charging_place_a49b6b018ddc3030dc1c45291415ed08d}{number\+Of\+Charging\+Places}} = 2
+\item 
+static constexpr int \mbox{\hyperlink{class_charging_place_ab8332b0d2cf01b84074a0a72990e7153}{not\+Loading}} = 0
+\item 
+static constexpr int \mbox{\hyperlink{class_charging_place_af2ac38ee3eeba0b4e486227e6147ad0e}{loading}} = 1
+\item 
+static QList$<$ \mbox{\hyperlink{class_charging_place}{Charging\+Place}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_charging_place_a7c067236ae734439fe1ae28db0a618d9}{list\+Of\+Charging\+Places}} = new QList$<$\mbox{\hyperlink{class_charging_place}{Charging\+Place}}$\ast$$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_charging_place}{Charging\+Place}} coordinates the activity of one specific charging place. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben
+\end{DoxyAuthor}
+A charging place is an agent. The power consumption is not part of the production system. 
+
+Definition at line \mbox{\hyperlink{chargingplace_8h_source_l00018}{18}} of file \mbox{\hyperlink{chargingplace_8h_source}{chargingplace.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_charging_place_a4e4188d15bcbfc50bcf3cdddf3f1e379}\label{class_charging_place_a4e4188d15bcbfc50bcf3cdddf3f1e379}} 
+\index{ChargingPlace@{ChargingPlace}!ChargingPlace@{ChargingPlace}}
+\index{ChargingPlace@{ChargingPlace}!ChargingPlace@{ChargingPlace}}
+\doxysubsubsection{\texorpdfstring{ChargingPlace()}{ChargingPlace()}}
+{\footnotesize\ttfamily Charging\+Place\+::\+Charging\+Place (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$}]{log }\end{DoxyParamCaption})}
+
+
+
+The constructor defines the type of the \mbox{\hyperlink{class_agent}{Agent}} \mbox{\hyperlink{class_charging_place}{Charging\+Place}} and appends it to the list of charging places. After creating a new object the agents starts to offer its service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & log parameter is used to write logging data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{chargingplace_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{chargingplace_8cpp_source}{chargingplace.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_charging_place_aaa4a81acf3d90a06dd7941ad8ad7fa44}\label{class_charging_place_aaa4a81acf3d90a06dd7941ad8ad7fa44}} 
+\index{ChargingPlace@{ChargingPlace}!chargeRobot@{chargeRobot}}
+\index{chargeRobot@{chargeRobot}!ChargingPlace@{ChargingPlace}}
+\doxysubsubsection{\texorpdfstring{chargeRobot()}{chargeRobot()}}
+{\footnotesize\ttfamily void Charging\+Place\+::charge\+Robot (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_robot}{Robot}} $\ast$}]{robot }\end{DoxyParamCaption})}
+
+
+
+When this method is called, the charging station starts to charge the robot by calling it to the charging place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & parameter robot defines, which robot shall be charged. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{chargingplace_8cpp_source_l00045}{45}} of file \mbox{\hyperlink{chargingplace_8cpp_source}{chargingplace.\+cpp}}.
+
+\mbox{\Hypertarget{class_charging_place_a79b6c5a0a26c48b1ea32237baac4fa20}\label{class_charging_place_a79b6c5a0a26c48b1ea32237baac4fa20}} 
+\index{ChargingPlace@{ChargingPlace}!getChargingPlaceNumber@{getChargingPlaceNumber}}
+\index{getChargingPlaceNumber@{getChargingPlaceNumber}!ChargingPlace@{ChargingPlace}}
+\doxysubsubsection{\texorpdfstring{getChargingPlaceNumber()}{getChargingPlaceNumber()}}
+{\footnotesize\ttfamily int Charging\+Place\+::get\+Charging\+Place\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+This method calculates and returns the number of the charging place. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{chargingplace_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{chargingplace_8cpp_source}{chargingplace.\+cpp}}.
+
+\mbox{\Hypertarget{class_charging_place_a60bf73630aee32a0a977594561883bf9}\label{class_charging_place_a60bf73630aee32a0a977594561883bf9}} 
+\index{ChargingPlace@{ChargingPlace}!isOccupied@{isOccupied}}
+\index{isOccupied@{isOccupied}!ChargingPlace@{ChargingPlace}}
+\doxysubsubsection{\texorpdfstring{isOccupied()}{isOccupied()}}
+{\footnotesize\ttfamily bool Charging\+Place\+::is\+Occupied (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+This method returns whether the carging place is occupied or free. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{chargingplace_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{chargingplace_8cpp_source}{chargingplace.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_charging_place_a7c067236ae734439fe1ae28db0a618d9}\label{class_charging_place_a7c067236ae734439fe1ae28db0a618d9}} 
+\index{ChargingPlace@{ChargingPlace}!listOfChargingPlaces@{listOfChargingPlaces}}
+\index{listOfChargingPlaces@{listOfChargingPlaces}!ChargingPlace@{ChargingPlace}}
+\doxysubsubsection{\texorpdfstring{listOfChargingPlaces}{listOfChargingPlaces}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_charging_place}{Charging\+Place}} $\ast$ $>$ $\ast$ Charging\+Place\+::list\+Of\+Charging\+Places = new QList$<$\mbox{\hyperlink{class_charging_place}{Charging\+Place}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{chargingplace_8h_source_l00027}{27}} of file \mbox{\hyperlink{chargingplace_8h_source}{chargingplace.\+h}}.
+
+\mbox{\Hypertarget{class_charging_place_af2ac38ee3eeba0b4e486227e6147ad0e}\label{class_charging_place_af2ac38ee3eeba0b4e486227e6147ad0e}} 
+\index{ChargingPlace@{ChargingPlace}!loading@{loading}}
+\index{loading@{loading}!ChargingPlace@{ChargingPlace}}
+\doxysubsubsection{\texorpdfstring{loading}{loading}}
+{\footnotesize\ttfamily constexpr int Charging\+Place\+::loading = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{chargingplace_8h_source_l00025}{25}} of file \mbox{\hyperlink{chargingplace_8h_source}{chargingplace.\+h}}.
+
+\mbox{\Hypertarget{class_charging_place_ab8332b0d2cf01b84074a0a72990e7153}\label{class_charging_place_ab8332b0d2cf01b84074a0a72990e7153}} 
+\index{ChargingPlace@{ChargingPlace}!notLoading@{notLoading}}
+\index{notLoading@{notLoading}!ChargingPlace@{ChargingPlace}}
+\doxysubsubsection{\texorpdfstring{notLoading}{notLoading}}
+{\footnotesize\ttfamily constexpr int Charging\+Place\+::not\+Loading = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{chargingplace_8h_source_l00024}{24}} of file \mbox{\hyperlink{chargingplace_8h_source}{chargingplace.\+h}}.
+
+\mbox{\Hypertarget{class_charging_place_a49b6b018ddc3030dc1c45291415ed08d}\label{class_charging_place_a49b6b018ddc3030dc1c45291415ed08d}} 
+\index{ChargingPlace@{ChargingPlace}!numberOfChargingPlaces@{numberOfChargingPlaces}}
+\index{numberOfChargingPlaces@{numberOfChargingPlaces}!ChargingPlace@{ChargingPlace}}
+\doxysubsubsection{\texorpdfstring{numberOfChargingPlaces}{numberOfChargingPlaces}}
+{\footnotesize\ttfamily constexpr int Charging\+Place\+::number\+Of\+Charging\+Places = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{chargingplace_8h_source_l00023}{23}} of file \mbox{\hyperlink{chargingplace_8h_source}{chargingplace.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{chargingplace_8h}{chargingplace.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{chargingplace_8cpp}{chargingplace.\+cpp}}\end{DoxyCompactItemize}

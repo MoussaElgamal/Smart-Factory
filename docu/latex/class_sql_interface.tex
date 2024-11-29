@@ -1,0 +1,161 @@
+\hypertarget{class_sql_interface}{}\doxysection{Sql\+Interface Class Reference}
+\label{class_sql_interface}\index{SqlInterface@{SqlInterface}}
+
+
+This class is used as an interface to the sql database.  
+
+
+
+
+{\ttfamily \#include $<$sqlinterface.\+h$>$}
+
+Inheritance diagram for Sql\+Interface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sql_interface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sql_interface_ae0aa968d559aff1e4c3ba770dffe5ddf}{send\+Order}} (\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{Part\+::\+Product\+Type}} product\+Type, int parts)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_sql_interface_ae0aa968d559aff1e4c3ba770dffe5ddf}{Sql\+Interface\+::send\+Order}} sends new created orders by the user to the sql database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_sql_interface_a010d975e4469d07fb480716dfaf571e7}{order\+Accepted}} (const bool \&valid)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sql_interface_af0ae3b4ebf24877f2ba4896fc4ea84cf}{Sql\+Interface}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_sql_interface_af0ae3b4ebf24877f2ba4896fc4ea84cf}{Sql\+Interface\+::\+Sql\+Interface}} creates a new sql interface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}{connect\+To\+Database}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}{Sql\+Interface\+::connect\+To\+Database}} connects the sql interface to the sql database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sql_interface_ae7ad5ef7f03f53ff6a9fcefaa936cbad}{close\+Database\+Connection}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_sql_interface_ae7ad5ef7f03f53ff6a9fcefaa936cbad}{Sql\+Interface\+::close\+Database\+Connection}} closes the actual database connection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_sql_interface_a19ff32bbe485e8218eb5978973ae0515}{next\+ID}} (int \&order\+Id, QList$<$ int $>$ $\ast$list\+Of\+Machines, QList$<$ int $>$ $\ast$list\+Of\+Times, bool \&read\+Order\+Ok)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_sql_interface_a19ff32bbe485e8218eb5978973ae0515}{Sql\+Interface\+::next\+ID}} loads the next order from the sql database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is used as an interface to the sql database. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben 
+\end{DoxyAuthor}
+
+
+Definition at line \mbox{\hyperlink{sqlinterface_8h_source_l00020}{20}} of file \mbox{\hyperlink{sqlinterface_8h_source}{sqlinterface.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sql_interface_af0ae3b4ebf24877f2ba4896fc4ea84cf}\label{class_sql_interface_af0ae3b4ebf24877f2ba4896fc4ea84cf}} 
+\index{SqlInterface@{SqlInterface}!SqlInterface@{SqlInterface}}
+\index{SqlInterface@{SqlInterface}!SqlInterface@{SqlInterface}}
+\doxysubsubsection{\texorpdfstring{SqlInterface()}{SqlInterface()}}
+{\footnotesize\ttfamily Sql\+Interface\+::\+Sql\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_sql_interface_af0ae3b4ebf24877f2ba4896fc4ea84cf}{Sql\+Interface\+::\+Sql\+Interface}} creates a new sql interface. 
+
+
+
+Definition at line \mbox{\hyperlink{sqlinterface_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{sqlinterface_8cpp_source}{sqlinterface.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sql_interface_ae7ad5ef7f03f53ff6a9fcefaa936cbad}\label{class_sql_interface_ae7ad5ef7f03f53ff6a9fcefaa936cbad}} 
+\index{SqlInterface@{SqlInterface}!closeDatabaseConnection@{closeDatabaseConnection}}
+\index{closeDatabaseConnection@{closeDatabaseConnection}!SqlInterface@{SqlInterface}}
+\doxysubsubsection{\texorpdfstring{closeDatabaseConnection()}{closeDatabaseConnection()}}
+{\footnotesize\ttfamily void Sql\+Interface\+::close\+Database\+Connection (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_sql_interface_ae7ad5ef7f03f53ff6a9fcefaa936cbad}{Sql\+Interface\+::close\+Database\+Connection}} closes the actual database connection. 
+
+
+
+Definition at line \mbox{\hyperlink{sqlinterface_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{sqlinterface_8cpp_source}{sqlinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}\label{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}} 
+\index{SqlInterface@{SqlInterface}!connectToDatabase@{connectToDatabase}}
+\index{connectToDatabase@{connectToDatabase}!SqlInterface@{SqlInterface}}
+\doxysubsubsection{\texorpdfstring{connectToDatabase()}{connectToDatabase()}}
+{\footnotesize\ttfamily void Sql\+Interface\+::connect\+To\+Database (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_sql_interface_aebb11a088e39f7b3e42a98897f61f996}{Sql\+Interface\+::connect\+To\+Database}} connects the sql interface to the sql database. 
+
+
+
+Definition at line \mbox{\hyperlink{sqlinterface_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{sqlinterface_8cpp_source}{sqlinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_sql_interface_a19ff32bbe485e8218eb5978973ae0515}\label{class_sql_interface_a19ff32bbe485e8218eb5978973ae0515}} 
+\index{SqlInterface@{SqlInterface}!nextID@{nextID}}
+\index{nextID@{nextID}!SqlInterface@{SqlInterface}}
+\doxysubsubsection{\texorpdfstring{nextID()}{nextID()}}
+{\footnotesize\ttfamily void Sql\+Interface\+::next\+ID (\begin{DoxyParamCaption}\item[{int \&}]{order\+Id,  }\item[{QList$<$ int $>$ $\ast$}]{list\+Of\+Machines,  }\item[{QList$<$ int $>$ $\ast$}]{list\+Of\+Times,  }\item[{bool \&}]{read\+Order\+Ok }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_sql_interface_a19ff32bbe485e8218eb5978973ae0515}{Sql\+Interface\+::next\+ID}} loads the next order from the sql database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order\+Id} & returns the id of the order by reference. \\
+\hline
+{\em list\+Of\+Machines} & contains a list of the machines to produce the part with by reference. \\
+\hline
+{\em list\+Of\+Times} & contains the cycle time per machine by reference. \\
+\hline
+{\em read\+Order\+Ok} & returns whether the returned values are valid by refrence. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sqlinterface_8cpp_source_l00051}{51}} of file \mbox{\hyperlink{sqlinterface_8cpp_source}{sqlinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_sql_interface_a010d975e4469d07fb480716dfaf571e7}\label{class_sql_interface_a010d975e4469d07fb480716dfaf571e7}} 
+\index{SqlInterface@{SqlInterface}!orderAccepted@{orderAccepted}}
+\index{orderAccepted@{orderAccepted}!SqlInterface@{SqlInterface}}
+\doxysubsubsection{\texorpdfstring{orderAccepted}{orderAccepted}}
+{\footnotesize\ttfamily void Sql\+Interface\+::order\+Accepted (\begin{DoxyParamCaption}\item[{const bool \&}]{valid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__sqlinterface_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{moc__sqlinterface_8cpp_source}{moc\+\_\+sqlinterface.\+cpp}}.
+
+\mbox{\Hypertarget{class_sql_interface_ae0aa968d559aff1e4c3ba770dffe5ddf}\label{class_sql_interface_ae0aa968d559aff1e4c3ba770dffe5ddf}} 
+\index{SqlInterface@{SqlInterface}!sendOrder@{sendOrder}}
+\index{sendOrder@{sendOrder}!SqlInterface@{SqlInterface}}
+\doxysubsubsection{\texorpdfstring{sendOrder}{sendOrder}}
+{\footnotesize\ttfamily void Sql\+Interface\+::send\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{Part\+::\+Product\+Type}}}]{product\+Type,  }\item[{int}]{parts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_sql_interface_ae0aa968d559aff1e4c3ba770dffe5ddf}{Sql\+Interface\+::send\+Order}} sends new created orders by the user to the sql database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em product\+Type} & contains the type of the product. \\
+\hline
+{\em parts} & contains the number of parts to be produced. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{sqlinterface_8cpp_source_l00111}{111}} of file \mbox{\hyperlink{sqlinterface_8cpp_source}{sqlinterface.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{sqlinterface_8h}{sqlinterface.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{moc__sqlinterface_8cpp}{moc\+\_\+sqlinterface.\+cpp}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{sqlinterface_8cpp}{sqlinterface.\+cpp}}\end{DoxyCompactItemize}

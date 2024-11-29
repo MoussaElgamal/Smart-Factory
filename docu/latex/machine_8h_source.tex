@@ -1,0 +1,51 @@
+\hypertarget{machine_8h_source}{}\doxysection{machine.\+h}
+\label{machine_8h_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/machine.h@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/machine.h}}
+\mbox{\hyperlink{machine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef MACHINE\_H}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00002}00002 \textcolor{preprocessor}{\#define MACHINE\_H}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <QTimer>}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{agent_8h}{agent.h}}>}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{workbench_8h}{workbench.h}}>}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{rfid_8h}{rfid.h}}>}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{mqttinterface_8h}{mqttinterface.h}}>} \textcolor{comment}{// AS: added to provide neccessary params for RFID-\/Constructor}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00019}\mbox{\hyperlink{class_machine}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{class_machine}{Machine}}:\textcolor{keyword}{public} \mbox{\hyperlink{class_agent}{Agent}}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00021}00021     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00023}00023 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00024}\mbox{\hyperlink{class_machine_aaf9a19a7fe4e1a3e47b66bd3f9ddda9a}{00024}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_machine_aaf9a19a7fe4e1a3e47b66bd3f9ddda9a}{numberOfMachines}} = 4;}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00025}\mbox{\hyperlink{class_machine_af34892f2a2dc086e9306037cf5defb05}{00025}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_machine_af34892f2a2dc086e9306037cf5defb05}{numberOfWorkbenches}} = 2;}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00027}\mbox{\hyperlink{class_machine_af4432f5adfe1268898e6ff2c29524b42}{00027}}     \textcolor{keyword}{static} QList<Machine*>* \mbox{\hyperlink{class_machine_af4432f5adfe1268898e6ff2c29524b42}{listOfMachines}};}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00029}00029     \mbox{\hyperlink{class_machine_a46aa39c8c3bbee2600ce136166a6c4fb}{Machine}}(\mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log);}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00030}00030     \mbox{\hyperlink{class_machine_a0fa0467985ec16cf6b7aff8895b3400c}{\string~Machine}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00032}00032     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_machine_a5ac458f89e1526454da5cde68403f95b}{takeService}}(\mbox{\hyperlink{class_agent}{Agent}}* agent) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00034}00034     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_machine_acfa890787be0c2e88bb848da96931f8b}{getMachineNumber}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00036}00036 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00037}00037     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_machine_ad07e59970f5ba76a678e04fa1e177cc2}{workCycleFinished}}();}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00038}00038     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_machine_a0eff027badbd14f72f6cd97376241666}{startWorkCycle}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&workbench, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&cycleTime);}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00039}00039     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_machine_a47d1f6f22c96e2be1235d5b4f4189acd}{partTakenFromMachine}}();}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00041}00041 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00042}00042     std::array<QTimer, numberOfWorkbenches> \_workTimers;}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00043}00043     std::array<Workbench*, numberOfWorkbenches> \_workbenches;}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00044}00044     \mbox{\hyperlink{class_r_f_i_d}{RFID}}* \_rfid;}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00045}00045     \mbox{\hyperlink{class_mqtt_interface}{MqttInterface}} *\_mqttInterface; \textcolor{comment}{//provide neccessary params for RFID-\/Constructor}}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00047}00047     \textcolor{keywordtype}{int} getFreeWorkbenchNumber(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00049}00049     \textcolor{keywordtype}{void} offerServiceProduction(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00050}00050 \};}
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{machine_8h_source_l00052}00052 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// MACHINE\_H}}
+
+\end{DoxyCode}

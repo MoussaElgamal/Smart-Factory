@@ -1,0 +1,46 @@
+\hypertarget{chargingplace_8h_source}{}\doxysection{chargingplace.\+h}
+\label{chargingplace_8h_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/chargingplace.h@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/chargingplace.h}}
+\mbox{\hyperlink{chargingplace_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef CHARGINGPLACE\_H}}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00002}00002 \textcolor{preprocessor}{\#define CHARGINGPLACE\_H}}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00006}00006 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{agent_8h}{agent.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{robot_8h}{robot.h}}>}}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{mqttinterface_8h}{mqttinterface.h}}>}}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00018}\mbox{\hyperlink{class_charging_place}{00018}} \textcolor{keyword}{class }\mbox{\hyperlink{class_charging_place}{ChargingPlace}}:\textcolor{keyword}{public} \mbox{\hyperlink{class_agent}{Agent}}}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00019}00019 \{}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00020}00020     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00022}00022 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00023}\mbox{\hyperlink{class_charging_place_a49b6b018ddc3030dc1c45291415ed08d}{00023}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_charging_place_a49b6b018ddc3030dc1c45291415ed08d}{numberOfChargingPlaces}} = 2;}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00024}\mbox{\hyperlink{class_charging_place_ab8332b0d2cf01b84074a0a72990e7153}{00024}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_charging_place_ab8332b0d2cf01b84074a0a72990e7153}{notLoading}} = 0;}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00025}\mbox{\hyperlink{class_charging_place_af2ac38ee3eeba0b4e486227e6147ad0e}{00025}}     \textcolor{keyword}{static} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_charging_place_af2ac38ee3eeba0b4e486227e6147ad0e}{loading}} = 1;}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00027}\mbox{\hyperlink{class_charging_place_a7c067236ae734439fe1ae28db0a618d9}{00027}}     \textcolor{keyword}{static} QList<ChargingPlace*>* \mbox{\hyperlink{class_charging_place_a7c067236ae734439fe1ae28db0a618d9}{listOfChargingPlaces}};}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00029}00029     \mbox{\hyperlink{class_charging_place_a4e4188d15bcbfc50bcf3cdddf3f1e379}{ChargingPlace}}(\mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log);}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00031}00031     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_charging_place_a60bf73630aee32a0a977594561883bf9}{isOccupied}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00033}00033     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_charging_place_aaa4a81acf3d90a06dd7941ad8ad7fa44}{chargeRobot}}(\mbox{\hyperlink{class_robot}{Robot}}* robot);}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00034}00034 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00035}00035     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_charging_place_a79b6c5a0a26c48b1ea32237baac4fa20}{getChargingPlaceNumber}}();}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00037}00037 \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00038}00038     \textcolor{keywordtype}{void} endCharging(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00040}00040 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00041}00041     \mbox{\hyperlink{class_robot}{Robot}}* \_robot = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00042}00042     \textcolor{keywordtype}{int} \_placeNumber = 0;}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00043}00043 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00044}00044     \textcolor{keywordtype}{void} offerServiceCharge(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00046}00046     \textcolor{keywordtype}{void} takeService(\mbox{\hyperlink{class_agent}{Agent}}* agent) \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00047}00047 \};}
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{chargingplace_8h_source_l00049}00049 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CHARGINGPLACE\_H}}
+
+\end{DoxyCode}

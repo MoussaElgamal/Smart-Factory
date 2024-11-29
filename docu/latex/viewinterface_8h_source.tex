@@ -1,0 +1,52 @@
+\hypertarget{viewinterface_8h_source}{}\doxysection{viewinterface.\+h}
+\label{viewinterface_8h_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/viewinterface.h@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/viewinterface.h}}
+\mbox{\hyperlink{viewinterface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef VIEWINTERFACE\_H}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00002}00002 \textcolor{preprocessor}{\#define VIEWINTERFACE\_H}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ordermanager_8h}{ordermanager.h}}>}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{robot_8h}{robot.h}}>}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{chargingplace_8h}{chargingplace.h}}>}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{machine_8h}{machine.h}}>}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00010}00010 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{prestorage_8h}{prestorage.h}}>}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00011}00011 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{finalstorage_8h}{finalstorage.h}}>}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00012}00012 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{sqlinterface_8h}{sqlinterface.h}}>}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00019}\mbox{\hyperlink{class_view_interface}{00019}} \textcolor{keyword}{class }\mbox{\hyperlink{class_view_interface}{ViewInterface}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00020}00020 \{}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00021}00021     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00022}00022 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00023}00023     \mbox{\hyperlink{class_view_interface_a7cc6dd4abc1efdc597242474ae2b4abb}{ViewInterface}}(\mbox{\hyperlink{class_order_manager}{OrderManager}}* orderManager, \mbox{\hyperlink{class_sql_interface}{SqlInterface}}* sqlInterface);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00025}\mbox{\hyperlink{class_view_interface_a2f1b6234e0b16f944815ec2109d3f2e0}{00025}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a2f1b6234e0b16f944815ec2109d3f2e0}{log}}(QString); \textcolor{comment}{//messages to user}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00026}\mbox{\hyperlink{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}{00026}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}{error}}(\textcolor{keywordtype}{int} errorNumber); \textcolor{comment}{//errors to user}}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00028}00028     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_ac3d60ac6695126751bb1e6753565e28c}{takeOrder}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char} \&productType, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&parts);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00030}00030     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_view_interface_a5fffd55018f1fc477b52ed0336e818fc}{getRobotPosition}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&robot, \textcolor{keywordtype}{int} \&x, \textcolor{keywordtype}{int} \&y);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00031}00031     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_view_interface_a91ff80cf80ae83b7d206c360fc169868}{getState}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Agent::Type}} \&agentType, \textcolor{keywordtype}{int} number);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00032}00032     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a67ff72b01d5d231a9fdfd7f968644972}{setNumberOfPallets}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&pallets);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00034}00034     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a07aa1181992ab1ef531c7bd9a4f8e5b7}{takePartFromFinalstorage}}(\textcolor{keywordtype}{int} finalstorage, \textcolor{keywordtype}{int} workbench);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00036}00036 signals:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00037}00037     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a84aa84d798d9877b1ba2325012d0327b}{sendOrder}}(\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{Part::ProductType}} productType, \textcolor{keywordtype}{int} parts);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00038}00038     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a18ea86c1306470fcff86107639006acb}{orderAccepted}}(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} \&valid);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00039}00039     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_ab539f04d2fb5c1ea946c326f927c3197}{onNumberOfPalletsChanged}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&pallets);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00040}00040     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a420f348c126d10f52aef1aa311150724}{partTakenFromFinalstorage}}(\textcolor{keywordtype}{int} finalstorage, \textcolor{keywordtype}{int} workbench);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00041}00041     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a04665ffb1f4f729957c94bfc7b67a6d7}{onErrorFromRobot}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&\mbox{\hyperlink{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}{error}});}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00043}00043 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00044}00044     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_ab41acd287fda6e808926502f00c9756b}{orderAcceptedBySql}}(\textcolor{keyword}{const} \textcolor{keywordtype}{bool} \&valid);}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00045}00045     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_view_interface_a4f3df4afa214813b56ea31625605035c}{errorFromRobot}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&\mbox{\hyperlink{class_view_interface_a611e1bf89fb3ed151840eb40531d56db}{error}});}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00047}00047 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00048}00048     \mbox{\hyperlink{class_order_manager}{OrderManager}}* \_orderManager;}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00049}00049 \};}
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{viewinterface_8h_source_l00051}00051 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// VIEWINTERFACE\_H}}
+
+\end{DoxyCode}

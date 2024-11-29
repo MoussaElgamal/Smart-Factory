@@ -1,0 +1,501 @@
+\hypertarget{class_part}{}\doxysection{Part Class Reference}
+\label{class_part}\index{Part@{Part}}
+
+
+This class represents a hardware part, which has to be processed.  
+
+
+
+
+{\ttfamily \#include $<$part.\+h$>$}
+
+Inheritance diagram for Part\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_part}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} \{ \newline
+\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a87b7cb79481f317bde90c116cf36084b}{robot}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a458c367e8649fcafe6a830fa322e6f79}{prestorage1place1}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a2118d37ce02554398da19f0dec0cdb5e}{prestorage1place2}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a16a6a2e93a5a80718a26b6b80d9915a6}{prestorage2place1}}
+, \newline
+\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8adb9594a580dd2ddd11c41e82372710d1}{prestorage2place2}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8abcb99b2de06626fd9712e48f10ec3c73}{machine1place1}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a6d7fc526394079bfc3299b2b2e364b40}{machine1place2}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8abaf8edaf6652d0e08d68263cffd8f4b7}{machine2place1}}
+, \newline
+\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a84fbc80d8bd3e95728c621a2e81d8ce5}{machine2place2}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a489209b726a37812fa12d8a9a6980ee3}{machine3place1}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a61ea04e7c84132f250e211e12f8b0435}{machine3place2}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8af34f81cbb50a1a0b5058c71dd2b8af7a}{machine4place1}}
+, \newline
+\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8adc03bee6b550422ce2d174ff91d2b57c}{machine4place2}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8addfd5b2988e35ee1a83866ccf1144c14}{finalstorage1place1}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a70fd7b0931ada6b26250a9da990c13af}{finalstorage1place2}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8ac0e5bd07b2c55a116f8152b72b4dfe8e}{finalstorage2place1}}
+, \newline
+\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a3e803b56534c52422b6c09f1293cb3f6}{finalstorage2place2}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a4e1196a599961a67d5d23b56ad247e36}{pickup}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a05897226f62afe01b5d3221e489c64bd}{placedown}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a869a935ba7d9a1ec71ff024d56631fd8}{prestorage1rfid}}
+, \newline
+\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a4647123a08a9eda1ea02ac6694783639}{prestorage2rfid}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8ad158b098113c627775da9dda808e49a1}{machine1rfid}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a76e54314d42387e0855ef9e9fec6816a}{machine2rfid}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8aa5b1dc5e6b19411b1b1a71ec7da1d079}{machine3rfid}}
+, \newline
+\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8ab1057f8f46c8dad5d6b5d893cce571ec}{machine4rfid}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8ae375fe68c0c8dd6436da286325eb9b2c}{finalstorage1rfid}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a9b0daac80004e9eac8e8e4c6d293f4b3}{finalstorage2rfid}}
+, \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8a5e543256c480ac577d30f76f9120eb74}{undefined}}
+ \}
+\item 
+enum class \mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{Product\+Type}} \{ \mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94ba7fc56270e7a70fa81a5935b72eacbe29}{A}}
+, \mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94ba9d5ed678fe57bcca610140957afab571}{B}}
+, \mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94ba0d61f8370cad1d412f80b84d143e1257}{C}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_part_a5163d8915e7ab2e42ece9c219db4ac00}{check\+In}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_part_a5163d8915e7ab2e42ece9c219db4ac00}{Part\+::check\+In}} check in the part into the machine or storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_part_a934073bec1e66379b1c21fc5a7682dd3}{check\+Out}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_part_a934073bec1e66379b1c21fc5a7682dd3}{Part\+::check\+Out}} check out the part into the machine or storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_part_ac868a9656f5803d051b19fc1f8bab93e}{transport\+Done\+Signal}} (const int workbench, const int cycle\+Time)
+\item 
+void \mbox{\hyperlink{class_part_aa9a787e38d7208b0f5994cce72b764f4}{part\+Taken\+From\+Machine}} (void)
+\item 
+void \mbox{\hyperlink{class_part_a1b4ef50fb217c3193aaf2c81942dd4cc}{check\+In\+Successful}} (\mbox{\hyperlink{class_part}{Part}} $\ast$part)
+\item 
+void \mbox{\hyperlink{class_part_a7317323b0ee968682c48b66947c9f7c3}{check\+Out\+Successful}} (\mbox{\hyperlink{class_part}{Part}} $\ast$part)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_part_aa036ee48bed9e21e6d9d558d2fbc6c9b}{Part}} (\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$log, int order\+Id, QList$<$ int $>$ $\ast$list\+Of\+Machines, QList$<$ int $>$ $\ast$list\+Of\+Times)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_part_aa036ee48bed9e21e6d9d558d2fbc6c9b}{Part\+::\+Part}} creates a new part and starts the request for service. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_part_a1710faabd37355a2a4380b904ea37642}{$\sim$\+Part}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_part_a1710faabd37355a2a4380b904ea37642}{Part\+::$\sim$\+Part}} deletes the part and its lists. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_part_a62678bdfc5b62f7cee1c60cd441780c9}{set\+Position}} (\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} position)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_part_a62678bdfc5b62f7cee1c60cd441780c9}{Part\+::set\+Position}} is used to set the part to one position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} \mbox{\hyperlink{class_part_aef485d58ba3459acc193e348789d0e90}{get\+Position}} (void)
+\item 
+\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} \mbox{\hyperlink{class_part_a7540d4d229e9fda3728d136554675e7e}{get\+Next\+Position}} (void)
+\item 
+bool \mbox{\hyperlink{class_part_a055da473cf07133069d4c3c3eb9aa078}{is\+Checked\+In}} (void)
+\item 
+bool \mbox{\hyperlink{class_part_a8907a2012fe540ff0a953d755d4d10f3}{is\+Check\+Out\+Requested}} (void)
+\item 
+void \mbox{\hyperlink{class_part_a4c59de1d50fbcfdb6f07a93677e0e85d}{machine\+Cycle\+Ready}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_part_a4c59de1d50fbcfdb6f07a93677e0e85d}{Part\+::machine\+Cycle\+Ready}} is called, when the production of the part is done in one machine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_part_a5762391b8731da6fc77ddde648203dcf}{transport\+Done}} (void)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_part_a5762391b8731da6fc77ddde648203dcf}{Part\+::transport\+Done}} is called, when the robot has placed the part inside a machine or storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_part_a99e5f1f51d0e0d55f01d06045c972c9c}{update\+Next\+Position}} (bool is\+Storage, int number, int workbench)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_part_a99e5f1f51d0e0d55f01d06045c972c9c}{Part\+::update\+Next\+Position}} is used to calculate the next position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class represents a hardware part, which has to be processed. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben
+\end{DoxyAuthor}
+The part is the agent to be transported or produced. It represents an order. 
+
+Definition at line \mbox{\hyperlink{part_8h_source_l00013}{13}} of file \mbox{\hyperlink{part_8h_source}{part.\+h}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8}} 
+\index{Part@{Part}!Position@{Position}}
+\index{Position@{Position}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part\+::\+Position}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{robot@{robot}!Part@{Part}}\index{Part@{Part}!robot@{robot}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a87b7cb79481f317bde90c116cf36084b}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a87b7cb79481f317bde90c116cf36084b}} 
+robot&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prestorage1place1@{prestorage1place1}!Part@{Part}}\index{Part@{Part}!prestorage1place1@{prestorage1place1}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a458c367e8649fcafe6a830fa322e6f79}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a458c367e8649fcafe6a830fa322e6f79}} 
+prestorage1place1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prestorage1place2@{prestorage1place2}!Part@{Part}}\index{Part@{Part}!prestorage1place2@{prestorage1place2}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a2118d37ce02554398da19f0dec0cdb5e}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a2118d37ce02554398da19f0dec0cdb5e}} 
+prestorage1place2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prestorage2place1@{prestorage2place1}!Part@{Part}}\index{Part@{Part}!prestorage2place1@{prestorage2place1}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a16a6a2e93a5a80718a26b6b80d9915a6}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a16a6a2e93a5a80718a26b6b80d9915a6}} 
+prestorage2place1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prestorage2place2@{prestorage2place2}!Part@{Part}}\index{Part@{Part}!prestorage2place2@{prestorage2place2}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8adb9594a580dd2ddd11c41e82372710d1}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8adb9594a580dd2ddd11c41e82372710d1}} 
+prestorage2place2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine1place1@{machine1place1}!Part@{Part}}\index{Part@{Part}!machine1place1@{machine1place1}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8abcb99b2de06626fd9712e48f10ec3c73}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8abcb99b2de06626fd9712e48f10ec3c73}} 
+machine1place1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine1place2@{machine1place2}!Part@{Part}}\index{Part@{Part}!machine1place2@{machine1place2}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a6d7fc526394079bfc3299b2b2e364b40}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a6d7fc526394079bfc3299b2b2e364b40}} 
+machine1place2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine2place1@{machine2place1}!Part@{Part}}\index{Part@{Part}!machine2place1@{machine2place1}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8abaf8edaf6652d0e08d68263cffd8f4b7}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8abaf8edaf6652d0e08d68263cffd8f4b7}} 
+machine2place1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine2place2@{machine2place2}!Part@{Part}}\index{Part@{Part}!machine2place2@{machine2place2}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a84fbc80d8bd3e95728c621a2e81d8ce5}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a84fbc80d8bd3e95728c621a2e81d8ce5}} 
+machine2place2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine3place1@{machine3place1}!Part@{Part}}\index{Part@{Part}!machine3place1@{machine3place1}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a489209b726a37812fa12d8a9a6980ee3}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a489209b726a37812fa12d8a9a6980ee3}} 
+machine3place1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine3place2@{machine3place2}!Part@{Part}}\index{Part@{Part}!machine3place2@{machine3place2}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a61ea04e7c84132f250e211e12f8b0435}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a61ea04e7c84132f250e211e12f8b0435}} 
+machine3place2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine4place1@{machine4place1}!Part@{Part}}\index{Part@{Part}!machine4place1@{machine4place1}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8af34f81cbb50a1a0b5058c71dd2b8af7a}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8af34f81cbb50a1a0b5058c71dd2b8af7a}} 
+machine4place1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine4place2@{machine4place2}!Part@{Part}}\index{Part@{Part}!machine4place2@{machine4place2}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8adc03bee6b550422ce2d174ff91d2b57c}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8adc03bee6b550422ce2d174ff91d2b57c}} 
+machine4place2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{finalstorage1place1@{finalstorage1place1}!Part@{Part}}\index{Part@{Part}!finalstorage1place1@{finalstorage1place1}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8addfd5b2988e35ee1a83866ccf1144c14}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8addfd5b2988e35ee1a83866ccf1144c14}} 
+finalstorage1place1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{finalstorage1place2@{finalstorage1place2}!Part@{Part}}\index{Part@{Part}!finalstorage1place2@{finalstorage1place2}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a70fd7b0931ada6b26250a9da990c13af}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a70fd7b0931ada6b26250a9da990c13af}} 
+finalstorage1place2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{finalstorage2place1@{finalstorage2place1}!Part@{Part}}\index{Part@{Part}!finalstorage2place1@{finalstorage2place1}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8ac0e5bd07b2c55a116f8152b72b4dfe8e}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8ac0e5bd07b2c55a116f8152b72b4dfe8e}} 
+finalstorage2place1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{finalstorage2place2@{finalstorage2place2}!Part@{Part}}\index{Part@{Part}!finalstorage2place2@{finalstorage2place2}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a3e803b56534c52422b6c09f1293cb3f6}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a3e803b56534c52422b6c09f1293cb3f6}} 
+finalstorage2place2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{pickup@{pickup}!Part@{Part}}\index{Part@{Part}!pickup@{pickup}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a4e1196a599961a67d5d23b56ad247e36}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a4e1196a599961a67d5d23b56ad247e36}} 
+pickup&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{placedown@{placedown}!Part@{Part}}\index{Part@{Part}!placedown@{placedown}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a05897226f62afe01b5d3221e489c64bd}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a05897226f62afe01b5d3221e489c64bd}} 
+placedown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prestorage1rfid@{prestorage1rfid}!Part@{Part}}\index{Part@{Part}!prestorage1rfid@{prestorage1rfid}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a869a935ba7d9a1ec71ff024d56631fd8}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a869a935ba7d9a1ec71ff024d56631fd8}} 
+prestorage1rfid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prestorage2rfid@{prestorage2rfid}!Part@{Part}}\index{Part@{Part}!prestorage2rfid@{prestorage2rfid}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a4647123a08a9eda1ea02ac6694783639}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a4647123a08a9eda1ea02ac6694783639}} 
+prestorage2rfid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine1rfid@{machine1rfid}!Part@{Part}}\index{Part@{Part}!machine1rfid@{machine1rfid}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8ad158b098113c627775da9dda808e49a1}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8ad158b098113c627775da9dda808e49a1}} 
+machine1rfid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine2rfid@{machine2rfid}!Part@{Part}}\index{Part@{Part}!machine2rfid@{machine2rfid}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a76e54314d42387e0855ef9e9fec6816a}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a76e54314d42387e0855ef9e9fec6816a}} 
+machine2rfid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine3rfid@{machine3rfid}!Part@{Part}}\index{Part@{Part}!machine3rfid@{machine3rfid}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8aa5b1dc5e6b19411b1b1a71ec7da1d079}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8aa5b1dc5e6b19411b1b1a71ec7da1d079}} 
+machine3rfid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{machine4rfid@{machine4rfid}!Part@{Part}}\index{Part@{Part}!machine4rfid@{machine4rfid}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8ab1057f8f46c8dad5d6b5d893cce571ec}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8ab1057f8f46c8dad5d6b5d893cce571ec}} 
+machine4rfid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{finalstorage1rfid@{finalstorage1rfid}!Part@{Part}}\index{Part@{Part}!finalstorage1rfid@{finalstorage1rfid}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8ae375fe68c0c8dd6436da286325eb9b2c}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8ae375fe68c0c8dd6436da286325eb9b2c}} 
+finalstorage1rfid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{finalstorage2rfid@{finalstorage2rfid}!Part@{Part}}\index{Part@{Part}!finalstorage2rfid@{finalstorage2rfid}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a9b0daac80004e9eac8e8e4c6d293f4b3}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a9b0daac80004e9eac8e8e4c6d293f4b3}} 
+finalstorage2rfid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{undefined@{undefined}!Part@{Part}}\index{Part@{Part}!undefined@{undefined}}}\mbox{\Hypertarget{class_part_a1dfc821324b12448a25b658b65bbb7a8a5e543256c480ac577d30f76f9120eb74}\label{class_part_a1dfc821324b12448a25b658b65bbb7a8a5e543256c480ac577d30f76f9120eb74}} 
+undefined&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{part_8h_source_l00017}{17}} of file \mbox{\hyperlink{part_8h_source}{part.\+h}}.
+
+\mbox{\Hypertarget{class_part_aeef375c15dc14dec346079185310a94b}\label{class_part_aeef375c15dc14dec346079185310a94b}} 
+\index{Part@{Part}!ProductType@{ProductType}}
+\index{ProductType@{ProductType}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{ProductType}{ProductType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{Part\+::\+Product\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{A@{A}!Part@{Part}}\index{Part@{Part}!A@{A}}}\mbox{\Hypertarget{class_part_aeef375c15dc14dec346079185310a94ba7fc56270e7a70fa81a5935b72eacbe29}\label{class_part_aeef375c15dc14dec346079185310a94ba7fc56270e7a70fa81a5935b72eacbe29}} 
+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B@{B}!Part@{Part}}\index{Part@{Part}!B@{B}}}\mbox{\Hypertarget{class_part_aeef375c15dc14dec346079185310a94ba9d5ed678fe57bcca610140957afab571}\label{class_part_aeef375c15dc14dec346079185310a94ba9d5ed678fe57bcca610140957afab571}} 
+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C@{C}!Part@{Part}}\index{Part@{Part}!C@{C}}}\mbox{\Hypertarget{class_part_aeef375c15dc14dec346079185310a94ba0d61f8370cad1d412f80b84d143e1257}\label{class_part_aeef375c15dc14dec346079185310a94ba0d61f8370cad1d412f80b84d143e1257}} 
+C&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{part_8h_source_l00022}{22}} of file \mbox{\hyperlink{part_8h_source}{part.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_part_aa036ee48bed9e21e6d9d558d2fbc6c9b}\label{class_part_aa036ee48bed9e21e6d9d558d2fbc6c9b}} 
+\index{Part@{Part}!Part@{Part}}
+\index{Part@{Part}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{Part()}{Part()}}
+{\footnotesize\ttfamily Part\+::\+Part (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$}]{log,  }\item[{int}]{order\+Id,  }\item[{QList$<$ int $>$ $\ast$}]{list\+Of\+Machines,  }\item[{QList$<$ int $>$ $\ast$}]{list\+Of\+Times }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_part_aa036ee48bed9e21e6d9d558d2fbc6c9b}{Part\+::\+Part}} creates a new part and starts the request for service. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & connects the part to the logger. \\
+\hline
+{\em order\+Id} & defines the order and is the same as in the sql server. \\
+\hline
+{\em list\+Of\+Machines} & defines the order of production. \\
+\hline
+{\em list\+Of\+Times} & contains the cycle times for each machine. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_a1710faabd37355a2a4380b904ea37642}\label{class_part_a1710faabd37355a2a4380b904ea37642}} 
+\index{Part@{Part}!````~Part@{$\sim$Part}}
+\index{````~Part@{$\sim$Part}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{$\sim$Part()}{~Part()}}
+{\footnotesize\ttfamily Part\+::$\sim$\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_part_a1710faabd37355a2a4380b904ea37642}{Part\+::$\sim$\+Part}} deletes the part and its lists. 
+
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_part_a5163d8915e7ab2e42ece9c219db4ac00}\label{class_part_a5163d8915e7ab2e42ece9c219db4ac00}} 
+\index{Part@{Part}!checkIn@{checkIn}}
+\index{checkIn@{checkIn}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{checkIn}{checkIn}}
+{\footnotesize\ttfamily void Part\+::check\+In (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_part_a5163d8915e7ab2e42ece9c219db4ac00}{Part\+::check\+In}} check in the part into the machine or storage. 
+
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_a1b4ef50fb217c3193aaf2c81942dd4cc}\label{class_part_a1b4ef50fb217c3193aaf2c81942dd4cc}} 
+\index{Part@{Part}!checkInSuccessful@{checkInSuccessful}}
+\index{checkInSuccessful@{checkInSuccessful}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{checkInSuccessful}{checkInSuccessful}}
+{\footnotesize\ttfamily void Part\+::check\+In\+Successful (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_part}{Part}} $\ast$}]{part }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_part_a934073bec1e66379b1c21fc5a7682dd3}\label{class_part_a934073bec1e66379b1c21fc5a7682dd3}} 
+\index{Part@{Part}!checkOut@{checkOut}}
+\index{checkOut@{checkOut}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{checkOut}{checkOut}}
+{\footnotesize\ttfamily void Part\+::check\+Out (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_part_a934073bec1e66379b1c21fc5a7682dd3}{Part\+::check\+Out}} check out the part into the machine or storage. 
+
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_a7317323b0ee968682c48b66947c9f7c3}\label{class_part_a7317323b0ee968682c48b66947c9f7c3}} 
+\index{Part@{Part}!checkOutSuccessful@{checkOutSuccessful}}
+\index{checkOutSuccessful@{checkOutSuccessful}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{checkOutSuccessful}{checkOutSuccessful}}
+{\footnotesize\ttfamily void Part\+::check\+Out\+Successful (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_part}{Part}} $\ast$}]{part }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_part_a7540d4d229e9fda3728d136554675e7e}\label{class_part_a7540d4d229e9fda3728d136554675e7e}} 
+\index{Part@{Part}!getNextPosition@{getNextPosition}}
+\index{getNextPosition@{getNextPosition}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{getNextPosition()}{getNextPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part\+::\+Position}} Part\+::get\+Next\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+get\+Position returns the next needed position of the part. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00057}{57}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_aef485d58ba3459acc193e348789d0e90}\label{class_part_aef485d58ba3459acc193e348789d0e90}} 
+\index{Part@{Part}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Part\+::\+Position}} Part\+::get\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+get\+Position returns the actual position of the part. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00049}{49}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_a055da473cf07133069d4c3c3eb9aa078}\label{class_part_a055da473cf07133069d4c3c3eb9aa078}} 
+\index{Part@{Part}!isCheckedIn@{isCheckedIn}}
+\index{isCheckedIn@{isCheckedIn}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{isCheckedIn()}{isCheckedIn()}}
+{\footnotesize\ttfamily bool Part\+::is\+Checked\+In (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns whether the part is checked in into a amachine or storage. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_a8907a2012fe540ff0a953d755d4d10f3}\label{class_part_a8907a2012fe540ff0a953d755d4d10f3}} 
+\index{Part@{Part}!isCheckOutRequested@{isCheckOutRequested}}
+\index{isCheckOutRequested@{isCheckOutRequested}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{isCheckOutRequested()}{isCheckOutRequested()}}
+{\footnotesize\ttfamily bool Part\+::is\+Check\+Out\+Requested (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Returns whether the part needs to be checked out from a amachine or storage. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00073}{73}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_a4c59de1d50fbcfdb6f07a93677e0e85d}\label{class_part_a4c59de1d50fbcfdb6f07a93677e0e85d}} 
+\index{Part@{Part}!machineCycleReady@{machineCycleReady}}
+\index{machineCycleReady@{machineCycleReady}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{machineCycleReady()}{machineCycleReady()}}
+{\footnotesize\ttfamily void Part\+::machine\+Cycle\+Ready (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_part_a4c59de1d50fbcfdb6f07a93677e0e85d}{Part\+::machine\+Cycle\+Ready}} is called, when the production of the part is done in one machine. 
+
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00081}{81}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_aa9a787e38d7208b0f5994cce72b764f4}\label{class_part_aa9a787e38d7208b0f5994cce72b764f4}} 
+\index{Part@{Part}!partTakenFromMachine@{partTakenFromMachine}}
+\index{partTakenFromMachine@{partTakenFromMachine}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{partTakenFromMachine}{partTakenFromMachine}}
+{\footnotesize\ttfamily void Part\+::part\+Taken\+From\+Machine (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__part_8cpp_source_l00160}{160}} of file \mbox{\hyperlink{moc__part_8cpp_source}{moc\+\_\+part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_a62678bdfc5b62f7cee1c60cd441780c9}\label{class_part_a62678bdfc5b62f7cee1c60cd441780c9}} 
+\index{Part@{Part}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void Part\+::set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}}}]{position }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_part_a62678bdfc5b62f7cee1c60cd441780c9}{Part\+::set\+Position}} is used to set the part to one position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & defines the exact position by enumeration. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_a5762391b8731da6fc77ddde648203dcf}\label{class_part_a5762391b8731da6fc77ddde648203dcf}} 
+\index{Part@{Part}!transportDone@{transportDone}}
+\index{transportDone@{transportDone}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{transportDone()}{transportDone()}}
+{\footnotesize\ttfamily void Part\+::transport\+Done (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_part_a5762391b8731da6fc77ddde648203dcf}{Part\+::transport\+Done}} is called, when the robot has placed the part inside a machine or storage. 
+
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00090}{90}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_ac868a9656f5803d051b19fc1f8bab93e}\label{class_part_ac868a9656f5803d051b19fc1f8bab93e}} 
+\index{Part@{Part}!transportDoneSignal@{transportDoneSignal}}
+\index{transportDoneSignal@{transportDoneSignal}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{transportDoneSignal}{transportDoneSignal}}
+{\footnotesize\ttfamily void Part\+::transport\+Done\+Signal (\begin{DoxyParamCaption}\item[{const int}]{workbench,  }\item[{const int}]{cycle\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Definition at line \mbox{\hyperlink{moc__part_8cpp_source_l00153}{153}} of file \mbox{\hyperlink{moc__part_8cpp_source}{moc\+\_\+part.\+cpp}}.
+
+\mbox{\Hypertarget{class_part_a99e5f1f51d0e0d55f01d06045c972c9c}\label{class_part_a99e5f1f51d0e0d55f01d06045c972c9c}} 
+\index{Part@{Part}!updateNextPosition@{updateNextPosition}}
+\index{updateNextPosition@{updateNextPosition}!Part@{Part}}
+\doxysubsubsection{\texorpdfstring{updateNextPosition()}{updateNextPosition()}}
+{\footnotesize\ttfamily void Part\+::update\+Next\+Position (\begin{DoxyParamCaption}\item[{bool}]{is\+Storage,  }\item[{int}]{number,  }\item[{int}]{workbench }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_part_a99e5f1f51d0e0d55f01d06045c972c9c}{Part\+::update\+Next\+Position}} is used to calculate the next position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Storage} & defines whether the next position is a storage. \\
+\hline
+{\em number} & defines the number of the machine or storage to drive to. \\
+\hline
+{\em workbench} & defines the workbench of the machine or storage to drive to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{part_8cpp_source_l00101}{101}} of file \mbox{\hyperlink{part_8cpp_source}{part.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{part_8h}{part.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{moc__part_8cpp}{moc\+\_\+part.\+cpp}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{part_8cpp}{part.\+cpp}}\end{DoxyCompactItemize}

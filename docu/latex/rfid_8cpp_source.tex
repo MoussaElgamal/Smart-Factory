@@ -1,0 +1,128 @@
+\hypertarget{rfid_8cpp_source}{}\doxysection{rfid.\+cpp}
+\label{rfid_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/rfid.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/rfid.cpp}}
+\mbox{\hyperlink{rfid_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{rfid_8h}{rfid.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00003}\mbox{\hyperlink{class_r_f_i_d_a808859ba9d9e9cf6c9f1dfbec6eef0ef}{00003}} \mbox{\hyperlink{class_r_f_i_d_a808859ba9d9e9cf6c9f1dfbec6eef0ef}{RFID::RFID}}(\mbox{\hyperlink{class_mqtt_interface}{MqttInterface}} *mqttInterface) \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00004}00004     \_mqttInterface = mqttInterface;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00005}00005     \_lastSerialNumber = 0;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00006}00006     \_currentStation = 0;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00007}00007 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00008}00008     connect(\_mqttInterface, \&\mbox{\hyperlink{class_mqtt_interface_a4d23080b20afc6d6a80b618a40623e3a}{MqttInterface::messageReceived}}, \textcolor{keyword}{this}, \&RFID::onMessageReceived);}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00009}00009 \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00011}\mbox{\hyperlink{class_r_f_i_d_a206ec174766f8de226f5a3c96e2967d4}{00011}} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_r_f_i_d_a206ec174766f8de226f5a3c96e2967d4}{RFID::readSerialNumberFromTag}}(\textcolor{keywordtype}{int} station)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00012}00012 \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00013}00013     \textcolor{keywordflow}{if} (station < 1 || station > 8)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00014}00014     \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00015}00015         qDebug() << \textcolor{stringliteral}{"{}Ungültige Station. Die Station muss zwischen 1 und 8 liegen."{}};}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00016}00016         \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00017}00017     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00019}00019     \textcolor{comment}{// Schritt 1: Lesevorgang starten, indem die Station an "{}RFID/Read\_ON"{} gesendet wird}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00020}00020     \_mqttInterface-\/>\mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{publishMessageToTopic}}(\textcolor{stringliteral}{"{}RFID/Read\_ON"{}}, QString::number(station));}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00022}00022     \textcolor{comment}{// Speichere die aktuelle Station}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00023}00023     \_currentStation = station;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00025}00025     \textcolor{comment}{// Schritt 2: Auf das spezifische Topic der Station abonnieren}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00026}00026     QString topic = QString(\textcolor{stringliteral}{"{}RFID/Station/\%1/Read"{}}).arg(station);}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00027}00027     \_mqttInterface-\/>\mbox{\hyperlink{class_mqtt_interface_a5f40f376fa89dbd45c4257e89b814935}{subscribeMessageFromTopic}}(topic);}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00029}00029     \textcolor{comment}{// Die Methode kehrt zurück, bevor die Nachricht empfangen wird}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00030}00030     \textcolor{comment}{// Die Nachricht wird asynchron empfangen und über das Signal verarbeitet}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00031}00031     \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00032}00032 \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00034}\mbox{\hyperlink{class_r_f_i_d_a14bd62a53ba24bffeb34738beaf42d8c}{00034}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_f_i_d_a14bd62a53ba24bffeb34738beaf42d8c}{RFID::writeSerialNumberToTag}}(\textcolor{keywordtype}{int} station, \textcolor{keywordtype}{int} serialNumber)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00035}00035 \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00036}00036     \textcolor{keywordtype}{int} result = 0;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00037}00037     \textcolor{keywordflow}{if} (station < 1 || station > 8)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00038}00038     \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00039}00039         qDebug() << \textcolor{stringliteral}{"{}Ungültige Station. Die Station muss zwischen 1 und 8 liegen."{}};}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00040}00040         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00043}00043     \textcolor{comment}{// Schritt 1: Seriennummer an das spezifische Topic "{}RFID/Station/x/Write"{} senden}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00044}00044     QString topicWrite = QString(\textcolor{stringliteral}{"{}RFID/Station/\%1/Write"{}}).arg(station);}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00045}00045     \textcolor{keywordflow}{if}(serialNumber > 9) \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00046}00046         result = \_mqttInterface-\/>\mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{publishMessageToTopic}}(topicWrite, QString::number(serialNumber));}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00047}00047     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00048}00048     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00049}00049         result = \_mqttInterface-\/>\mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{publishMessageToTopic}}(topicWrite, QString(\textcolor{stringliteral}{"{}0\%1"{}}).arg(serialNumber));}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00050}00050     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00051}00051 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00052}00052     \textcolor{keywordflow}{if} (result == -\/1)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00053}00053     \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00054}00054         qDebug() << \textcolor{stringliteral}{"{}Fehler beim Publizieren der Seriennummer an das Topic"{}} << topicWrite;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00055}00055         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00056}00056     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00057}00057     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00058}00058     \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00059}00059         qDebug() << \textcolor{stringliteral}{"{}Seriennummer erfolgreich an das Topic"{}} << topicWrite << \textcolor{stringliteral}{"{}gesendet."{}};}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00060}00060     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00062}00062     \textcolor{comment}{// Schritt 2: Stationsnummer an "{}RFID/Write\_ON"{} senden, um den Schreibvorgang zu starten}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00063}00063     result = \_mqttInterface-\/>\mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{publishMessageToTopic}}(\textcolor{stringliteral}{"{}RFID/Write\_ON"{}}, QString::number(station));}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00065}00065     \textcolor{keywordflow}{if} (result == -\/1)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00066}00066     \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00067}00067         qDebug() << \textcolor{stringliteral}{"{}Fehler beim Publizieren der Stationsnummer an 'RFID/Write\_ON'."{}};}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00068}00068         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00069}00069     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00070}00070     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00071}00071     \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00072}00072         qDebug() << \textcolor{stringliteral}{"{}Stationsnummer erfolgreich an 'RFID/Write\_ON' gesendet."{}};}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00073}00073     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00075}00075     \textcolor{comment}{// Schritt 3: Auf das Topic "{}RFID/WriteStatus"{} abonnieren und auf die Bestätigung warten}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00076}00076     QString topicWriteStatus = QString(\textcolor{stringliteral}{"{}RFID/WriteStatus"{}});}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00077}00077     \_mqttInterface-\/>\mbox{\hyperlink{class_mqtt_interface_a5f40f376fa89dbd45c4257e89b814935}{subscribeMessageFromTopic}}(topicWriteStatus);}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00078}00078 \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00080}00080 \textcolor{keywordtype}{void} RFID::onMessageReceived(\textcolor{keyword}{const} QString \&topic, \textcolor{keyword}{const} QString \&message)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00081}00081 \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00082}00082     QString readTopic = QString(\textcolor{stringliteral}{"{}RFID/Station/\%1/Read"{}}).arg(\_currentStation);}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00083}00083 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00084}00084     \textcolor{comment}{// Wenn das Topic das Read-\/Topic ist}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00085}00085     \textcolor{keywordflow}{if} (topic == readTopic)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00086}00086     \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00087}00087         \textcolor{keywordtype}{bool} ok;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00088}00088         \textcolor{keywordtype}{int} serialNumber = message.toInt(\&ok);}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00090}00090         \textcolor{keywordflow}{if} (ok)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00091}00091         \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00092}00092             \_lastSerialNumber = serialNumber;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00093}00093             qDebug() << \textcolor{stringliteral}{"{}Seriennummer von Station"{}} << \_currentStation << \textcolor{stringliteral}{"{}empfangen:"{}} << serialNumber;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00094}00094 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00095}00095             \_mqttInterface-\/>\mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{publishMessageToTopic}}(\textcolor{stringliteral}{"{}RFID/Read\_ON"{}}, \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00097}00097             emit \mbox{\hyperlink{class_r_f_i_d_a626a840e2e5643b0984f9843bedfe2ea}{serialNumberRead}}(\_currentStation, serialNumber);}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00098}00098         \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00099}00099         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00100}00100         \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00101}00101             qDebug() << \textcolor{stringliteral}{"{}Fehler beim Konvertieren der Seriennummer von Station"{}} << \_currentStation;}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00102}00102         \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00103}00103     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00104}00104 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00105}00105     \textcolor{comment}{// Wenn das Topic das WriteStatus-\/Topic ist}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00106}00106     QString expectedWriteStatusTopic = QString(\textcolor{stringliteral}{"{}RFID/WriteStatus"{}}).arg(\_currentStation);}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00107}00107 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00108}00108     \textcolor{keywordflow}{if} (topic == expectedWriteStatusTopic)}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00109}00109     \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00110}00110         \textcolor{keywordflow}{if} (message == \textcolor{stringliteral}{"{}1"{}})}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00111}00111         \{}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00112}00112             qDebug() << \textcolor{stringliteral}{"{}Schreibvorgang an Station"{}} << \_currentStation << \textcolor{stringliteral}{"{}erfolgreich bestätigt."{}};}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00113}00113 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00114}00114             \textcolor{comment}{// Sende 0 an RFID/Write\_ON, um den Schreibvorgang abzuschließen}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00115}00115             \_mqttInterface-\/>\mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{publishMessageToTopic}}(\textcolor{stringliteral}{"{}RFID/Write\_ON"{}}, \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00116}00116 }
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00117}00117             \textcolor{comment}{// Sende 0 an RFID/WriteStatus, um den Status zurückzusetzen}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00118}00118             \_mqttInterface-\/>\mbox{\hyperlink{class_mqtt_interface_a2be1014b62dbe5f66521f0ae99ce1efb}{publishMessageToTopic}}(expectedWriteStatusTopic, \textcolor{stringliteral}{"{}0"{}});}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00119}00119         \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00121}00121 \}}
+\DoxyCodeLine{\Hypertarget{rfid_8cpp_source_l00122}00122 }
+
+\end{DoxyCode}

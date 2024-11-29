@@ -1,0 +1,56 @@
+\hypertarget{agent_8h_source}{}\doxysection{agent.\+h}
+\label{agent_8h_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/agent.h@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/agent.h}}
+\mbox{\hyperlink{agent_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef AGENT\_H}}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00002}00002 \textcolor{preprocessor}{\#define AGENT\_H}}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <QMap>}}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{csvinterpreter_8h}{csvinterpreter.h}}>}}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00017}\mbox{\hyperlink{class_agent}{00017}} \textcolor{keyword}{class }\mbox{\hyperlink{class_agent}{Agent}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00018}00018 \{}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00020}00020 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00021}00021     \mbox{\hyperlink{class_agent_a3b95867e426dba7c93b45a0c5af4cf45}{Agent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00022}00022     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_agent_af247dac4f407e2839b61be6bd3887b39}{\string~Agent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00027}\mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{00027}}     \textcolor{keyword}{enum class} \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{State}} \{error, free, reserved, allocated\};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00032}\mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{00032}}     \textcolor{keyword}{enum class} \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} \{chargingPlace, robot, machine, part, finalstorage, prestorage\};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00034}\mbox{\hyperlink{class_agent_ad61c9a576e4b13067c4255ad521c1f26}{00034}}     \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} \mbox{\hyperlink{class_agent_ad61c9a576e4b13067c4255ad521c1f26}{getType}}(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}};\}}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00035}\mbox{\hyperlink{class_agent_a2d33e97461571f20bdae864e86d9e345}{00035}}     \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{State}} \mbox{\hyperlink{class_agent_a2d33e97461571f20bdae864e86d9e345}{getState}}(\textcolor{keywordtype}{void}) \{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_agent_ab42b9ba4a88f358c1f182f62d89e9a8f}{\_state}};\}}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00037}00037 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00038}\mbox{\hyperlink{class_agent_af3fee8d5146a2de3dc9e6709118964a9}{00038}}     \mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* \mbox{\hyperlink{class_agent_af3fee8d5146a2de3dc9e6709118964a9}{\_log}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00039}\mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{00039}}     \mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} \mbox{\hyperlink{class_agent_a9e62a928770a9a9b33d0fff767210fec}{\_type}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00040}\mbox{\hyperlink{class_agent_ab42b9ba4a88f358c1f182f62d89e9a8f}{00040}}     \mbox{\hyperlink{class_agent_ab6f02589f842ffc7bca081f9ca016399}{State}} \mbox{\hyperlink{class_agent_ab42b9ba4a88f358c1f182f62d89e9a8f}{\_state}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00042}00042     \textcolor{comment}{//list of open requests}}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00043}\mbox{\hyperlink{class_agent_a81300dafd2abdb23af8359b37347bb6b}{00043}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_a81300dafd2abdb23af8359b37347bb6b}{listOfOpenRequestsCharge}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00044}\mbox{\hyperlink{class_agent_a46e374be6b15316f6e8159058f60fad0}{00044}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_a46e374be6b15316f6e8159058f60fad0}{listOfOpenRequestsTransport}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00045}\mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{00045}}     \textcolor{keyword}{static} QList<QList<Agent*>*>* \mbox{\hyperlink{class_agent_aeed1c7b2d4be17946bae8d80c293d3c1}{listOfOpenRequestsProduction}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00046}\mbox{\hyperlink{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}{00046}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_a3a9e5358eb8966aeb1e50c4c74e47fd0}{listOfOpenRequestsFinalstorage}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00047}\mbox{\hyperlink{class_agent_a0bc033cded1611f932c14b9aa6016599}{00047}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_a0bc033cded1611f932c14b9aa6016599}{listOfOpenRequestsPrestorage}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00048}\mbox{\hyperlink{class_agent_a550e89c90cdb00a5b7425ef3e2e9fd0c}{00048}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_a550e89c90cdb00a5b7425ef3e2e9fd0c}{listOfOpenRequestsPart}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00050}00050     \textcolor{comment}{//list of services}}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00051}\mbox{\hyperlink{class_agent_a72ffab9912ff6f564f7790547d470987}{00051}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_a72ffab9912ff6f564f7790547d470987}{listOfServicesCharge}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00052}\mbox{\hyperlink{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}{00052}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_ad3fa473d8631d301ce1c56567cfa2ba9}{listOfServicesTransport}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00053}\mbox{\hyperlink{class_agent_af020b5ba1e477dc19bfcd907697c329e}{00053}}     \textcolor{keyword}{static} QList<QList<Agent*>*>* \mbox{\hyperlink{class_agent_af020b5ba1e477dc19bfcd907697c329e}{listOfServicesProduction}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00054}\mbox{\hyperlink{class_agent_aed9efac0cb124cc00f170c1e47adcd47}{00054}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_aed9efac0cb124cc00f170c1e47adcd47}{listOfServicesFinalstorage}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00055}\mbox{\hyperlink{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}{00055}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_ac6c24ac7202b6a2b410c6e952a14368d}{listOfServicesPrestorage}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00056}\mbox{\hyperlink{class_agent_a4f1c5c12163b3dd6ea81d93846c98b04}{00056}}     \textcolor{keyword}{static} QList<Agent*>* \mbox{\hyperlink{class_agent_a4f1c5c12163b3dd6ea81d93846c98b04}{listOfServicesPart}};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00058}00058     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_agent_a01dcc6ba6bbf586d43c4bcb928082115}{organizeHelp}}(\mbox{\hyperlink{class_agent_a74c335b513eeb92231976477006c63bf}{Type}} type);}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00060}\mbox{\hyperlink{class_agent_adc1723360ca832e8fca798a6c18ca331}{00060}}     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_agent_adc1723360ca832e8fca798a6c18ca331}{takeService}}(\mbox{\hyperlink{class_agent}{Agent}}* agent) = 0;}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00062}00062 \};}
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{agent_8h_source_l00064}00064 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// AGENT\_H}}
+
+\end{DoxyCode}

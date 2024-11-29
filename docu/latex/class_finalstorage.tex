@@ -1,0 +1,209 @@
+\hypertarget{class_finalstorage}{}\doxysection{Finalstorage Class Reference}
+\label{class_finalstorage}\index{Finalstorage@{Finalstorage}}
+
+
+This class represents a finalstorage.  
+
+
+
+
+{\ttfamily \#include $<$finalstorage.\+h$>$}
+
+Inheritance diagram for Finalstorage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_finalstorage}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_finalstorage_a445b76bf239a929f7b2326ae1b1e7ec2}{part\+Taken\+From\+Finalstorage}} (int finalstorage, int workbench)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_finalstorage_a445b76bf239a929f7b2326ae1b1e7ec2}{Finalstorage\+::part\+Taken\+From\+Finalstorage}} is a slot and connected to the view interface. When the user removes the part. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_finalstorage_a0f39ed274293c3af16fad9a8830ee72f}{Finalstorage}} (\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$log, \mbox{\hyperlink{class_order_manager}{Order\+Manager}} $\ast$order\+Manager, \mbox{\hyperlink{class_view_interface}{View\+Interface}} $\ast$view\+Interface)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_finalstorage_a0f39ed274293c3af16fad9a8830ee72f}{Finalstorage\+::\+Finalstorage}} creates a new finalstorage with its workbenches and connects it to the view interface. The service of storing is provided. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_finalstorage_a4d6236f107da59de34d1a9c59011a4b3}{$\sim$\+Finalstorage}} (void)
+\begin{DoxyCompactList}\small\item\em The destructor deletes all created workbenches and removes the finalstorage from the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_finalstorage_a49c73300530111c0a97fe6d12332c4eb}{take\+Service}} (\mbox{\hyperlink{class_agent}{Agent}} $\ast$agent) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_finalstorage_a49c73300530111c0a97fe6d12332c4eb}{Finalstorage\+::take\+Service}} is called when one part reacts to the offered service. The service starts. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_finalstorage_a82da522b9a5ace052651b197b2f58297}{get\+Free\+Workbench\+Number}} (void)
+\item 
+int \mbox{\hyperlink{class_finalstorage_ad1f1da9b70c73e7d335bb4109da1fb45}{get\+Finalstorage\+Number}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr int \mbox{\hyperlink{class_finalstorage_a4c4ad07c6cf8ee1ca244c9446b3002ac}{number\+Of\+Workbenches}} = 2
+\item 
+static constexpr int \mbox{\hyperlink{class_finalstorage_a6f65998be6c8cb1970fbd9390daceeff}{number\+Of\+Finalstorages}} = 2
+\item 
+static QList$<$ \mbox{\hyperlink{class_finalstorage}{Finalstorage}} $\ast$ $>$ $\ast$ \mbox{\hyperlink{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}{list\+Of\+Finalstorages}} = new QList$<$\mbox{\hyperlink{class_finalstorage}{Finalstorage}}$\ast$$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+This class represents a finalstorage. 
+
+\begin{DoxyAuthor}{Author}
+Moussa Elgamal, Pascal Imholze, Anton Sprank, Pascal Wittleben
+\end{DoxyAuthor}
+A finalstorage has a RFID-\/\+Reader and two storage places. Finalstorages are agents. 
+
+Definition at line \mbox{\hyperlink{finalstorage_8h_source_l00020}{20}} of file \mbox{\hyperlink{finalstorage_8h_source}{finalstorage.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_finalstorage_a0f39ed274293c3af16fad9a8830ee72f}\label{class_finalstorage_a0f39ed274293c3af16fad9a8830ee72f}} 
+\index{Finalstorage@{Finalstorage}!Finalstorage@{Finalstorage}}
+\index{Finalstorage@{Finalstorage}!Finalstorage@{Finalstorage}}
+\doxysubsubsection{\texorpdfstring{Finalstorage()}{Finalstorage()}}
+{\footnotesize\ttfamily Finalstorage\+::\+Finalstorage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_csv_interpreter}{Csv\+Interpreter}} $\ast$}]{log,  }\item[{\mbox{\hyperlink{class_order_manager}{Order\+Manager}} $\ast$}]{order\+Manager,  }\item[{\mbox{\hyperlink{class_view_interface}{View\+Interface}} $\ast$}]{view\+Interface }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_finalstorage_a0f39ed274293c3af16fad9a8830ee72f}{Finalstorage\+::\+Finalstorage}} creates a new finalstorage with its workbenches and connects it to the view interface. The service of storing is provided. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parameter} & log is needed to write actions and errors into the logfile. \\
+\hline
+{\em order\+Manager} & represents the ordermanager in the production plant. \\
+\hline
+{\em view\+Interface} & is requested for a connection to the view interface. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{finalstorage_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{finalstorage_8cpp_source}{finalstorage.\+cpp}}.
+
+\mbox{\Hypertarget{class_finalstorage_a4d6236f107da59de34d1a9c59011a4b3}\label{class_finalstorage_a4d6236f107da59de34d1a9c59011a4b3}} 
+\index{Finalstorage@{Finalstorage}!````~Finalstorage@{$\sim$Finalstorage}}
+\index{````~Finalstorage@{$\sim$Finalstorage}!Finalstorage@{Finalstorage}}
+\doxysubsubsection{\texorpdfstring{$\sim$Finalstorage()}{~Finalstorage()}}
+{\footnotesize\ttfamily Finalstorage\+::$\sim$\+Finalstorage (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+The destructor deletes all created workbenches and removes the finalstorage from the list. 
+
+
+
+Definition at line \mbox{\hyperlink{finalstorage_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{finalstorage_8cpp_source}{finalstorage.\+cpp}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_finalstorage_ad1f1da9b70c73e7d335bb4109da1fb45}\label{class_finalstorage_ad1f1da9b70c73e7d335bb4109da1fb45}} 
+\index{Finalstorage@{Finalstorage}!getFinalstorageNumber@{getFinalstorageNumber}}
+\index{getFinalstorageNumber@{getFinalstorageNumber}!Finalstorage@{Finalstorage}}
+\doxysubsubsection{\texorpdfstring{getFinalstorageNumber()}{getFinalstorageNumber()}}
+{\footnotesize\ttfamily int Finalstorage\+::get\+Finalstorage\+Number (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+This method returns the number of this finalstorage. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{finalstorage_8cpp_source_l00110}{110}} of file \mbox{\hyperlink{finalstorage_8cpp_source}{finalstorage.\+cpp}}.
+
+\mbox{\Hypertarget{class_finalstorage_a82da522b9a5ace052651b197b2f58297}\label{class_finalstorage_a82da522b9a5ace052651b197b2f58297}} 
+\index{Finalstorage@{Finalstorage}!getFreeWorkbenchNumber@{getFreeWorkbenchNumber}}
+\index{getFreeWorkbenchNumber@{getFreeWorkbenchNumber}!Finalstorage@{Finalstorage}}
+\doxysubsubsection{\texorpdfstring{getFreeWorkbenchNumber()}{getFreeWorkbenchNumber()}}
+{\footnotesize\ttfamily int Finalstorage\+::get\+Free\+Workbench\+Number (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+This method returns a free workbench for storage. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{finalstorage_8cpp_source_l00097}{97}} of file \mbox{\hyperlink{finalstorage_8cpp_source}{finalstorage.\+cpp}}.
+
+\mbox{\Hypertarget{class_finalstorage_a445b76bf239a929f7b2326ae1b1e7ec2}\label{class_finalstorage_a445b76bf239a929f7b2326ae1b1e7ec2}} 
+\index{Finalstorage@{Finalstorage}!partTakenFromFinalstorage@{partTakenFromFinalstorage}}
+\index{partTakenFromFinalstorage@{partTakenFromFinalstorage}!Finalstorage@{Finalstorage}}
+\doxysubsubsection{\texorpdfstring{partTakenFromFinalstorage}{partTakenFromFinalstorage}}
+{\footnotesize\ttfamily void Finalstorage\+::part\+Taken\+From\+Finalstorage (\begin{DoxyParamCaption}\item[{int}]{finalstorage,  }\item[{int}]{workbench }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_finalstorage_a445b76bf239a929f7b2326ae1b1e7ec2}{Finalstorage\+::part\+Taken\+From\+Finalstorage}} is a slot and connected to the view interface. When the user removes the part. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em The} & parameter finalstorage defines the finalstorage to remove the part. \\
+\hline
+{\em The} & workbench finalstorage defines the finalstorage to remove the part. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{finalstorage_8cpp_source_l00053}{53}} of file \mbox{\hyperlink{finalstorage_8cpp_source}{finalstorage.\+cpp}}.
+
+\mbox{\Hypertarget{class_finalstorage_a49c73300530111c0a97fe6d12332c4eb}\label{class_finalstorage_a49c73300530111c0a97fe6d12332c4eb}} 
+\index{Finalstorage@{Finalstorage}!takeService@{takeService}}
+\index{takeService@{takeService}!Finalstorage@{Finalstorage}}
+\doxysubsubsection{\texorpdfstring{takeService()}{takeService()}}
+{\footnotesize\ttfamily void Finalstorage\+::take\+Service (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_agent}{Agent}} $\ast$}]{agent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_finalstorage_a49c73300530111c0a97fe6d12332c4eb}{Finalstorage\+::take\+Service}} is called when one part reacts to the offered service. The service starts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Parameter} & agent defines the part to storage. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_agent_adc1723360ca832e8fca798a6c18ca331}{Agent}}.
+
+
+
+Definition at line \mbox{\hyperlink{finalstorage_8cpp_source_l00076}{76}} of file \mbox{\hyperlink{finalstorage_8cpp_source}{finalstorage.\+cpp}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}\label{class_finalstorage_a0cb0004eb1d51c014e6c4a679dda4caa}} 
+\index{Finalstorage@{Finalstorage}!listOfFinalstorages@{listOfFinalstorages}}
+\index{listOfFinalstorages@{listOfFinalstorages}!Finalstorage@{Finalstorage}}
+\doxysubsubsection{\texorpdfstring{listOfFinalstorages}{listOfFinalstorages}}
+{\footnotesize\ttfamily QList$<$ \mbox{\hyperlink{class_finalstorage}{Finalstorage}} $\ast$ $>$ $\ast$ Finalstorage\+::list\+Of\+Finalstorages = new QList$<$\mbox{\hyperlink{class_finalstorage}{Finalstorage}}$\ast$$>$\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{finalstorage_8h_source_l00027}{27}} of file \mbox{\hyperlink{finalstorage_8h_source}{finalstorage.\+h}}.
+
+\mbox{\Hypertarget{class_finalstorage_a6f65998be6c8cb1970fbd9390daceeff}\label{class_finalstorage_a6f65998be6c8cb1970fbd9390daceeff}} 
+\index{Finalstorage@{Finalstorage}!numberOfFinalstorages@{numberOfFinalstorages}}
+\index{numberOfFinalstorages@{numberOfFinalstorages}!Finalstorage@{Finalstorage}}
+\doxysubsubsection{\texorpdfstring{numberOfFinalstorages}{numberOfFinalstorages}}
+{\footnotesize\ttfamily constexpr int Finalstorage\+::number\+Of\+Finalstorages = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{finalstorage_8h_source_l00025}{25}} of file \mbox{\hyperlink{finalstorage_8h_source}{finalstorage.\+h}}.
+
+\mbox{\Hypertarget{class_finalstorage_a4c4ad07c6cf8ee1ca244c9446b3002ac}\label{class_finalstorage_a4c4ad07c6cf8ee1ca244c9446b3002ac}} 
+\index{Finalstorage@{Finalstorage}!numberOfWorkbenches@{numberOfWorkbenches}}
+\index{numberOfWorkbenches@{numberOfWorkbenches}!Finalstorage@{Finalstorage}}
+\doxysubsubsection{\texorpdfstring{numberOfWorkbenches}{numberOfWorkbenches}}
+{\footnotesize\ttfamily constexpr int Finalstorage\+::number\+Of\+Workbenches = 2\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+Definition at line \mbox{\hyperlink{finalstorage_8h_source_l00024}{24}} of file \mbox{\hyperlink{finalstorage_8h_source}{finalstorage.\+h}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{finalstorage_8h}{finalstorage.\+h}}\item 
+Desktop\+\_\+\+Qt\+\_\+6\+\_\+7\+\_\+2\+\_\+llvm\+\_\+mingw\+\_\+64\+\_\+bit-\/\+Debug/debug/\mbox{\hyperlink{finalstorage_8cpp}{finalstorage.\+cpp}}\end{DoxyCompactItemize}

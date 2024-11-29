@@ -1,0 +1,55 @@
+\hypertarget{ordermanager_8cpp_source}{}\doxysection{ordermanager.\+cpp}
+\label{ordermanager_8cpp_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/ordermanager.cpp@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/ordermanager.cpp}}
+\mbox{\hyperlink{ordermanager_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{ordermanager_8h}{ordermanager.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00003}00003 \textcolor{comment}{//These lists are used to manage the available empty parts (-\/-\/>pallets).}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00004}00004 \textcolor{keywordtype}{int} OrderManager::\_numberOfPallets = 5;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00005}00005 \textcolor{keywordtype}{int} OrderManager::\_numberOfFreePallets = 5;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00012}\mbox{\hyperlink{class_order_manager_a56810e5febb15bf62f36a928903d815a}{00012}} \mbox{\hyperlink{class_order_manager_a56810e5febb15bf62f36a928903d815a}{OrderManager::OrderManager}}(\mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log, \mbox{\hyperlink{class_sql_interface}{SqlInterface}}* sqlInterface) \{}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00013}00013     \_log = log;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00014}00014     \_sqlInterface = sqlInterface;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00015}00015 \}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00020}\mbox{\hyperlink{class_order_manager_ab3642ba8fdccd202c34f6a6d7fd1d5dc}{00020}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_order_manager_ab3642ba8fdccd202c34f6a6d7fd1d5dc}{OrderManager::loadNextOrder}}() \textcolor{comment}{//TODO: muss getriggert werden, sobald ein Part unter dem RFID Sensor ist}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00023}00023     \textcolor{keywordflow}{if}(\_numberOfFreePallets < 1) \{ \textcolor{comment}{//check whether at least one pallet is free to protect overwrite}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00024}00024         \textcolor{keywordflow}{return}; \textcolor{comment}{//load nothing}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00027}00027     \textcolor{keywordtype}{int} orderId;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00028}00028     QList<int>* listOfMachines = \textcolor{keyword}{new} QList<int>;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00029}00029     QList<int>* listOfTimes = \textcolor{keyword}{new} QList<int>;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00030}00030     \textcolor{keywordtype}{bool} readOrderOk;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00032}00032     \_sqlInterface-\/>\mbox{\hyperlink{class_sql_interface_a19ff32bbe485e8218eb5978973ae0515}{nextID}}(orderId, listOfMachines, listOfTimes, readOrderOk);}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00034}00034     \textcolor{keywordflow}{if} (readOrderOk) \{}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00035}00035         \mbox{\hyperlink{class_part}{Part}}* part = \textcolor{keyword}{new} \mbox{\hyperlink{class_part}{Part}}(\_log, orderId, listOfMachines, listOfTimes);}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00036}00036         \mbox{\hyperlink{class_agent_a0bc033cded1611f932c14b9aa6016599}{Agent::listOfOpenRequestsPrestorage}}-\/>append(part);}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00037}00037         \_numberOfFreePallets-\/-\/;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00039}00039 \}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00045}\mbox{\hyperlink{class_order_manager_a89037ce41f446ebfa56d060de9c6be86}{00045}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_order_manager_a89037ce41f446ebfa56d060de9c6be86}{OrderManager::partRemovedFromFinalstorage}}(\mbox{\hyperlink{class_part}{Part}}* part)}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00046}00046 \{}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00047}00047     \textcolor{keyword}{delete} part;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00048}00048     \_numberOfFreePallets++;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00049}00049 \}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00055}\mbox{\hyperlink{class_order_manager_ae8f455262adafa06d841c1312cbe6b6d}{00055}} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_order_manager_ae8f455262adafa06d841c1312cbe6b6d}{OrderManager::setNumberOfPallets}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&pallets)}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00056}00056 \{}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00057}00057     \textcolor{keywordflow}{if} (pallets < \_numberOfPallets) \{}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00058}00058         \_numberOfFreePallets -\/= (\_numberOfPallets -\/ pallets);}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00060}00060     \textcolor{keywordflow}{if} (pallets > \_numberOfPallets) \{}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00061}00061         \_numberOfFreePallets += (pallets -\/ \_numberOfPallets);}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00062}00062     \}}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00064}00064     \_numberOfPallets = pallets;}
+\DoxyCodeLine{\Hypertarget{ordermanager_8cpp_source_l00065}00065 \}}
+
+\end{DoxyCode}

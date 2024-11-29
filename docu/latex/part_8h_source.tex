@@ -1,0 +1,74 @@
+\hypertarget{part_8h_source}{}\doxysection{part.\+h}
+\label{part_8h_source}\index{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/part.h@{Desktop\_Qt\_6\_7\_2\_llvm\_mingw\_64\_bit-\/Debug/debug/part.h}}
+\mbox{\hyperlink{part_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef PART\_H}}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00002}00002 \textcolor{preprocessor}{\#define PART\_H}}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{agent_8h}{agent.h}}>}}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00013}\mbox{\hyperlink{class_part}{00013}} \textcolor{keyword}{class }\mbox{\hyperlink{class_part}{Part}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_agent}{Agent}}}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00015}00015     Q\_OBJECT}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00016}00016 \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00017}\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{00017}}     \textcolor{keyword}{enum class} \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} \{robot, prestorage1place1, prestorage1place2, prestorage2place1, prestorage2place2, machine1place1, machine1place2,}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00018}00018                           machine2place1, machine2place2, machine3place1, machine3place2, machine4place1, machine4place2, finalstorage1place1,}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00019}00019                           finalstorage1place2, finalstorage2place1, finalstorage2place2, pickup, placedown, prestorage1rfid, prestorage2rfid,}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00020}00020                           machine1rfid, machine2rfid, machine3rfid, machine4rfid, finalstorage1rfid, finalstorage2rfid, undefined\};}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00022}\mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{00022}}     \textcolor{keyword}{enum class} \mbox{\hyperlink{class_part_aeef375c15dc14dec346079185310a94b}{ProductType}} \{A, B, C\};}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00024}00024     \mbox{\hyperlink{class_part_aa036ee48bed9e21e6d9d558d2fbc6c9b}{Part}}(\mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* log, \textcolor{keywordtype}{int} orderId, QList<int>* listOfMachines, QList<int>* listOfTimes);}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00025}00025     \mbox{\hyperlink{class_part_a1710faabd37355a2a4380b904ea37642}{\string~Part}}();}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00027}00027     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a62678bdfc5b62f7cee1c60cd441780c9}{setPosition}}(\mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} position);}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00028}00028     \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} \mbox{\hyperlink{class_part_aef485d58ba3459acc193e348789d0e90}{getPosition}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00029}00029     \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} \mbox{\hyperlink{class_part_a7540d4d229e9fda3728d136554675e7e}{getNextPosition}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00031}00031     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_part_a055da473cf07133069d4c3c3eb9aa078}{isCheckedIn}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00032}00032     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_part_a8907a2012fe540ff0a953d755d4d10f3}{isCheckOutRequested}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00034}00034     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a4c59de1d50fbcfdb6f07a93677e0e85d}{machineCycleReady}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00035}00035     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a5762391b8731da6fc77ddde648203dcf}{transportDone}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00037}00037     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a99e5f1f51d0e0d55f01d06045c972c9c}{updateNextPosition}}(\textcolor{keywordtype}{bool} isStorage, \textcolor{keywordtype}{int} number, \textcolor{keywordtype}{int} workbench);}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00039}00039 signals:}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00040}00040     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_ac868a9656f5803d051b19fc1f8bab93e}{transportDoneSignal}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} workbench, \textcolor{keyword}{const} \textcolor{keywordtype}{int} cycleTime);}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00041}00041     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_aa9a787e38d7208b0f5994cce72b764f4}{partTakenFromMachine}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00042}\mbox{\hyperlink{class_part_a1b4ef50fb217c3193aaf2c81942dd4cc}{00042}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a1b4ef50fb217c3193aaf2c81942dd4cc}{checkInSuccessful}}(\mbox{\hyperlink{class_part}{Part}}* part);}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00043}\mbox{\hyperlink{class_part_a7317323b0ee968682c48b66947c9f7c3}{00043}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a7317323b0ee968682c48b66947c9f7c3}{checkOutSuccessful}}(\mbox{\hyperlink{class_part}{Part}}* part);}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00045}00045 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00046}00046     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a5163d8915e7ab2e42ece9c219db4ac00}{checkIn}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00047}00047     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_part_a934073bec1e66379b1c21fc5a7682dd3}{checkOut}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00049}00049 \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00050}00050     \textcolor{keywordtype}{int} \_orderId;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00051}00051     \mbox{\hyperlink{class_csv_interpreter}{CsvInterpreter}}* \_log;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00052}00052     \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} \_position;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00053}00053     \mbox{\hyperlink{class_part_a1dfc821324b12448a25b658b65bbb7a8}{Position}} \_nextPosition;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00054}00054     \textcolor{keywordtype}{bool} \_checkedIn;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00055}00055     \textcolor{keywordtype}{bool} \_checkOutRequested;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00057}00057     \textcolor{keywordtype}{int} \_workbench = 0;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00059}00059     QList<int>* \_listOfMachines;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00060}00060     QList<int>* \_listOfTimes;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00062}00062     \textcolor{keywordtype}{int} \_actMachineCycleTime;}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00064}00064     \textcolor{keywordtype}{int} getNextMachine(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00066}00066     \textcolor{keywordtype}{void} requestServiceProductionOrStorage(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00067}00067     \textcolor{keywordtype}{void} requestServiceProduction(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00068}00068     \textcolor{keywordtype}{void} requestServiceTransport(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00069}00069     \textcolor{keywordtype}{void} requestServiceFinalstorage(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00072}00072     \textcolor{keywordtype}{void} takeService(\mbox{\hyperlink{class_agent}{Agent}}* agent);}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00073}00073 \};}
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{part_8h_source_l00075}00075 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// PART\_H}}
+
+\end{DoxyCode}
